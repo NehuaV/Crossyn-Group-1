@@ -1,5 +1,13 @@
+body {
+    background-color: #2d3574;
+}
+
 form.login-form {
     padding: 20px;
+}
+
+.spacer {
+    padding-inline: 20px;
 }
 
 .login-container {
@@ -9,10 +17,12 @@ form.login-form {
     max-width: 500px;
     margin: auto;
     border-radius: 25px;
+    background-color: white;
 }
 
 h1.text-center {
     padding: 25px;
+    color: white;
 }
 
 button.btn.btn-secondary {

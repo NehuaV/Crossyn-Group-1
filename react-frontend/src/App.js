@@ -14,7 +14,7 @@ function App() {
     return (
         <div>
             <HeaderCom />
-            <div className="container">
+            <div className="c1-home">
                 <Router>                   
                     <Switch>
                         <Route exact path="/"> <Home /> </Route>
