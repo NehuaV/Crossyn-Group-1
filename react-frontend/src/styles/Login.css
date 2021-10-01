@@ -1,0 +1,25 @@
+form.login-form {
+    padding: 20px;
+}
+
+.login-container {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 25px;
+}
+
+h1.text-center {
+    padding: 25px;
+}
+
+button.btn.btn-secondary {
+    margin-block: 10px;
+    width: -webkit-fill-available;
+}
+
+.extra-links {
+    text-align: center;
+}

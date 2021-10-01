@@ -3,7 +3,7 @@ import logo from "../images/companyLogo.png";
 
 import {Navbar, Nav} from 'react-bootstrap'
 
-const BootstrapNavbar = () => {
+const HeaderCom = () => {
     return (
         <div className="Navbar">
             <Navbar bg="dark" expand="lg" sticky="top">
@@ -20,4 +20,4 @@ const BootstrapNavbar = () => {
         </div>
     );
 }
-export default BootstrapNavbar;
+export default HeaderCom;

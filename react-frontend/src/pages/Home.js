@@ -1,9 +1,9 @@
 
 const Home = () => {
     return (
-        <div className='Home'>
+        <h1 className="text-center">
             Home Page
-        </div>
+        </h1>
     )
 }
 
