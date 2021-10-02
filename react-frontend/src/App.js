@@ -1,7 +1,8 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+
 
 import HeaderCom from "./components/HeaderCom";
 import Home from "./pages/Home";
@@ -12,7 +13,7 @@ import Register from "./components/Register";
 function App() {
 
     return (
-        <div>
+        <div className="App">
             <HeaderCom />
             <div className="c1-home">
                 <Router>                   
