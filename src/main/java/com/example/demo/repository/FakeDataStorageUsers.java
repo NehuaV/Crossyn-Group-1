@@ -31,12 +31,30 @@ public class FakeDataStorageUsers {
         return null;
     }
 
-    public boolean CheckUser(String username, String password) {
+    public User getUserByEmail(String email) {
+        for (User user : this.users) {
+            if (user.getEmail().equals(email))
+                return user;
+        }
+        return null;
+    }
+
+    public boolean checkUser(String username, String password) {
         for (User user : this.users) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 return true;
             }
         }
         return false;
+    }
+
+    public int addUser(User user) {
+        if (this.getUser(user.getUsername()) != null ) {
+            return -1;
+        }else if(this.getUserByEmail(user.getEmail()) != null){
+            return -2;
+        }
+        users.add(user);
+        return 0;
     }
 }

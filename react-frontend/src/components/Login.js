@@ -17,7 +17,7 @@ const Login = () => {
     const history = useHistory();
 
     const login = (username, password) => {
-        axios.post('http://localhost:8080/users',
+        axios.post('http://localhost:8080/users/login',
             {username, password}).then(res => {
             if (res.data.error) {
                 console.log(res.data);
