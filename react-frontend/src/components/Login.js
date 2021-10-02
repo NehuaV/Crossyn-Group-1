@@ -1,6 +1,13 @@
+
 import {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import axios from "axios";
+
+
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import '../styles/Login.css';
+
+
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -51,16 +58,32 @@ const Login = () => {
     }
 
     return (
-        <form onSubmit={handleFormSubmit} className='login-form'>
-            <h2>Login</h2>
+        <div>
+            <h1 className="text-center">
+                Login Page
+            </h1>
             <p className='error-msg'>{loginErrorMessage}</p>
-            <input className="login-input" onChange={handleUsernameChange} placeholder='Username' value={username}
-                   type='text'/>
-            <input className="login-input" onChange={handlePasswordChange} placeholder='Password' value={password}
-                   type='password'/>
-            <input type='submit' value='Sign In'/>
-        </form>
+            <div className="spacer">
+                <div className="login-container">
+                    <Form className='login-form' onSubmit={handleFormSubmit}>
+                        <FormGroup>
+                            <Label>Username</Label>
+                            <Input type='username' onChange={handleUsernameChange} placeholder='Username' value={username} />
+                            <Label>Password</Label>
+                            <Input type='password' onChange={handlePasswordChange} placeholder='Password' value={password} />
+                        </FormGroup>
+                        <Button>Login</Button>
+                        <div className="extra-links">
+                            <a href="/register">Signup Now!</a>
+                            <a> | </a>
+                            <a href="/">Forgotten Password?</a>
+                        </div>
+                    </Form>
+                </div>
+            </div>
+        </div>
     )
 }
 
-export default Login
+export default Login;
+

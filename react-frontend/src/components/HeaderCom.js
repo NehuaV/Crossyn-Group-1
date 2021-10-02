@@ -1,13 +1,13 @@
-import '../styles/Navbar.css'
+import '../styles/Header.css'
 import logo from "../images/companyLogo.png";
 
 import {Navbar, Nav} from 'react-bootstrap'
 
-const BootstrapNavbar = () => {
+const HeaderCom = () => {
     return (
         <div className="Navbar">
-            <Navbar bg="dark" expand="lg" sticky="top">
-                <Navbar.Brand href="/"> <img src={logo} alt="Logo" style={{width: 75, marginTop: -7}}/>
+            <Navbar className="color-nav" expand="lg" sticky="top">
+                <Navbar.Brand href="/"> <img src={logo} className="img-logo" alt="Logo" style={{width: 75, marginTop: -7}}/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -20,4 +20,4 @@ const BootstrapNavbar = () => {
         </div>
     );
 }
-export default BootstrapNavbar;
+export default HeaderCom;

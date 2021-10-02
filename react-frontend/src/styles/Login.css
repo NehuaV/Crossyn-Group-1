@@ -1,0 +1,35 @@
+body {
+    background-color: #2d3574;
+}
+
+form.login-form {
+    padding: 20px;
+}
+
+.spacer {
+    padding-inline: 20px;
+}
+
+.login-container {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 25px;
+    background-color: white;
+}
+
+h1.text-center {
+    padding: 25px;
+    color: white;
+}
+
+button.btn.btn-secondary {
+    margin-block: 10px;
+    width: -webkit-fill-available;
+}
+
+.extra-links {
+    text-align: center;
+}

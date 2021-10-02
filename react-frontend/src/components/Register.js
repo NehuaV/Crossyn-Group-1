@@ -1,9 +1,9 @@
 
 const Register = () => {
     return (
-        <div className='Register'>
+        <h1 className="text-center">
             Register Page
-        </div>
+        </h1>
     )
 }
 
