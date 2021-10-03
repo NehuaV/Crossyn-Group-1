@@ -65,7 +65,7 @@ const Login = () => {
                     <Form onSubmit={handleFormSubmit} className='login-form'>
                         <FormGroup>
                             <Label>Username</Label>
-                            <Input className="login-input" onChange={handleUsernameChange} placeholder='Username' value={username} type='text' />
+                            <Input className="login-input" onChange={handleUsernameChange} placeholder='Username' value={username} type='username' />
                             <Label>Password</Label>
                             <Input className="login-input" onChange={handlePasswordChange} placeholder='Password' value={password} type='password' />
                         </FormGroup>
