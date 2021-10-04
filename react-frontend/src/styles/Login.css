@@ -6,30 +6,41 @@ form.login-form {
     padding: 20px;
 }
 
-.spacer {
+.spacer-login {
     padding-inline: 20px;
 }
 
 .login-container {
-    border-width: 2px;
-    border-style: solid;
-    border-color: black;
+    -webkit-box-shadow: 0px 0px 9px 1px #0000004f;
+    -moz-box-shadow: 0px 0px 9px 1px #0000004f;
+    box-shadow: 0px 0px 9px 1px #0000004f;
     max-width: 500px;
     margin: auto;
-    border-radius: 25px;
+    border-radius: 15px;
     background-color: white;
+    margin-top: 15%;
 }
 
-h1.text-center {
-    padding: 25px;
-    color: white;
+input.login-input {
+    margin-block: 15px;
 }
 
-button.btn.btn-secondary {
-    margin-block: 10px;
+h2.title {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+button.login-button.btn.btn-secondary {
+    background: #1d9bf0;
     width: -webkit-fill-available;
 }
 
 .extra-links {
     text-align: center;
+    color: #1d9bf0;
+    margin-top: 10px;
+}
+
+.link {
+    text-decoration: none;
 }

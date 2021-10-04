@@ -7,7 +7,7 @@ const HeaderCom = () => {
     return (
         <div className="Navbar">
             <Navbar className="color-nav" expand="lg" sticky="top">
-                <Navbar.Brand href="/"> <img src={logo} className="img-logo" alt="Logo" style={{width: 75, marginTop: -7}}/>
+                <Navbar.Brand href="/"> <img src={logo} className="img-logo" alt="Logo" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
