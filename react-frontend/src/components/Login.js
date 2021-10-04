@@ -1,22 +1,9 @@
-<<<<<<< HEAD
-
-import {useState} from 'react'
-import {useHistory} from 'react-router-dom'
-import axios from "axios";
-
-
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
-import '../styles/Login.css';
-
-
-=======
 import {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import axios from "axios";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import '../styles/Login.css';
 
->>>>>>> Login-function
 
 const Login = () => {
 
@@ -75,21 +62,12 @@ const Login = () => {
             <p className='error-msg'>{loginErrorMessage}</p>
             <div className="spacer">
                 <div className="login-container">
-<<<<<<< HEAD
-                    <Form className='login-form' onSubmit={handleFormSubmit}>
-                        <FormGroup>
-                            <Label>Username</Label>
-                            <Input type='username' onChange={handleUsernameChange} placeholder='Username' value={username} />
-                            <Label>Password</Label>
-                            <Input type='password' onChange={handlePasswordChange} placeholder='Password' value={password} />
-=======
                     <Form onSubmit={handleFormSubmit} className='login-form'>
                         <FormGroup>
                             <Label>Username</Label>
                             <Input className="login-input" onChange={handleUsernameChange} placeholder='Username' value={username} type='username' />
                             <Label>Password</Label>
                             <Input className="login-input" onChange={handlePasswordChange} placeholder='Password' value={password} type='password' />
->>>>>>> Login-function
                         </FormGroup>
                         <Button type='submit' value='Sign In'>Login</Button>
                         <div className="extra-links">
@@ -105,7 +83,3 @@ const Login = () => {
 }
 
 export default Login;
-<<<<<<< HEAD
-
-=======
->>>>>>> Login-function

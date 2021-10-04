@@ -1,10 +1,6 @@
 import {useState} from 'react';
 import axios from "axios";
 import {useHistory} from "react-router-dom";
-
-import {useState} from 'react'
-import {useHistory} from 'react-router-dom'
-import axios from "axios";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import '../styles/Register.css';
 

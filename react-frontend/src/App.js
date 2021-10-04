@@ -1,12 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-<<<<<<< HEAD
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-
-=======
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
->>>>>>> Login-function
 
 import HeaderCom from "./components/HeaderCom";
 import Home from "./pages/Home";
@@ -17,11 +12,7 @@ import Register from "./components/Register";
 function App() {
 
     return (
-<<<<<<< HEAD
-        <div className="App">
-=======
         <div>
->>>>>>> Login-function
             <HeaderCom />
             <div className="c1-home">
                 <Router>                   
