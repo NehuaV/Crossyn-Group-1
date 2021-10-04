@@ -1,29 +1,30 @@
+*{
+  color: #0f1419;
+}
 
-section.banner-1 {
+section.banner {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+section.banner.\31 {
   background: url("../images/homeBackgroundImage.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 35%;
-  min-height: 700px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
+  background-position: 50% 35%; 
 }
 
-section.banner-2 {
+section.banner.\32 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 35%;
-  min-height: 700px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
 }
 
 h1.title {
-  color: White;
+  color: black;
   font-size: 64px;
   line-height: 90px;
   padding-bottom: 35px;
@@ -33,13 +34,13 @@ h1.title {
 strong.slogan {
   font-size: 40px;
   line-height: 50px;
-  color: white;
+  color: black;
   padding-bottom: 10px;
   display: block;
 }
 
 p.description {
-  color: white;
+  color: black;
   font-size: 20px;
   line-height: 28px;
   padding-bottom: 60px;
@@ -50,7 +51,7 @@ p.description {
 
 a.infoBox {
   font-size: 17px;
-  color: white;
+  color: black;
   -webkit-text-stroke: 1px Black;
   padding: 13px 0px;
   width: 100%;

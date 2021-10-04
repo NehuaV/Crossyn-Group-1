@@ -1,0 +1,38 @@
+body {
+    background-color: White;
+}
+
+
+
+form.register-form {
+    padding: 20px;
+}
+
+.spacer-register {
+    padding-inline: 20px;
+}
+
+.register-container {
+    -webkit-box-shadow: 0px 0px 9px 1px #0000004f;
+    -moz-box-shadow: 0px 0px 9px 1px #0000004f;
+    box-shadow: 0px 0px 9px 1px #0000004f;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 15px;
+    background-color: white;
+    margin-top: 15%;
+}
+
+input.register-input {
+    margin-block: 15px;
+}
+
+h2.title {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+button.register-button {
+    background: #1d9bf0;
+    width: -webkit-fill-available;
+}
