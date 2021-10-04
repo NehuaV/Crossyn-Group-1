@@ -2,6 +2,13 @@ import {useState} from 'react';
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 
+import {useState} from 'react'
+import {useHistory} from 'react-router-dom'
+import axios from "axios";
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import '../styles/Register.css';
+
+
 const Register = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
@@ -76,15 +83,31 @@ const Register = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className='register-form'>
-            <h2>Register</h2>
-            <p className='error-msg'>{errorMessage}</p>
-            <input onChange={handleUsernameChange} type='text' placeholder='Username'/>
-            <input onChange={handleEmailChange} type='email' placeholder='Email'/>
-            <input onChange={handlePasswordChange} type='password' placeholder='Password'/>
-            <input onChange={handleConfirmPasswordChange} type='password' placeholder='Confirm Password'/>
-            <input type='submit' value='Register'/>
-        </form>
+        <h1 className="text-center">
+            Register Page
+            <div className="spacer">
+                <div className="login-container">
+                    <Form className='register-form'>
+                        <FormGroup>
+                            <Label>Email</Label>
+                            <Input onChange={handleEmailChange} className="email-input" placeholder='Email' type='email' />
+                            <Label>Username</Label>
+                            <Input onChange={handleUsernameChange} className="login-input" placeholder='Username' type='username' />
+                            <Label>Password</Label>
+                            <Input onChange={handlePasswordChange} className="login-input" placeholder='Password' type='new-password' />
+                            <Label>Repeat Password</Label>
+                            <Input onChange={handleConfirmPasswordChange} className="login-input" placeholder='Confirm Password' type='new-password' />
+                        </FormGroup>
+                        <Button type='submit' value='Sign In'>Login</Button>
+                        <div className="extra-links">
+                            <a href="/register">Signup Now!</a>
+                            <a> | </a>
+                            <a href="/">Forgotten Password?</a>
+                        </div>
+                    </Form>
+                </div>
+            </div>
+        </h1>
     )
 }
 
