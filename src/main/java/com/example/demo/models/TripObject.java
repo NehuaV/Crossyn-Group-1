@@ -63,4 +63,19 @@ public class TripObject {
     public Boolean getIgnition() {
         return ignition;
     }
+
+    @Override
+    public String toString() {
+        return "TripObject{" +
+                "vehicleId='" + vehicleId + '\'' +
+                ", lat=" + lat +
+                ", lon=" + lon +
+                ", alt=" + alt +
+                ", dateTime='" + dateTime + '\'' +
+                ", speed=" + speed +
+                ", speedLimit=" + speedLimit +
+                ", roadType=" + roadType +
+                ", ignition=" + ignition +
+                '}';
+    }
 }

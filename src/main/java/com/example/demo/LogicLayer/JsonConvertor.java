@@ -2,44 +2,54 @@ package com.example.demo.LogicLayer;
 
 
 import com.example.demo.models.TripObject;
+import com.google.gson.Gson;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class JsonConvertor {
 
-    ArrayList trips = new ArrayList();
-
-    public String CreateObjects() {
-        //creating a path object
-        Path p1 = Paths.get("dummy\\");
-        //adding the folders to the datasets and adding required dataset
-        String pathString = p1.toUri().getRawPath();
-        String[] parts = pathString.split("dummy");
-        if (parts.length > 0) {
-            pathString = parts[0];
-            System.out.println(pathString);
-            parts = pathString.split("%20");
-            for (int i = 0; i < parts.length; i++) {
-                if (i == 0) {
-                    pathString = parts[0] + " " + parts[1];
-                } else {
-                    pathString = pathString + " " + parts[i];
+    List<TripObject> trips = new ArrayList();
+    //takes data from the file and loads them into java objects
+    public void deserializeTripObject(String path) throws IOException {
+        Gson g = new Gson();
+        File file = new File(path);
+        Scanner scan = new Scanner(file);
+        //read file line by line
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                //check if the line is a trip
+                if (line.length() > 1) {
+                    System.out.println(line.lastIndexOf("]"));
+                    //check if the line is the last in the set
+                    if (line.lastIndexOf("]") == -1) {
+                        //remove "," from the end of each line
+                        line = line.substring(0, line.lastIndexOf(",")) ;
+                    } else {
+                        //remove "]" at the end of the dataset
+                        line = line.substring(0,line.lastIndexOf("]"));
+                    }
+                    System.out.println(line);
+                    TripObject trip = g.fromJson(line, TripObject.class);
+                    trips.add(trip);
                 }
             }
-            pathString = parts[0] + " " + parts[1];
         }
-
-        System.out.println(pathString);
-        return pathString;
+       /* while (scan.hasNext()) {
+            if (scan.nextLine().length() <= 1) {
+                scan.nextLine();
+            }
+            TripObject trip = g.fromJson(scan.nextLine(), TripObject.class);
+            trips.add(trip);
+        }
+        */
     }
 
-    public ArrayList getTrips() {
+    public List<TripObject> getTrips() {
         return trips;
     }
-
-    public void addTrips(TripObject trip) {
-        trips.add(trip);
-    }
 }
+

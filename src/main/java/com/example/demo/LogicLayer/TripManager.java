@@ -23,7 +23,7 @@ public class TripManager {
        String filename = "";
        for(Trip trip : trips)
        {
-           filename = "trip" + (trips.indexOf(trip) + 1)+".json";
+           filename = "trip" + (trips.indexOf(trip) + 1)+".txt";
            FileWriter writer = new FileWriter(filename);
            for (String s : trip.getData())
            {
