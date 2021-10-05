@@ -76,6 +76,7 @@ public class Main {
             avgSpeed += conv.getTrips().get(i).getSpeed();
         }
         avgSpeed = avgSpeed / conv.getTrips().size();
+        conv.setAvgSpeed(avgSpeed);
         System.out.println("Average speed: " + avgSpeed + " km/h");
         /* String test = "{\"vehicleId\":\"00A1\",\"lat\":51.59143,\"lon\":4.77158,\"alt\":48,\"dateTime\":\"2021-08-30T13:43:54+02:00\",\"speed\":7,\"speedLimit\":50,\"roadType\":4}";
         Gson g = new Gson();
@@ -95,6 +96,7 @@ public class Main {
         coordinates[3] = conv.getTrips().get(conv.getTrips().size()-1).getLon();
         double distance = 0.5 - Math.cos((coordinates[2]-coordinates[0])*p/2 + Math.cos(coordinates[0]*p) * Math.cos(coordinates[2] * p)*(1-Math.cos((coordinates[3] - coordinates[1])*p)))/2;
         distance = 12742 /*2 times radius of the Earth*/ * Math.asin(Math.sqrt(distance));
+        conv.setDistance(distance);
         System.out.println("Distance: " + distance + " km");
 
 

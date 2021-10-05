@@ -11,6 +11,9 @@ import java.util.Scanner;
 
 public class JsonConvertor {
 
+private int avgSpeed;
+private double distance;
+
     List<TripObject> trips = new ArrayList();
     //takes data from the file and loads them into java objects
     public void deserializeTripObject(String path) throws IOException {
@@ -50,6 +53,23 @@ public class JsonConvertor {
 
     public List<TripObject> getTrips() {
         return trips;
+    }
+
+    public int getAvgSpeed()
+    {
+        return avgSpeed;
+    }
+    public double getDistance()
+    {
+        return distance;
+    }
+    public void setAvgSpeed(int avgSpeed)
+    {
+        this.avgSpeed = avgSpeed;
+    }
+    public void setDistance(double distance)
+    {
+        this.distance = distance;
     }
 }
 
