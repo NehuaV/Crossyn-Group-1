@@ -1,6 +1,5 @@
 package com.example.demo.LogicLayer;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,7 +23,7 @@ public class TripManager {
        String filename = "";
        for(Trip trip : trips)
        {
-           filename = "trip" + (trips.indexOf(trip) + 1)+".txt";
+           filename = "trip" + (trips.indexOf(trip) + 1)+".json";
            FileWriter writer = new FileWriter(filename);
            for (String s : trip.getData())
            {

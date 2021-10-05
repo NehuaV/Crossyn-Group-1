@@ -9,7 +9,6 @@ import java.io.FileNotFoundException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-//imported java file paths
 
 public class Main {
     //need to add a parameter for selecting file, maybe
@@ -21,18 +20,20 @@ public class Main {
         //adding the folders to the datasets and adding required dataset
         String pathString = p1.toUri().getRawPath();
         String[] parts = pathString.split("dummy");
+        String jsonPath = null;
         if (parts.length > 0) {
+            jsonPath = parts[0];
             pathString = parts[0] + "datasets/raw data/";
             System.out.println(pathString);
+            //replace %20 from paths if folder name has a space
             parts = pathString.split("%20");
             for (int i = 0; i < parts.length; i++) {
                 if (i == 0) {
-                    pathString = parts[0] + " " + parts[1];
+                    pathString = parts[0];
                 } else {
                     pathString = pathString + " " + parts[i];
                 }
             }
-            pathString = parts[0] + " " + parts[1];
         }
 
         System.out.println(pathString);
@@ -57,6 +58,25 @@ public class Main {
         {
             exception.printStackTrace();
         }
+
+        /*JsonConvertor conv = new JsonConvertor();
+        File jsonfile = new File(conv.CreateObjects());
+        Scanner scnr =  new Scanner(jsonfile);
+        while (scnr.hasNextLine()) {
+            String vehicleId = scnr.nextLine();
+            Double lat;
+            Double lon;
+            int alt;
+            String dateTime;
+            int speed;
+            int speedLimit;
+            Byte roadType;
+            Boolean ignition;
+            TripObject trip = new TripObject();
+
+            conv.addTrips(trip);
+        } */
+        System.out.println(jsonPath);
 
     }
 }

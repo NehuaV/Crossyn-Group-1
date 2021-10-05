@@ -24,4 +24,43 @@ public class TripObject {
         this.ignition = ignition;
     }
 
+    public TripObject() {
+
+    }
+
+    public String getVehicleId() {
+        return vehicleId;
+    }
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public Double getLon() {
+        return lon;
+    }
+
+    public int getAlt() {
+        return alt;
+    }
+
+    public String getDateTime() {
+        return dateTime;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public int getSpeedLimit() {
+        return speedLimit;
+    }
+
+    public Byte getRoadType() {
+        return roadType;
+    }
+
+    public Boolean getIgnition() {
+        return ignition;
+    }
 }
