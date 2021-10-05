@@ -47,19 +47,19 @@ public class Main {
         TripSplitter ts = new TripSplitter(sr.GetTextList());
 
 
-        ts.Splitter(); //This function splits the dataset into trips and writes it into text files in the main folder of the app
-        for(Trip trip : ts.GetManager().ReturnTrips())
-        {
-            System.out.println(trip.toString());
-        }
-        try
-        {
-            ts.GetManager().TripWriter();
-        }
-        catch (Exception exception)
-        {
-            exception.printStackTrace();
-        }
+            ts.Splitter(); //This function splits the dataset into trips and writes it into text files in the main folder of the app
+            for(Trip trip : ts.GetManager().ReturnTrips())
+            {
+                System.out.println(trip.toString());
+            }
+            try
+            {
+                ts.GetManager().TripWriter();
+            }
+            catch (Exception exception)
+            {
+                exception.printStackTrace();
+            }
 
         JsonConvertor conv = new JsonConvertor(); //This is where the text file is converted to Json and made into objects
         jsonPath = jsonPath + "Trip3.txt"; //Select the trip text file here
@@ -72,11 +72,11 @@ public class Main {
 
         //Calculating average speed
         int avgSpeed = 0;
-        for (int i = 0; i < conv.getTrips().size(); i++) {
+        /*for (int i = 0; i < conv.getTrips().size(); i++) {
             avgSpeed += conv.getTrips().get(i).getSpeed();
         }
         avgSpeed = avgSpeed / conv.getTrips().size();
-        conv.setAvgSpeed(avgSpeed);
+        conv.setAvgSpeed(avgSpeed);*/
         System.out.println("Average speed: " + avgSpeed + " km/h");
         /* String test = "{\"vehicleId\":\"00A1\",\"lat\":51.59143,\"lon\":4.77158,\"alt\":48,\"dateTime\":\"2021-08-30T13:43:54+02:00\",\"speed\":7,\"speedLimit\":50,\"roadType\":4}";
         Gson g = new Gson();
@@ -89,7 +89,6 @@ public class Main {
         //Calculating distance using Haversine formula
         double p = 0.017453292519943295; // Pi/180, used to convert degrees to radians
         double coordinates[] = new double[4];
-        //Retrieve coordinates from
         coordinates[0] = conv.getTrips().get(0).getLat();
         coordinates[1] = conv.getTrips().get(0).getLon();
         coordinates[2] = conv.getTrips().get(conv.getTrips().size()-1).getLat();

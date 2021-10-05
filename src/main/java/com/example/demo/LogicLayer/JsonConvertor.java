@@ -51,6 +51,7 @@ private double distance;
         */
     }
 
+
     public List<TripObject> getTrips() {
         return trips;
     }
@@ -63,9 +64,15 @@ private double distance;
     {
         return distance;
     }
-    public void setAvgSpeed(int avgSpeed)
+    public void setAvgSpeed()
     {
-        this.avgSpeed = avgSpeed;
+        int output = 0;
+        for (int i = 0; i < trips.size(); i++)
+        {
+        output += trips.get(i).getSpeed();
+    }
+        avgSpeed = output / trips.size();
+
     }
     public void setDistance(double distance)
     {

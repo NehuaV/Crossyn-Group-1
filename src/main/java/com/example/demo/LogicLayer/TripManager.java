@@ -24,6 +24,7 @@ public class TripManager {
        for(Trip trip : trips)
        {
            filename = "trip" + (trips.indexOf(trip) + 1)+".txt";
+           trip.setTripname("trip" + (trips.indexOf(trip) + 1));
            FileWriter writer = new FileWriter(filename);
            for (String s : trip.getData())
            {
