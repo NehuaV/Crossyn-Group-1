@@ -22,8 +22,7 @@ public class Main {
         String[] parts = pathString.split("dummy");
         String jsonPath = null;
         if (parts.length > 0) {
-            jsonPath = parts[0];
-            pathString = parts[0] + "datasets/raw data/";
+            pathString = parts[0];
             System.out.println(pathString);
             //replace %20 from paths if folder name has a space
             parts = pathString.split("%20");
@@ -35,7 +34,8 @@ public class Main {
                 }
             }
         }
-
+        jsonPath = pathString;
+        pathString = pathString + "datasets/raw data/";
         System.out.println(pathString);
         SetReader sr = new SetReader( pathString + "dataset1111.txt");
         /*for(String s : sr.GetTextList())
