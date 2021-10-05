@@ -1,45 +1,16 @@
 import { useState } from "react";
-import axios from "axios";
-import { useHistory } from "react-router-dom";
+
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import "../styles/Register.css";
 
-const Register = () => {
+const Register = ({register}) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [errorMessage, setErrorMessage] = useState("");
-  const history = useHistory();
 
-  const register = (username, password, email) => {
-    axios
-      .post("http://localhost:8080/users/register", {
-        username,
-        email,
-        password,
-      })
-      .then((response) => {
-        if (response.status === 201) {
-          console.log(response.data);
-          history.push("/");
-          alert(response.data);
-
-          // TO DO:
-          // implement authentication -- loggedIn state/accessToken
-          // auto redirect to home page via authentication setup
-        }
-      })
-      .catch((error) => {
-        if (error.response.status === 409) {
-          console.log(error.response);
-          alert(error.response.data);
-        } else {
-          alert("Something went wrong");
-        }
-      });
-  };
 
   const handleUsernameChange = (e) => {
     e.preventDefault();
@@ -74,6 +45,7 @@ const Register = () => {
     if (password === confirmPassword) {
       if (password.length < 6) {
         setErrorMessage("Password must be at least 6 characters long");
+        return;
       }
       setErrorMessage("");
       register(username, password, email);
@@ -86,7 +58,8 @@ const Register = () => {
     <div>
       <div className="spacer-register">
         <div className="register-container">
-          <Form className="register-form">
+          <Form className="register-form" onSubmit={handleSubmit}>
+            <p>{errorMessage}</p>
             <FormGroup>
               <h2 className="title register">Register</h2>
               <Input
@@ -107,14 +80,14 @@ const Register = () => {
                 onChange={handlePasswordChange}
                 className="register-input"
                 placeholder="Password"
-                type="new-password"
+                type="password"
                 required
               />
               <Input
                 onChange={handleConfirmPasswordChange}
                 className="register-input"
                 placeholder="Confirm Password"
-                type="new-password"
+                type="password"
                 required
               />
             </FormGroup>
