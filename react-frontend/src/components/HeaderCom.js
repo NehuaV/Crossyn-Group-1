@@ -16,6 +16,7 @@ const HeaderCom = ({loggedIn, logout}) => {
                         {localStorage.getItem('accessToken') ?
                             <>
                                 <Nav.Link href='/'>Home</Nav.Link>
+                                <Nav.Link href='/trips'>Trips</Nav.Link>
                                 <Nav.Link href='/' onClick={logout}> Logout</Nav.Link>
                             </>
                             :

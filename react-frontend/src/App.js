@@ -9,6 +9,7 @@ import HeaderCom from "./components/HeaderCom";
 import Home from "./pages/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Trips from "./components/Trips"
 import {useState, useEffect} from "react";
 import {createBrowserHistory} from "history";
 
@@ -82,6 +83,7 @@ function App() {
                             localStorage.getItem('accessToken') ?
                                 <>
                                     <Route exact path="/"> <Home/> </Route>
+                                    <Route path="/trips"> <Trips/> </Route>
                                 </>
                                 :
                                 <>
