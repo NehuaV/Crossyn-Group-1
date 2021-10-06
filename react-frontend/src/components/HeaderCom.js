@@ -4,7 +4,7 @@ import logo from "../images/companyLogo.png";
 import {Navbar, Nav, NavLink} from 'react-bootstrap'
 import {Link} from "react-router-dom";
 
-const HeaderCom = ({loggedIn, logout}) => {
+const HeaderCom = ({logout}) => {
     return (
         <div className="Navbar">
             <Navbar className="color-nav" expand="lg" sticky="top">
@@ -16,7 +16,7 @@ const HeaderCom = ({loggedIn, logout}) => {
                         {localStorage.getItem('accessToken') ?
                             <>
                                 <Nav.Link href='/'>Home</Nav.Link>
-                                <Nav.Link href='/trips'>Trips</Nav.Link>
+                                <Nav.Link href='/trips' >Trips</Nav.Link>
                                 <Nav.Link href='/' onClick={logout}> Logout</Nav.Link>
                             </>
                             :

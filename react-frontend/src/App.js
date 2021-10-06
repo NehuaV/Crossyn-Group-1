@@ -13,7 +13,27 @@ import Trips from "./components/Trips"
 import {useState, useEffect} from "react";
 import {createBrowserHistory} from "history";
 
+const trips = [
+    { id: 1, avgSpeed: 74, distance: 2.02 },
+    { id: 2, avgSpeed: 74, distance: 11.89},
+    { id: 3, avgSpeed: 29, distance: 33.55}
+];
+
+
 function App() {
+
+
+    // const [trips, setTrips] = useState([]);
+    //
+    // const getTrips = () => {
+    //     axios.get(`http://localhost:8080/trips`)
+    //         .then(res => {
+    //             //const posts = res.data.map(trip => [trip.id, trip.avgSpeed, trip.distance]);
+    //             setTrips(res.data);
+    //             console.log(trips);
+    //         });
+    // }
+
 
     const history = createBrowserHistory();
 
@@ -36,6 +56,7 @@ function App() {
                     localStorage.setItem('accessToken', 'loggedIn')
                     history.push("/");
                     window.location.reload();
+
                     // TO DO:
                     // implement authentication -- loggedIn state/accessToken
                     // auto redirect to home page via authentication setup
@@ -73,9 +94,10 @@ function App() {
             });
     };
 
+
     return (
         <div className="App">
-            <HeaderCom logout={logout}/>
+            <HeaderCom logout={logout} /*getTrips={getTrips}*//>
             <div className="c1-home">
                 <Router>
                     <Switch>
@@ -83,7 +105,7 @@ function App() {
                             localStorage.getItem('accessToken') ?
                                 <>
                                     <Route exact path="/"> <Home/> </Route>
-                                    <Route path="/trips"> <Trips/> </Route>
+                                    <Route path="/trips" initialTrips={trips}> <Trips/> </Route>
                                 </>
                                 :
                                 <>
