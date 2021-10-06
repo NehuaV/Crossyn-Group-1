@@ -42,8 +42,13 @@ private double distance;
     }
 
 
-    public List<TripObject> getTrips() {
+    public List<TripObject> getAllLines() {
         return trips;
+    }
+
+    public TripObject getLine(int index)
+    {
+        return trips.get(index);
     }
 
     public int getAvgSpeed()
@@ -54,19 +59,28 @@ private double distance;
     {
         return distance;
     }
-    public void setAvgSpeed()
+    public void calculateAvgSpeed()
     {
         int output = 0;
         for (int i = 0; i < trips.size(); i++)
+
         {
         output += trips.get(i).getSpeed();
-    }
+        }
         avgSpeed = output / trips.size();
 
+
     }
-    public void setDistance(double distance)
+    public void calculateDistance()
     {
-        this.distance = distance;
+        double p = 0.017453292519943295; // Pi/180, used to convert degrees to radians
+        double coordinates[] = new double[4];
+        coordinates[0] = trips.get(0).getLat();
+        coordinates[1] = trips.get(0).getLon();
+        coordinates[2] = trips.get(trips.size()-1).getLat();
+        coordinates[3] = trips.get(trips.size()-1).getLon();
+        distance = 0.5 - Math.cos((coordinates[2]-coordinates[0])*p/2 + Math.cos(coordinates[0]*p) * Math.cos(coordinates[2] * p)*(1-Math.cos((coordinates[3] - coordinates[1])*p)))/2;
+        distance = 12742 /*2 times radius of the Earth*/ * Math.asin(Math.sqrt(distance));
     }
 }
 

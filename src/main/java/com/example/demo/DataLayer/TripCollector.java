@@ -17,8 +17,8 @@ public class TripCollector {
     String pathString = null;
     String jsonPath =null;
     //JsonTrip stores all the data from 1 trip
-    List<JsonTrip> listjt = new ArrayList<>();
-    JsonTrip jt = new JsonTrip();
+    List<JsonTrip> jtList = new ArrayList<>();
+    JsonTrip jt;
     SetReader sr;
     TripSplitter ts;
     int averageSpeed;
@@ -40,29 +40,25 @@ public class TripCollector {
         }
         for(Trip trip : ts.GetManager().ReturnTrips())
         {
+            jt = new JsonTrip();
             try {
-                System.out.println(jsonPath);
-                System.out.println(trip.getTripname());
                 jt.deserializeTripObject(jsonPath + trip.getTripname() + ".txt"); //Converts txt file into TripObject
-                listjt.add(jt);
+                jtList.add(jt);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+        for (JsonTrip jt : jtList)
+        {
+            jt.calculateAvgSpeed();
+            jt.calculateDistance();
         }
     }
     /*public List<JsonConvertor> ReturnTrip()
     {
         return jc.getTrips();
     }*/
-    private void SetAverage()
-    {
-        /*for (int i = 0; i < jc.getTrips().size(); i++) {
-            averageSpeed += jc.getTrips().get(i).getSpeed();
-        }
-        avgSpeed = avgSpeed / conv.getTrips().size();
-        conv.setAvgSpeed(avgSpeed);*/
 
-    }
     private void SetDistance()
     {
 
@@ -92,10 +88,14 @@ public class TripCollector {
         }
         jsonPath = pathString + "datasets/trips/";
         pathString = pathString + "datasets/raw data/";
-        //SetReader sr = new SetReader( pathString + "dataset1111.txt");
+
     }
 
-    public List<JsonTrip> getListjt() {
-        return listjt;
+    public List<JsonTrip> getAllTrips() {
+        return jtList;
+    }
+    public JsonTrip getTrip(int index)
+    {
+        return jtList.get(index);
     }
 }
