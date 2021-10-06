@@ -28,9 +28,9 @@ function App() {
     // const getTrips = () => {
     //     axios.get(`http://localhost:8080/trips`)
     //         .then(res => {
-    //             //const posts = res.data.map(trip => [trip.id, trip.avgSpeed, trip.distance]);
+    //             const posts = res.data.map(trip => [trip.id, trip.avgSpeed, trip.distance]);
     //             setTrips(res.data);
-    //             console.log(trips);
+    //             console.log(res.data);
     //         });
     // }
 
@@ -105,7 +105,7 @@ function App() {
                             localStorage.getItem('accessToken') ?
                                 <>
                                     <Route exact path="/"> <Home/> </Route>
-                                    <Route path="/trips" initialTrips={trips}> <Trips/> </Route>
+                                    <Route path="/trips" > <Trips /> </Route>
                                 </>
                                 :
                                 <>
