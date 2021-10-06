@@ -24,9 +24,6 @@ public class TripObject {
         this.ignition = ignition;
     }
 
-    public TripObject() {
-
-    }
 
     public String getVehicleId() {
         return vehicleId;
