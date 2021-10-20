@@ -1,26 +1,21 @@
 package com.example.demo;
 
 
-import com.example.demo.DataLayer.SetReader;
-import com.example.demo.DataLayer.TripCollector;
-import com.example.demo.LogicLayer.JsonTrip;
-import com.example.demo.LogicLayer.Trip;
-import com.example.demo.LogicLayer.TripSplitter;
+import com.example.demo.DataLayer.DataManager;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 
 public class Main {
     //This is where most of the backend is tested.
     //need to add a parameter for selecting file, maybe
     public static void main(String[] args) throws IOException {
-        TripCollector tc = new TripCollector("dataset1111.txt");
+        /*TripCollector tc = new TripCollector("dataset1111.txt");
         System.out.println(tc.getTrip(0).getLine(0));
         System.out.println(tc.getTrip(1).getLine(0));
         System.out.println(tc.getTrip(0).getDistance());
-        System.out.println(tc.getTrip(2).getAvgSpeed());
+        System.out.println(tc.getTrip(2).getAvgSpeed());*/
+        DataManager dm = new DataManager("dataset1111.txt");
 
 
 

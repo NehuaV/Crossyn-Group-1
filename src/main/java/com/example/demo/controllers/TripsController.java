@@ -38,7 +38,7 @@ public class TripsController {
         FakeDataStoreTrips tripStorage = new FakeDataStoreTrips();
         List<TripDescription> trips = null;
 
-        trips = tripStorage.getAllTrips();
+        //trips = tripStorage.getAllTrips();
 
         if(trips != null) {
             return ResponseEntity.ok().body(trips);
@@ -46,4 +46,5 @@ public class TripsController {
             return ResponseEntity.notFound().build();
         }
     }
-}
+
+    }

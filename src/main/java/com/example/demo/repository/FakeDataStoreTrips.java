@@ -18,7 +18,7 @@ public class FakeDataStoreTrips {
 //        trips = tc.getAllTrips();
 //    }
 
-    public List<JsonTrip> getTrips() throws IOException {
+    /*public List<JsonTrip> getTrips() throws IOException {
         TripCollector tc = new TripCollector("dataset1111.txt");
         return tc.getAllTrips();
     }
@@ -34,4 +34,6 @@ public class FakeDataStoreTrips {
         }
         return trips;
     }
+    */
+
 }

@@ -1,20 +1,9 @@
 package com.example.demo.DataLayer;
 
-import com.example.demo.LogicLayer.JsonTrip;
-import com.example.demo.LogicLayer.Trip;
-import com.example.demo.LogicLayer.TripSplitter;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-
 //A class that takes the dataset name as a parameter and processes it
 public class TripCollector {
     //creating paths for the files
-    String pathString = null;
+    /*String pathString = null;
     String jsonPath =null;
     //JsonTrip stores all the data from 1 trip
     List<JsonTrip> jtList = new ArrayList<>();
@@ -57,7 +46,7 @@ public class TripCollector {
     /*public List<JsonConvertor> ReturnTrip()
     {
         return jc.getTrips();
-    }*/
+    }
 
     private void SetDistance()
     {
@@ -98,4 +87,6 @@ public class TripCollector {
     {
         return jtList.get(index);
     }
+
+     */
 }
