@@ -1,5 +1,7 @@
 package com.example.demo.DataLayer;
 
+import com.example.demo.models.Trip;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,6 +15,7 @@ public class DataManager {
     private List<Data> dataList;
     private List<String> textList = new ArrayList<>();
     private TripCreator tc;
+    private DataConverter dc;
     private String pathString = null;
     private String  jsonPath = null;
     public DataManager(String dataset) throws IOException {
@@ -21,8 +24,7 @@ public class DataManager {
         this.tc = new TripCreator(textList);
         this.dataList = tc.Splitter();
         tc.TripWriter(this.dataList);
-
-
+        this.dc = new DataConverter(this.dataList);
     }
 
     private void SetReader(String dataset) throws FileNotFoundException {
@@ -62,5 +64,10 @@ public class DataManager {
     public List<Data> GetDataList()
     {
         return dataList;
+    }
+
+    public List<Trip> GetTrips()
+    {
+        return dc.GetTrips();
     }
 }
