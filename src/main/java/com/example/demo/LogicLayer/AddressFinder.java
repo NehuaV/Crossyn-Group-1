@@ -1,18 +1,26 @@
-package com.example.demo;
+package com.example.demo.LogicLayer;
+
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+public class AddressFinder {
 
-public class Test {
-    public static void main(String[] args) throws Exception {
+    private String key= "AIzaSyAj3JM4M64fttwnz7rnyi7SgWKzZUpgcGU";
+
+    // API Key and Coordinates link generator
+    private String Stringify(String lat,String lon){
+        return "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lon+"&key="+key;
+    }
+
+    public String FindAddress(String lat,String lon) throws IOException {
 
         // HTTP Get request - Uses Stringify method to make custom URL with provided coordinates
-        URL request = new URL(Stringify("51.59143","4.77158"));
+        URL request = new URL(Stringify(lat,lon));
 
         // Open Connection
         URLConnection rq = request.openConnection();
@@ -38,14 +46,6 @@ public class Test {
         JSONObject temp = myResponse.getJSONArray("results").getJSONObject(0);
         String result = temp.getString("formatted_address");
         System.out.println(result);
-
-
+        return result;
     }
-
-    // API Key and Coordinates method
-    public static String Stringify(String lat,String lon){
-        String key= "AIzaSyAj3JM4M64fttwnz7rnyi7SgWKzZUpgcGU";
-        return "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lon+"&key="+key;
-    }
-
 }

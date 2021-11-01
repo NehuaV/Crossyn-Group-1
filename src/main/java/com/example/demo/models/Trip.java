@@ -1,9 +1,15 @@
 package com.example.demo.models;
 
+import com.example.demo.LogicLayer.AddressFinder;
+
+import java.io.IOException;
 import java.util.List;
 
 public class Trip {
     private List<TripObject> tripdata;
+
+    private AddressFinder addressFinder;
+
     private int VehicleId = 0;
     private int TripId = 0;
     private int UserId = 0;
@@ -13,10 +19,26 @@ public class Trip {
     private Double distance = null;
     private Double average_speed = null;
 
-    public Trip(List<TripObject> tripdata)
-    {
+    public Trip(List<TripObject> tripdata) throws IOException {
         this.tripdata = tripdata;
+        this.addressFinder = new AddressFinder();
         calculateDistance();
+        /*
+           Enable for Testing when we have a list of [TripObject]'s
+           Keep in mind we do not have unlimited uses for the Google API
+           Keep StartEndAddress method commented out if you can
+        */
+        // StartEndAddress();
+
+    }
+
+    public void StartEndAddress() throws IOException {
+        if (tripdata != null && !tripdata.isEmpty()) {
+            TripObject last = tripdata.get(tripdata.size()-1);
+            TripObject first = tripdata.get(0);
+            this.startpoint = addressFinder.FindAddress(last.getLat().toString(),last.getLon().toString());
+            this.endpoint = addressFinder.FindAddress(first.getLat().toString(),first.getLon().toString());
+        }
     }
 
     public void calculateDistance()
