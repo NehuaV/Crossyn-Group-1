@@ -1,14 +1,5 @@
 package com.example.demo.repository;
 
-import com.example.demo.DataLayer.TripCollector;
-import com.example.demo.LogicLayer.JsonTrip;
-import com.example.demo.LogicLayer.TripDescription;
-
-import java.io.IOException;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class FakeDataStoreTrips {
 
 //    private List<JsonTrip> trips = new ArrayList<>();
@@ -18,7 +9,7 @@ public class FakeDataStoreTrips {
 //        trips = tc.getAllTrips();
 //    }
 
-    public List<JsonTrip> getTrips() throws IOException {
+    /*public List<JsonTrip> getTrips() throws IOException {
         TripCollector tc = new TripCollector("dataset1111.txt");
         return tc.getAllTrips();
     }
@@ -34,4 +25,6 @@ public class FakeDataStoreTrips {
         }
         return trips;
     }
+    */
+
 }
