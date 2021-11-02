@@ -2,6 +2,8 @@ package com.example.demo;
 
 
 import com.example.demo.DataLayer.DataManager;
+import com.example.demo.LogicLayer.AddressFinder;
+import com.example.demo.LogicLayer.DistanceFinder;
 
 import java.io.IOException;
 
@@ -15,8 +17,12 @@ public class Main {
         System.out.println(tc.getTrip(1).getLine(0));
         System.out.println(tc.getTrip(0).getDistance());
         System.out.println(tc.getTrip(2).getAvgSpeed());*/
+
+        AddressFinder af = new AddressFinder();
+        DistanceFinder df = new DistanceFinder();
         DataManager dm = new DataManager("dataset1111.txt");
-        System.out.println(dm.GetTrips().get(0).getDistance());
+        df.FindDistance(dm.GetTrips().get(0).ReturnTripData().get(0).getLat().toString(), dm.GetTrips().get(0).ReturnTripData().get(0).getLon().toString(),dm.GetTrips().get(0).ReturnTripData().get(dm.GetTrips().get(0).ReturnTripData().size() - 1).getLat().toString(),dm.GetTrips().get(0).ReturnTripData().get(dm.GetTrips().get(0).ReturnTripData().size() - 1).getLon().toString());
+
 
 
         //variable for selecting dataset
