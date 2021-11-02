@@ -42,8 +42,7 @@ public class DistanceFinder {
         // Navigate through JSON object
         JSONObject temp = myResponse.getJSONArray("rows").getJSONObject(0);
         JSONObject temp2 = temp.getJSONArray("elements").getJSONObject(0);
-        String result = temp2.getJSONObject("distance").getString("text").toString();
-        System.out.println(result);
+        String result = temp2.getJSONObject("distance").getString("text").toString(); //grab distance output in km (string format)
         return result;
     }
 }

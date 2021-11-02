@@ -21,9 +21,6 @@ public class Main {
         AddressFinder af = new AddressFinder();
         DistanceFinder df = new DistanceFinder();
         DataManager dm = new DataManager("dataset1111.txt");
-        df.FindDistance(dm.GetTrips().get(0).ReturnTripData().get(0).getLat().toString(), dm.GetTrips().get(0).ReturnTripData().get(0).getLon().toString(),dm.GetTrips().get(0).ReturnTripData().get(dm.GetTrips().get(0).ReturnTripData().size() - 1).getLat().toString(),dm.GetTrips().get(0).ReturnTripData().get(dm.GetTrips().get(0).ReturnTripData().size() - 1).getLon().toString());
-
-
 
         //variable for selecting dataset
 //        String datasetName = "";
