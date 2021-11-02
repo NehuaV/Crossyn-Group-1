@@ -5,7 +5,6 @@ import com.example.demo.models.Trip;
 import lombok.Getter;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FakeDataStoreTrips {
@@ -18,7 +17,7 @@ public class FakeDataStoreTrips {
         this.trips = dataManager.GetTrips();
         int id = 1;
         for (Trip trip : this.trips) {
-            trip.setTripId(id);
+            trip.setId(id);
             id++;
         }
     }
