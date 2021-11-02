@@ -38,6 +38,10 @@ public class DataConverter {
         for (String line : lines) {
 
             if (line.length() > 1) {
+                //checks if the line starts with "[" and removes it
+                if(line.contains("[")){
+                    line.substring(1);
+                }
                 //check if the line is the last in the set
                 if (line.lastIndexOf("]") == -1) {
                     //remove "," from the end of each line
