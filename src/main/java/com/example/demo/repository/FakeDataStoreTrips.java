@@ -1,14 +1,5 @@
 package com.example.demo.repository;
 
-import com.example.demo.DataLayer.TripCollector;
-import com.example.demo.LogicLayer.JsonTrip;
-import com.example.demo.LogicLayer.TripDescription;
-
-import java.io.IOException;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class FakeDataStoreTrips {
 
 //    private List<JsonTrip> trips = new ArrayList<>();

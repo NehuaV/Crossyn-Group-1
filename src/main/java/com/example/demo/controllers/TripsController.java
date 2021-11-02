@@ -1,17 +1,13 @@
 package com.example.demo.controllers;
 
 
-import com.example.demo.LogicLayer.JsonTrip;
 import com.example.demo.LogicLayer.TripDescription;
-import com.example.demo.repository.FakeDataStorageUsers;
 import com.example.demo.repository.FakeDataStoreTrips;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
