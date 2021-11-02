@@ -3,6 +3,7 @@ package com.example.demo.DataLayer;
 import com.example.demo.models.Trip;
 import com.example.demo.models.TripObject;
 import com.google.gson.Gson;
+import org.json.JSONException;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -79,8 +80,8 @@ public class TripCreator {
         List<Trip> trips = new ArrayList<>();
         for (Data data : dataList) {
             try {
-                trips.add(new Trip(this.tripReader(data.GetName() + ".json")));
-            } catch (IOException e) {
+                trips.add(new Trip(this.tripReader(data.GetName() + this.dataSetName + ".json")));
+            } catch (IOException | JSONException e) {
                 e.printStackTrace();
             }
         }

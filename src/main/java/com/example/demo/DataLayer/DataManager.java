@@ -51,7 +51,6 @@ public class DataManager {
         jsonPath = null;
         if (parts.length > 0) {
             pathString = parts[0];
-            //System.out.println(pathString);
             //replace %20 from paths if folder name has a space
             parts = pathString.split("%20");
             for (int i = 0; i < parts.length; i++) {

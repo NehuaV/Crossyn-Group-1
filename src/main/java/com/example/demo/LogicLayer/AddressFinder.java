@@ -11,17 +11,17 @@ import java.net.URLConnection;
 
 public class AddressFinder {
 
-    private String key= "AIzaSyAj3JM4M64fttwnz7rnyi7SgWKzZUpgcGU";
+    private String key = "AIzaSyAj3JM4M64fttwnz7rnyi7SgWKzZUpgcGU";
 
     // API Key and Coordinates link generator
-    private String Stringify(String lat,String lon){
-        return "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lon+"&key="+key;
+    private String Stringify(String lat, String lon) {
+        return "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lon + "&key=" + key;
     }
 
-    public String FindAddress(String lat,String lon)  {
+    public String FindAddress(String lat, String lon) throws IOException, JSONException {
 
         // HTTP Get request - Uses Stringify method to make custom URL with provided coordinates
-        URL request = new URL(Stringify(lat,lon));
+        URL request = new URL(Stringify(lat, lon));
 
         // Open Connection
         URLConnection rq = request.openConnection();

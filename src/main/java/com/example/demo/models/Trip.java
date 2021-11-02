@@ -3,6 +3,7 @@ package com.example.demo.models;
 import com.example.demo.LogicLayer.AddressFinder;
 import lombok.Getter;
 import lombok.Setter;
+import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,7 +23,7 @@ public class Trip {
     @Getter @Setter private Double distance = null;
     @Getter @Setter private Double average_speed = null;
 
-    public Trip(List<TripObject> tripdata) throws IOException {
+    public Trip(List<TripObject> tripdata) throws IOException, JSONException {
         this.tripdata = tripdata;
         this.addressFinder = new AddressFinder();
         calculateDistance();
@@ -31,11 +32,11 @@ public class Trip {
            Keep in mind we do not have unlimited uses for the Google API
            Keep StartEndAddress method commented out if you can
         */
-        // StartEndAddress();
+        //StartEndAddress();
 
     }
 
-    public void StartEndAddress() throws IOException {
+    public void StartEndAddress() throws IOException, JSONException {
         if (tripdata != null && !tripdata.isEmpty()) {
             TripObject last = tripdata.get(tripdata.size()-1);
             TripObject first = tripdata.get(0);

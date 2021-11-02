@@ -16,10 +16,7 @@ public class Data {
     {
         return data;
     }
-    public SavingObject getList(){
-        SavingObject object = new SavingObject(this.data);
-        return object;
-    }
+
     public void SetName(String dataname)
     {
         this.dataname = dataname;

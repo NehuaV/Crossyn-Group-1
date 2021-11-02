@@ -12,7 +12,7 @@ public class DatasetsEnrichmentApplication {
     public static void main(String[] args) throws IOException {
         SpringApplication.run(DatasetsEnrichmentApplication.class, args);
         DataManager dm = new DataManager("dataset1111.txt");
-       // System.out.println(dm.GetTrips().get(0).getDistance());
+        //System.out.println(dm.GetTrips().get(0).getStartpoint());
     }
 
 }
