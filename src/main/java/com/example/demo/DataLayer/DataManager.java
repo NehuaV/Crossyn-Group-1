@@ -14,17 +14,19 @@ import java.util.Scanner;
 public class DataManager {
     private List<Data> dataList;
     private List<String> textList = new ArrayList<>();
-    private TripCreator tc;
-    private DataConverter dc;
+    private TripCreator tripCreator;
+    private DataConverter dataConverter;
     private String pathString = null;
     private String  jsonPath = null;
     public DataManager(String dataset) throws IOException {
         GetPath();
-        SetReader(pathString + dataset);
-        this.tc = new TripCreator(textList);
-        this.dataList = tc.Splitter();
-        tc.TripWriter(this.dataList);
-        this.dc = new DataConverter(this.dataList);
+        //SetReader(pathString + dataset);
+        this.dataConverter = new DataConverter(pathString + dataset);
+
+        this.tripCreator = new TripCreator(this.dataConverter.GetTripObjects());
+        this.dataList = tripCreator.Splitter();
+        tripCreator.TripWriter(this.dataList);
+        //this.dataConverter = new DataConverter(this.dataList);
     }
 
     private void SetReader(String dataset) throws FileNotFoundException {
@@ -68,6 +70,6 @@ public class DataManager {
 
     public List<Trip> GetTrips()
     {
-        return dc.GetTrips();
+        return dataConverter.GetTrips();
     }
 }

@@ -1,4 +1,4 @@
-{"vehicleId":"00A1","lat":51.55546,"lon":5.10577,"alt":62,"dateTime":"2021-08-30T14:10:13+02:00","speed":7,"speedLimit":50,"roadType":3,"ignition":"true"},
+[{"vehicleId":"00A1","lat":51.55546,"lon":5.10577,"alt":62,"dateTime":"2021-08-30T14:10:13+02:00","speed":7,"speedLimit":50,"roadType":3,"ignition":true},
 {"vehicleId":"00A1","lat":51.55528,"lon":5.10594,"alt":62,"dateTime":"2021-08-30T14:10:13+02:00","speed":7,"speedLimit":50,"roadType":3},
 {"vehicleId":"00A1","lat":51.55528,"lon":5.10594,"alt":62,"dateTime":"2021-08-30T14:10:13+02:00","speed":7,"speedLimit":50,"roadType":3},
 {"vehicleId":"00A1","lat":51.55516,"lon":5.10605,"alt":62,"dateTime":"2021-08-30T14:10:13+02:00","speed":7,"speedLimit":50,"roadType":3},
@@ -1320,4 +1320,4 @@
 {"vehicleId":"00A1","lat":51.76801,"lon":5.52666,"alt":52,"dateTime":"2021-08-30T14:37:13+02:00","speed":20,"speedLimit":30,"roadType":5},
 {"vehicleId":"00A1","lat":51.76807,"lon":5.5267,"alt":52,"dateTime":"2021-08-30T14:37:17+02:00","speed":20,"speedLimit":30,"roadType":5},
 {"vehicleId":"00A1","lat":51.76813,"lon":5.52671,"alt":52,"dateTime":"2021-08-30T14:37:17+02:00","speed":20,"speedLimit":30,"roadType":5},
-{"vehicleId":"00A1","lat":51.7682,"lon":5.5267,"alt":52,"dateTime":"2021-08-30T14:37:21+02:00","speed":20,"speedLimit":30,"roadType":5,"ignition":"false"},
+{"vehicleId":"00A1","lat":51.7682,"lon":5.5267,"alt":52,"dateTime":"2021-08-30T14:37:21+02:00","speed":20,"speedLimit":30,"roadType":5,"ignition":false}]
