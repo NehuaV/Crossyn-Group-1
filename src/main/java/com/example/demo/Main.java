@@ -15,9 +15,9 @@ public class Main {
         System.out.println(tc.getTrip(1).getLine(0));
         System.out.println(tc.getTrip(0).getDistance());
         System.out.println(tc.getTrip(2).getAvgSpeed());*/
-        DataManager dm = new DataManager("dataset1111.txt");
-        System.out.println(dm.GetTrips().get(0).getDistance());
-        System.out.println("sasas");
+//        DataManager dm = new DataManager("dataset1111.txt");
+//        System.out.println(dm.GetTrips().get(0).getDistance());
+//        System.out.println("sasas");
 
         //variable for selecting dataset
 //        String datasetName = "";

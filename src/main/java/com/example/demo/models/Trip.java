@@ -1,6 +1,8 @@
 package com.example.demo.models;
 
 import com.example.demo.LogicLayer.AddressFinder;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,14 +12,15 @@ public class Trip {
 
     private AddressFinder addressFinder;
 
-    private int VehicleId = 0;
-    private int TripId = 0;
-    private int UserId = 0;
-    private String startpoint = null;
-    private String endpoint = null;
-    private Double duration = null;
-    private Double distance = null;
-    private Double average_speed = null;
+
+    @Getter @Setter private int VehicleId = 0;
+    @Getter @Setter private int TripId = 0;
+    @Getter @Setter private int UserId = 0;
+    @Getter @Setter private String startpoint = null;
+    @Getter @Setter private String endpoint = null;
+    @Getter @Setter private Double duration = null;
+    @Getter @Setter private Double distance = null;
+    @Getter @Setter private Double average_speed = null;
 
     public Trip(List<TripObject> tripdata) throws IOException {
         this.tripdata = tripdata;
@@ -53,10 +56,6 @@ public class Trip {
         this.distance = 12742 /*2 times radius of the Earth*/ * Math.asin(Math.sqrt(distance));
     }
 
-    public Double getDistance()
-    {
-        return this.distance;
-    }
     public List<TripObject> ReturnTripData()
     {
         return this.tripdata;

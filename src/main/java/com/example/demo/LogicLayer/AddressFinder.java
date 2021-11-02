@@ -1,5 +1,6 @@
 package com.example.demo.LogicLayer;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -17,7 +18,7 @@ public class AddressFinder {
         return "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lon+"&key="+key;
     }
 
-    public String FindAddress(String lat,String lon) throws IOException {
+    public String FindAddress(String lat,String lon)  {
 
         // HTTP Get request - Uses Stringify method to make custom URL with provided coordinates
         URL request = new URL(Stringify(lat,lon));

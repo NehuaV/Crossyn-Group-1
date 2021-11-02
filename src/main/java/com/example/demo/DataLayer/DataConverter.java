@@ -14,21 +14,6 @@ public class DataConverter {
     private List<TripObject> tripData;
     private List<Data> dataList;
 
-//    public DataConverter(String dataset ) throws FileNotFoundException{
-//
-//        this.dataList =  this.ConvertToDataList(this.ConvertToStringList(dataset));
-//        this.trips = new ArrayList<>();
-//        for (Data data : dataList) {
-//            tripdata = new ArrayList();
-//            try {
-//                deserializeTripObject(this.ConvertToStringList(dataset)); //Converts txt file into TripObject
-//                trips.add(new Trip(tripdata));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
-
     public DataConverter(String dataset)  throws IOException {
         tripData = new ArrayList<>();
         //Converts txt file into TripObject
@@ -49,14 +34,6 @@ public class DataConverter {
 
     public void deserializeTripObject(List<String> lines) throws IOException {
         Gson g = new Gson();
-
-//        File file = new File(path);
-//        Scanner scan = new Scanner(file);
-//        //read file line by line
-//        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-//            String line;
-//            while ((line = br.readLine()) != null) {
-        //check if the line is a trip
 
         for (String line : lines) {
 

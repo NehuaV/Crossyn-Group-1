@@ -12,18 +12,20 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DataManager {
+
     private List<Data> dataList;
     private List<String> textList = new ArrayList<>();
     private TripCreator tripCreator;
     private DataConverter dataConverter;
     private String pathString = null;
     private String  jsonPath = null;
+
     public DataManager(String dataset) throws IOException {
         GetPath();
         //SetReader(pathString + dataset);
         this.dataConverter = new DataConverter(pathString + dataset);
 
-        this.tripCreator = new TripCreator(this.dataConverter.GetTripObjects());
+        this.tripCreator = new TripCreator(this.dataConverter.GetTripObjects(), dataset);
         this.dataList = tripCreator.Splitter();
         tripCreator.TripWriter(this.dataList);
         //this.dataConverter = new DataConverter(this.dataList);
@@ -31,10 +33,10 @@ public class DataManager {
 
     private void SetReader(String dataset) throws FileNotFoundException {
         File textfile = new File(dataset);
-        Scanner scnr =  new Scanner(textfile);
-        while (scnr.hasNextLine())
+        Scanner scanner =  new Scanner(textfile);
+        while (scanner.hasNextLine())
         {
-            String line = scnr.nextLine();
+            String line = scanner.nextLine();
             this.textList.add(line);
         }
     }
@@ -70,6 +72,6 @@ public class DataManager {
 
     public List<Trip> GetTrips()
     {
-        return dataConverter.GetTrips();
+        return tripCreator.getTrips(dataList);
     }
 }
