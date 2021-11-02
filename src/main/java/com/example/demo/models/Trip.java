@@ -39,7 +39,7 @@ public class Trip {
            Keep in mind we do not have unlimited uses for the Google API
            Keep StartEndAddress method commented out if you can
         */
-        //StartEndAddress();
+        StartEndAddress();
 
     }
 
