@@ -1,5 +1,7 @@
 package com.example.demo.models;
 
+import java.time.LocalDateTime;
+
 public class TripObject {
 
     private String vehicleId;
@@ -59,6 +61,11 @@ public class TripObject {
 
     public Boolean getIgnition() {
         return ignition;
+    }
+
+    //remove timezone string and returns LocalDateTime
+    public LocalDateTime getLocalDateTime() {
+        return LocalDateTime.parse(dateTime.substring(0, dateTime.lastIndexOf("+02:00")));
     }
 
     @Override

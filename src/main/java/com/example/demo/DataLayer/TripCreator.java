@@ -8,6 +8,7 @@ import org.json.JSONException;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -26,53 +27,28 @@ public class TripCreator {
         List<Data> splitted_data = new ArrayList<>();
         int last_index = 0;
         int first_index = 0;
-
+        int index = 1;
+        int counter = 1;
         for (TripObject tripObject : data) {
-            if (tripObject.getIgnition() != null) {
-                if (!tripObject.getIgnition()) {
+            //difference between this entry and the next time in minutes
+            long minutes = ChronoUnit.MINUTES.between(tripObject.getLocalDateTime(), data.get(index).getLocalDateTime());
+            if (minutes > 2 || counter == data.size()) {
+                if () {
                     last_index = data.indexOf(tripObject);
                     List<TripObject> output = data.subList(first_index, last_index + 1);
                     splitted_data.add(new Data(output));
                     first_index = last_index + 1;
                 }
-            }
 
+            }
+            //
+            if (index < data.size() - 1) {
+                index++;
+            }
+            counter++;
         }
         return splitted_data;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public List<Trip> getTrips(List<Data> dataList) {
@@ -80,7 +56,8 @@ public class TripCreator {
         List<Trip> trips = new ArrayList<>();
         for (Data data : dataList) {
             try {
-                trips.add(new Trip(this.tripReader(data.GetName() + this.dataSetName + ".json")));
+                //
+                trips.add(new Trip(this.tripReader(this.dataSetName.substring(0,dataSetName.lastIndexOf(".txt")) + data.GetName() +  ".json")));
             } catch (IOException | JSONException e) {
                 e.printStackTrace();
             }
@@ -128,8 +105,8 @@ public class TripCreator {
 
             Gson gson = new Gson();
 
-            // create a writer
-            filename = "trip" + (dataList.indexOf(data) + 1) + this.dataSetName + ".json";
+            // create a file named "dataset[x]trip[y].json" that contains a trip
+            filename = this.dataSetName.substring(0,dataSetName.lastIndexOf(".txt")) + "trip" + (dataList.indexOf(data) + 1) + ".json";
             Writer writer = Files.newBufferedWriter(Paths.get(filename));
             writer.write("[");
             writer.write("\n");
