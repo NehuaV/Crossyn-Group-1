@@ -1,30 +1,25 @@
 package com.example.demo.repository;
 
+import com.example.demo.DataLayer.DataManager;
+import com.example.demo.models.Trip;
+import lombok.Getter;
+
+import java.io.IOException;
+import java.util.List;
+
 public class FakeDataStoreTrips {
 
-//    private List<JsonTrip> trips = new ArrayList<>();
-//
-//    public FakeDataStoreTrips() throws IOException {
-//        TripCollector tc = new TripCollector("dataset1111.txt");
-//        trips = tc.getAllTrips();
-//    }
+    @Getter
+    List<Trip> trips;
 
-    /*public List<JsonTrip> getTrips() throws IOException {
-        TripCollector tc = new TripCollector("dataset1111.txt");
-        return tc.getAllTrips();
-    }
-
-    public List<TripDescription> getAllTrips() throws IOException{
-        TripCollector tc = new TripCollector("dataset1111.txt");
-        List<TripDescription> trips = new ArrayList<>();
+    public FakeDataStoreTrips() throws IOException {
+        DataManager dataManager = new DataManager("dataset1111.txt");
+        this.trips = dataManager.GetTrips();
         int id = 1;
-
-        for (JsonTrip Jtrip : tc.getAllTrips()) {
-           trips.add(new TripDescription(Jtrip.getAvgSpeed(), Jtrip.getDistance(), id));
+        for (Trip trip : this.trips) {
+            trip.setId(id);
             id++;
         }
-        return trips;
     }
-    */
 
 }

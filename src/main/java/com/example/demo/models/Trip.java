@@ -1,6 +1,9 @@
 package com.example.demo.models;
 
 import com.example.demo.LogicLayer.AddressFinder;
+import lombok.Getter;
+import lombok.Setter;
+import org.json.JSONException;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -12,16 +15,17 @@ public class Trip {
 
     private AddressFinder addressFinder;
 
-    private int VehicleId = 0;
-    private int TripId = 0;
-    private int UserId = 0;
-    private String startpoint = null;
-    private String endpoint = null;
-    private Double duration = null;
-    private Double distance = null;
-    private Double average_speed = null;
 
-    public Trip(List<TripObject> tripdata) throws IOException {
+    @Getter @Setter private int VehicleId = 0;
+    @Getter @Setter private int id = 0;
+    @Getter @Setter private int UserId = 0;
+    @Getter @Setter private String startpoint = null;
+    @Getter @Setter private String endpoint = null;
+    @Getter @Setter private Double duration = null;
+    @Getter @Setter private Double distance = null;
+    @Getter @Setter private Double avgSpeed = null;
+
+    public Trip(List<TripObject> tripdata) throws IOException, JSONException {
         this.tripdata = tripdata;
         this.addressFinder = new AddressFinder();
         calculateDistance();
@@ -32,11 +36,11 @@ public class Trip {
            Keep in mind we do not have unlimited uses for the Google API
            Keep StartEndAddress method commented out if you can
         */
-        // StartEndAddress();
+        //StartEndAddress();
 
     }
 
-    public void StartEndAddress() throws IOException {
+    public void StartEndAddress() throws IOException, JSONException {
         if (tripdata != null && !tripdata.isEmpty()) {
 
             // Get First and last item from List
@@ -87,7 +91,7 @@ public class Trip {
 
         // Average the sum of the speeds by the size of the array
         avgSpeed = avgSpeed/tripdata.size();
-        this.average_speed = avgSpeed;
+        this.avgSpeed = Math.round(avgSpeed * 100.0) / 100.0;
     }
 
     public void calculateDistance()
@@ -100,12 +104,9 @@ public class Trip {
         coordinates[3] = tripdata.get(tripdata.size()-1).getLon();
         this.distance = 0.5 - Math.cos((coordinates[2]-coordinates[0])*p/2 + Math.cos(coordinates[0]*p) * Math.cos(coordinates[2] * p)*(1-Math.cos((coordinates[3] - coordinates[1])*p)))/2;
         this.distance = 12742 /*2 times radius of the Earth*/ * Math.asin(Math.sqrt(distance));
+        this.distance = Math.round(distance * 100.0) / 100.0;
     }
 
-    public Double getDistance()
-    {
-        return this.distance;
-    }
     public List<TripObject> ReturnTripData()
     {
         return this.tripdata;

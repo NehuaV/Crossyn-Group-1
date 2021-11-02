@@ -12,27 +12,31 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DataManager {
+
     private List<Data> dataList;
     private List<String> textList = new ArrayList<>();
-    private TripCreator tc;
-    private DataConverter dc;
+    private TripCreator tripCreator;
+    private DataConverter dataConverter;
     private String pathString = null;
     private String  jsonPath = null;
+
     public DataManager(String dataset) throws IOException {
         GetPath();
-        SetReader(pathString + dataset);
-        this.tc = new TripCreator(textList);
-        this.dataList = tc.Splitter();
-        tc.TripWriter(this.dataList);
-        this.dc = new DataConverter(this.dataList);
+        //SetReader(pathString + dataset);
+        this.dataConverter = new DataConverter(pathString + dataset);
+
+        this.tripCreator = new TripCreator(this.dataConverter.GetTripObjects(), dataset);
+        this.dataList = tripCreator.Splitter();
+        tripCreator.TripWriter(this.dataList);
+        //this.dataConverter = new DataConverter(this.dataList);
     }
 
     private void SetReader(String dataset) throws FileNotFoundException {
         File textfile = new File(dataset);
-        Scanner scnr =  new Scanner(textfile);
-        while (scnr.hasNextLine())
+        Scanner scanner =  new Scanner(textfile);
+        while (scanner.hasNextLine())
         {
-            String line = scnr.nextLine();
+            String line = scanner.nextLine();
             this.textList.add(line);
         }
     }
@@ -47,7 +51,6 @@ public class DataManager {
         jsonPath = null;
         if (parts.length > 0) {
             pathString = parts[0];
-            //System.out.println(pathString);
             //replace %20 from paths if folder name has a space
             parts = pathString.split("%20");
             for (int i = 0; i < parts.length; i++) {
@@ -68,6 +71,6 @@ public class DataManager {
 
     public List<Trip> GetTrips()
     {
-        return dc.GetTrips();
+        return tripCreator.getTrips(dataList);
     }
 }

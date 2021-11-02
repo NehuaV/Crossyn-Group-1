@@ -1,7 +1,7 @@
 package com.example.demo.controllers;
 
 
-import com.example.demo.LogicLayer.TripDescription;
+import com.example.demo.models.Trip;
 import com.example.demo.repository.FakeDataStoreTrips;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,33 +14,17 @@ import java.util.List;
 @RequestMapping("/trips")
 public class TripsController {
 
-
-//    @GetMapping()
-//    public ResponseEntity<List<JsonTrip>> getAllTrips() throws IOException {
-//        FakeDataStoreTrips tripStorage = new FakeDataStoreTrips();
-//        List<JsonTrip> trips = null;
-//
-//        trips = tripStorage.getTrips();
-//
-//        if(trips != null) {
-//            return ResponseEntity.ok().body(trips);
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
-
     @GetMapping()
-    public ResponseEntity<List<TripDescription>> getAllTrips() throws IOException {
+    public ResponseEntity<List<Trip>> getAllTrips() throws IOException {
         FakeDataStoreTrips tripStorage = new FakeDataStoreTrips();
-        List<TripDescription> trips = null;
+        List<Trip> trips = null;
 
-        //trips = tripStorage.getAllTrips();
+        trips = tripStorage.getTrips();
 
-        if(trips != null) {
+        if (trips != null) {
             return ResponseEntity.ok().body(trips);
         } else {
             return ResponseEntity.notFound().build();
         }
     }
-
-    }
+}
