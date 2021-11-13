@@ -11,7 +11,7 @@ public class DatasetsEnrichmentApplication {
 
     public static void main(String[] args) throws IOException {
         SpringApplication.run(DatasetsEnrichmentApplication.class, args);
-        DataManager dm = new DataManager("dataset5.txt");
+        //DataManager dm = new DataManager("dataset5.txt");
         //System.out.println(dm.GetTrips().get(0).getStartpoint());
     }
 
