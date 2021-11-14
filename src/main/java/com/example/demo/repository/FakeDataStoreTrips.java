@@ -21,7 +21,7 @@ public class FakeDataStoreTrips {
         this.trips.addAll(dataManager5.GetTrips());
         int id = 1;
         for (Trip trip : this.trips) {
-            trip.setId(id);
+            trip.setTripId(id);
             id++;
         }
     }
