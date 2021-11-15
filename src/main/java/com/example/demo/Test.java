@@ -15,7 +15,6 @@ import com.example.demo.models.TripObject;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.example.demo.DataLayer.DataManager;
 
 public class Test {
     // Geocoding Code
@@ -88,13 +87,13 @@ public class Test {
         Byte roadType = 1; /* there are only 6 types of roads */
         Boolean ignition = false;
 
-        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,1,speedLimit,roadType,ignition));
-        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,2,speedLimit,roadType,ignition));
-        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,3,speedLimit,roadType,ignition));
-        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,6,speedLimit,roadType,ignition));
-        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,8,speedLimit,roadType,ignition));
-        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,2,speedLimit,roadType,ignition));
-        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,12,speedLimit,roadType,ignition));
+//        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,1,speedLimit,roadType,ignition));
+//        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,2,speedLimit,roadType,ignition));
+//        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,3,speedLimit,roadType,ignition));
+//        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,6,speedLimit,roadType,ignition));
+//        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,8,speedLimit,roadType,ignition));
+//        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,2,speedLimit,roadType,ignition));
+//        t.add(new TripObject(vehicleId,lat,lon,alt,dateTime,12,speedLimit,roadType,ignition));
 
         double avgSpeed = 0;
         for(TripObject trip : t){

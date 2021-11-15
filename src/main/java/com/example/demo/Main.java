@@ -1,7 +1,5 @@
 package com.example.demo;
 
-
-import com.example.demo.DataLayer.DataManager;
 import com.example.demo.LogicLayer.AddressFinder;
 import com.example.demo.LogicLayer.DistanceFinder;
 
@@ -20,7 +18,6 @@ public class Main {
 
         AddressFinder af = new AddressFinder();
         DistanceFinder df = new DistanceFinder();
-        DataManager dm = new DataManager("dataset1111.txt");
 
         //variable for selecting dataset
 //        String datasetName = "";

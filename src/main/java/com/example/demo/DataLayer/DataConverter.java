@@ -10,9 +10,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DataConverter {
-    private List<Trip> trips;
+
     private List<TripObject> tripData;
-    private List<Data> dataList;
 
     public DataConverter(String dataset)  throws IOException {
         tripData = new ArrayList<>();
@@ -22,10 +21,10 @@ public class DataConverter {
 
     private List<String> ConvertToStringList(String dataset) throws FileNotFoundException {
         File textfile = new File(dataset);
-        Scanner scnr = new Scanner(textfile);
+        Scanner scanner = new Scanner(textfile);
         List<String> textList = new ArrayList<>();
-        while (scnr.hasNextLine()) {
-            String line = scnr.nextLine();
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
             textList.add(line);
         }
         return textList;
@@ -61,7 +60,4 @@ public class DataConverter {
         return tripData;
     }
 
-    public List<Trip> GetTrips() {
-        return trips;
-    }
 }

@@ -18,7 +18,7 @@ public class VehicleActivity {
     private int vehicleActivityId;
 
     @OneToOne( optional = false, cascade = CascadeType.ALL )
-    @JoinColumn(name = "vehicleId", nullable = false, columnDefinition="integer")
+    @JoinColumn(name = "vehicleId", nullable = false, columnDefinition="varchar(255)")
     private Vehicle vehicle;
 
     @OneToOne( optional = false, cascade = CascadeType.ALL )

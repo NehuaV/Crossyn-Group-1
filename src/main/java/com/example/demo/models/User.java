@@ -1,7 +1,6 @@
 package com.example.demo.models;
 
 
-import kotlinx.serialization.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -42,10 +41,10 @@ public class User {
     @NotFound(action= NotFoundAction.IGNORE)
     private List<Vehicle> vehicles;
 
-    @OneToMany(targetEntity = TripModel.class, cascade = CascadeType.ALL)
-    @JoinColumn(name="driverId", referencedColumnName="userId")
-    @NotFound(action= NotFoundAction.IGNORE)
-    private List<TripModel> trips;
+//    @OneToMany(targetEntity = Trip.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name="driverId", referencedColumnName="userId")
+//    @NotFound(action= NotFoundAction.IGNORE)
+//    private List<Trip> trips;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private VehicleActivity vehicleActivity;

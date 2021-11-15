@@ -1,17 +1,50 @@
 package com.example.demo.models;
 
-import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
+import javax.persistence.*;
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "TripObjects")
 public class TripObject {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int lineId;
+
+    @Column(name = "vehicleId")
     private String vehicleId;
+
+    @Column(name = "lat")
     private Double lat;
+
+    @Column(name = "lon")
     private Double lon;
+
+    @Column(name = "alt")
     private int alt;
+
+    @Column(name = "dateTime")
     private String dateTime;
+
+    @Column(name = "speed")
     private int speed;
+
+    @Column(name = "speedLimit")
     private int speedLimit;
-    private Byte roadType; /* there are only 6 types of roads */
+
+    @Column(name = "roadType")
+    private Byte roadType;
+
+    @Column(name = "ignition", nullable = true)
     private Boolean ignition;
 
     public TripObject(String vehicleId, Double lat, Double lon, int alt, String dateTime, int speed, int speedLimit, Byte roadType, Boolean ignition) {
@@ -26,60 +59,4 @@ public class TripObject {
         this.ignition = ignition;
     }
 
-
-    public String getVehicleId() {
-        return vehicleId;
-    }
-
-    public Double getLat() {
-        return lat;
-    }
-
-    public Double getLon() {
-        return lon;
-    }
-
-    public int getAlt() {
-        return alt;
-    }
-
-    public String getDateTime() {
-        return dateTime;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public int getSpeedLimit() {
-        return speedLimit;
-    }
-
-    public Byte getRoadType() {
-        return roadType;
-    }
-
-    public Boolean getIgnition() {
-        return ignition;
-    }
-
-    //remove timezone string and returns LocalDateTime
-    public LocalDateTime getLocalDateTime() {
-        return LocalDateTime.parse(dateTime.substring(0, dateTime.lastIndexOf("+02:00")));
-    }
-
-    @Override
-    public String toString() {
-        return "TripObject{" +
-                "vehicleId='" + vehicleId + '\'' +
-                ", lat=" + lat +
-                ", lon=" + lon +
-                ", alt=" + alt +
-                ", dateTime='" + dateTime + '\'' +
-                ", speed=" + speed +
-                ", speedLimit=" + speedLimit +
-                ", roadType=" + roadType +
-                ", ignition=" + ignition +
-                '}';
-    }
 }

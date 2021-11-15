@@ -17,15 +17,27 @@ public class Vehicle {
 
     @Id
     @Column(name="vehicleId")
-    private int vehicleId;
+    private String vehicleId;
 
     @Column(name = "ownerId")
     private int ownerId;
 
-    @OneToMany(targetEntity = TripModel.class, cascade = CascadeType.ALL)
-    @JoinColumn(name="vehicleId", referencedColumnName="vehicleId")
-    private List<TripModel> trips;
+    @Column(name = "vin")
+    private String vin;
 
-    @OneToOne(mappedBy = "vehicle", cascade = CascadeType.ALL)
-    private VehicleActivity vehicleActivity;
+    @Column(name = "model")
+    private String model;
+
+    @Column(name = "brand")
+    private String brand;
+
+    @Column(name = "licencePlate")
+    private String licencePlate;
+
+//    @OneToMany(targetEntity = Trip.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name="vehicleId", referencedColumnName="vehicleId")
+//    private List<Trip> trips;
+//
+//    @OneToOne(mappedBy = "vehicle", cascade = CascadeType.ALL)
+//    private VehicleActivity vehicleActivity;
 }
