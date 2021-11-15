@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "TripObject")
+@Table(name = "TripObjects")
 public class TripObjectModel {
 
     @Id

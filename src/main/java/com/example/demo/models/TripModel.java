@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "trip")
+@Table(name = "trips")
 public class TripModel {
 
    @OneToMany(targetEntity = TripObjectModel.class, cascade = CascadeType.ALL)

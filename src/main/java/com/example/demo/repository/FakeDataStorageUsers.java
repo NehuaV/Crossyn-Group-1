@@ -14,9 +14,9 @@ public class FakeDataStorageUsers {
 
     public FakeDataStorageUsers() {
 
-        this.users.add(new User("Stanislav", "123", "s.petkov@gmail.com"));
-        this.users.add(new User("John", "123", "j.bony@gmail.com"));
-        this.users.add(new User("Steve", "123", "s.jobs@gmail.com"));
+//        this.users.add(new User("Stanislav", "123", "s.petkov@gmail.com"));
+//        this.users.add(new User("John", "123", "j.bony@gmail.com"));
+//        this.users.add(new User("Steve", "123", "s.jobs@gmail.com"));
     }
 
     public List<User> getUsers() {
