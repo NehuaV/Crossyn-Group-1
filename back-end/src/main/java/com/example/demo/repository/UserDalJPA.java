@@ -15,25 +15,25 @@ public class UserDalJPA implements IUserDal {
     IUserRepository repository;
 
     @Override
-    public User getAccountById(int id) {
-        return repository.getAccountByUserId(id);
+    public User getUserById(int id) {
+        return repository.getUserByUserId(id);
     }
 
     @Override
-    public User getAccountByUsername(String username) {
-        return repository.getAccountByUsername(username);
+    public User getUserByUsername(String username) {
+        return repository.getUserByUsername(username);
     }
 
     @Override
-    public List<User> getAllAccounts() {
+    public List<User> getAllUsers() {
         return repository.findAll();
     }
 
     @Override
-    public int addAccount(User user) {
-        if (repository.existsAccountByUsername(user.getUsername())) {
+    public int addUser(User user) {
+        if (repository.existsUserByUsername(user.getUsername())) {
             return -1;
-        } else if (repository.existsAccountByEmail(user.getEmail())) {
+        } else if (repository.existsUserByEmail(user.getEmail())) {
             return -2;
         }
         repository.save(user);
@@ -42,6 +42,6 @@ public class UserDalJPA implements IUserDal {
 
     @Override
     public boolean checkCredentials(String username, String password) {
-        return repository.existsAccountByUsernameAndPassword(username, password);
+        return repository.existsUserByUsernameAndPassword(username, password);
     }
 }

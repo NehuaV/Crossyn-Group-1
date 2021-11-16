@@ -46,7 +46,11 @@ public class AddressFinder {
         // Navigate through JSON object
         JSONObject temp = myResponse.getJSONArray("results").getJSONObject(0);
         String result = temp.getString("formatted_address");
+<<<<<<< HEAD
         //System.out.println(result);
+=======
+        // System.out.println(result);
+>>>>>>> 9a1b8a17c7ee59960b41bd4151ae47eefbb119bd
         return result;
     }
 }
