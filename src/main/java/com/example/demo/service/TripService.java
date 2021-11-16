@@ -2,8 +2,11 @@ package com.example.demo.service;
 
 import com.example.demo.LogicLayer.TripManager;
 import com.example.demo.dalInterfaces.ITripDal;
+import com.example.demo.dalInterfaces.ITripObjectDal;
 import com.example.demo.models.Trip;
 import com.example.demo.models.TripLinesList;
+import com.example.demo.models.TripObject;
+import com.example.demo.repository.TripObjectDalJPA;
 import com.example.demo.serviceInterfaces.ITripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,13 +16,11 @@ import java.util.List;
 
 @Service
 public class TripService implements ITripService {
-
+    @Autowired
     ITripDal dal;
 
     @Autowired
-    public TripService (ITripDal dal){
-        this.dal = dal;
-    }
+    ITripObjectDal tripObjectDal;
 
     @Override
     public Trip getTripById(int id) {
@@ -40,7 +41,10 @@ public class TripService implements ITripService {
         }
 
 //        for (TripLinesList tripLinesList : tripManager.getTripObjects()){
-//
+//           for(TripObject tripObject : tripLinesList.getTripLines()){
+//               tripObject.setTripId(tripLinesList.getTrip().getTripId());
+//               tripObjectDal.addTripObject(tripObject);
+//           }
 //        }
     }
 

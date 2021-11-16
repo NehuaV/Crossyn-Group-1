@@ -1,6 +1,5 @@
 package com.example.demo.DataLayer;
 
-import com.example.demo.models.Trip;
 import com.example.demo.models.TripObject;
 import com.google.gson.Gson;
 
@@ -15,7 +14,7 @@ public class DataConverter {
 
     public DataConverter(String dataset)  throws IOException {
         tripData = new ArrayList<>();
-        //Converts txt file into TripObject
+        // Converts txt file into TripObject
         deserializeTripObject(this.ConvertToStringList(dataset));
     }
 

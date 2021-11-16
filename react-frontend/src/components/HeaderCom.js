@@ -27,8 +27,6 @@ const HeaderCom = ({logout}) => {
                         }
                         {/*<Nav.Link hreft='/login' onClick={logout}>Logout</Nav.Link>*/}
 
-
-
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

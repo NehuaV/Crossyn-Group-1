@@ -1,13 +1,13 @@
 import React from "react";
 
-const TripBlock = ({id,avgSpeed, distance, startpoint, endpoint}) =>{
+const TripBlock = ({tripId, avgSpeed, distance, startPoint, endPoint}) => {
 
-    return(
+    return (
         <div className="trip-block">
-            <a><u>Trip Number: {id}</u> </a>
-            <a> <b>Start:</b> <i>{startpoint}</i></a>
-            <a> <b>End:</b> <i>{endpoint} </i></a>
-            <a><b>Average Speed:</b> {avgSpeed} km/h   <b>Distance:</b> {distance}</a>
+            <a><u>Trip Number: {tripId}</u> </a>
+            <a> <b>Start:</b> <i>{startPoint}</i></a>
+            <a> <b>End:</b> <i>{endPoint} </i></a>
+            <a><b>Average Speed:</b> {avgSpeed} km/h <b>Distance:</b> {distance}</a>
         </div>
     )
 }

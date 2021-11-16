@@ -3,6 +3,8 @@ package com.example.demo.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import java.util.List;
@@ -15,10 +17,9 @@ import java.util.List;
 @Table(name = "trips")
 public class Trip {
 
-    @OneToMany(targetEntity = TripObject.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "tripId", referencedColumnName = "tripId")
-    private List<TripObject> tripData;
-
+//    @OneToMany(targetEntity = TripObject.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "tripId", referencedColumnName = "tripId")
+//    private List<TripObject> tripData;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,8 +27,8 @@ public class Trip {
 
     @Column(name = "vehicleId")
     private String vehicleId;
-
-    @Column(name = "driverId")
+    
+    @Column(name = "driverId", nullable = true)
     private int driverId;
 
     @Column(name = "startPoint")
@@ -46,13 +47,13 @@ public class Trip {
     private Double avgSpeed;
 
 
-    public Trip(String vehicleId, int driverId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed) {
+    public Trip( int driverId, String vehicleId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed) {
         this.vehicleId = vehicleId;
-        this.driverId = driverId;
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.duration = duration;
         this.distance = distance;
         this.avgSpeed = avgSpeed;
+        this.driverId = driverId;
     }
 }
