@@ -38,7 +38,10 @@ public class TripCreator {
                 if (CheckTimeDifference(dataLines.get(i-1), dataLines.get(i)) || i+1 == dataLines.size()) {
                     // Last index of the trip is the current dataLine
                     last_index = i;  //dataLines.indexOf(dataLines.get(i))
-
+                    //at the end of the loop add the last line of the dataset to the trip
+                    if (i+1 == dataLines.size()) {
+                        last_index = last_index + 1;
+                    }
                     // List of data for one trip
                     List<DataLine> tripLines = dataLines.subList(first_index, last_index);
 
@@ -46,7 +49,7 @@ public class TripCreator {
                     this.CreateTrip(tripLines);
 
                     // Sets the first index for the next trip
-                    first_index = last_index + 1;
+                    first_index = last_index;
                 }
             }
         }
@@ -63,9 +66,7 @@ public class TripCreator {
         //speed safety limit
         int speedLimit = 51;
 
-        if (roadTypes.contains(dataLine.getRoadType().intValue()) && dataLine.getSpeedLimit() <= speedLimit) { return true; }
-
-        return false;
+        return roadTypes.contains(dataLine.getRoadType().intValue()) && dataLine.getSpeedLimit() <= speedLimit;
     }
     //check if the time difference is bigger than 2 minutes
     private boolean CheckTimeDifference(DataLine previousLine, DataLine currentLine){
