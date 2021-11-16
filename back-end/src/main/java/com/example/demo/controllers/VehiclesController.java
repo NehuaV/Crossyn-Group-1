@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
 @RequestMapping("/vehicles")
-public class VehicleController {
+public class VehiclesController {
 
     @Autowired
     IVehicleService service;

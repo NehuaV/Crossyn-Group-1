@@ -4,7 +4,7 @@ import com.example.demo.models.DataLine;
 
 import java.util.List;
 
-public interface ITripObjectService {
+public interface IDataLineService {
 
     void addTripObject(DataLine dataLine);
 

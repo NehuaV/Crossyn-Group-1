@@ -2,14 +2,14 @@ package com.example.demo.service;
 
 import com.example.demo.dalInterfaces.IDataLineDal;
 import com.example.demo.models.DataLine;
-import com.example.demo.serviceInterfaces.ITripObjectService;
+import com.example.demo.serviceInterfaces.IDataLineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class DataLineService implements ITripObjectService {
+public class DataLineService implements IDataLineService {
 
     @Autowired
     IDataLineDal dal;
