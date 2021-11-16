@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "TripObjects")
-public class TripObject {
+public class DataLine {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -50,7 +50,7 @@ public class TripObject {
     @Column(name = "ignition", nullable = true)
     private Boolean ignition;
 
-    public TripObject(String vehicleId, Double lat, Double lon, int alt, String dateTime, int speed, int speedLimit, Byte roadType, Boolean ignition) {
+    public DataLine(String vehicleId, Double lat, Double lon, int alt, String dateTime, int speed, int speedLimit, Byte roadType, Boolean ignition) {
         this.vehicleId = vehicleId;
         this.lat = lat;
         this.lon = lon;

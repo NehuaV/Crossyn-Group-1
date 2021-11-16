@@ -21,7 +21,7 @@ public class TripManager {
         // Sets the path for reading the datasets
         GetPath();
 
-        // Convert string dataset to list of TripObject
+        // Convert string dataset to list of DataLine
         this.dataConverter = new DataConverter(pathString + dataset);
 
         // Instantiate the class for splitting trips

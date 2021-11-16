@@ -9,6 +9,6 @@ import java.util.List;
 @AllArgsConstructor
 public class TripLinesList {
 
-    private List<TripObject> tripLines;
+    private List<DataLine> tripLines;
     private Trip trip;
 }

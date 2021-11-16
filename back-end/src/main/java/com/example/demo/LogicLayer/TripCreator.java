@@ -2,7 +2,7 @@ package com.example.demo.LogicLayer;
 
 import com.example.demo.models.Trip;
 import com.example.demo.models.TripLinesList;
-import com.example.demo.models.TripObject;
+import com.example.demo.models.DataLine;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
@@ -26,23 +26,23 @@ public class TripCreator {
         this.trips = new ArrayList<>();
     }
 
-    public void Splitter(List<TripObject> data) throws IOException {
+    public void Splitter(List<DataLine> data) throws IOException {
 
         int last_index;
         int first_index = 0;
         int index = 1;
         int counter = 1;
 
-        for (TripObject tripObject : data) {
+        for (DataLine dataLine : data) {
             //difference between this entry and the next time in minutes
-            long minutes = ChronoUnit.MINUTES.between(this.getLocalDateTime(tripObject.getDateTime()), this.getLocalDateTime(data.get(index).getDateTime()));
+            long minutes = ChronoUnit.MINUTES.between(this.getLocalDateTime(dataLine.getDateTime()), this.getLocalDateTime(data.get(index).getDateTime()));
             // if time difference between two data lines is bigger than 2 minutes => make a new trip
             if (minutes > 2 || counter == data.size()) {
-                // Last index of the trip is the current tripObject
-                last_index = data.indexOf(tripObject);
+                // Last index of the trip is the current dataLine
+                last_index = data.indexOf(dataLine);
 
                 // List of data for one trip
-                List<TripObject> tripLines = data.subList(first_index, last_index + 1);
+                List<DataLine> tripLines = data.subList(first_index, last_index + 1);
 
                 // Creates a new trip and adds it to the collection of trips
                 this.CreateTrip(tripLines);
@@ -58,7 +58,7 @@ public class TripCreator {
     }
 
     @SneakyThrows
-    public void CreateTrip(List<TripObject> tripLines) throws IOException {
+    public void CreateTrip(List<DataLine> tripLines) throws IOException {
 
         // Creates a trip object based on the tripLines
         TripStatisticsCalculator tripStatisticsCalculator = new TripStatisticsCalculator(tripLines);

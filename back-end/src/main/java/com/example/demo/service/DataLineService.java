@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.dalInterfaces.ITripObjectDal;
-import com.example.demo.models.TripObject;
+import com.example.demo.dalInterfaces.IDataLineDal;
+import com.example.demo.models.DataLine;
 import com.example.demo.serviceInterfaces.ITripObjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,23 +9,23 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TripObjectService implements ITripObjectService {
+public class DataLineService implements ITripObjectService {
 
     @Autowired
-    ITripObjectDal dal;
+    IDataLineDal dal;
 
     @Override
-    public void addTripObject(TripObject tripObject) {
-        dal.addTripObject(tripObject);
+    public void addTripObject(DataLine dataLine) {
+        dal.addTripObject(dataLine);
     }
 
     @Override
-    public List<TripObject> getTripObjectsByTripId(int tripId) {
+    public List<DataLine> getTripObjectsByTripId(int tripId) {
         return dal.getTripObjectsByTripId(tripId);
     }
 
     @Override
-    public List<TripObject> getAllTripObjects() {
+    public List<DataLine> getAllTripObjects() {
         return dal.getAllTripObjects();
     }
 }

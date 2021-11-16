@@ -1,6 +1,6 @@
 package com.example.demo.DataLayer;
 
-import com.example.demo.models.TripObject;
+import com.example.demo.models.DataLine;
 import com.google.gson.Gson;
 
 import java.io.*;
@@ -10,11 +10,11 @@ import java.util.Scanner;
 
 public class DataConverter {
 
-    private List<TripObject> tripData;
+    private List<DataLine> tripData;
 
     public DataConverter(String dataset)  throws IOException {
         tripData = new ArrayList<>();
-        // Converts txt file into TripObject
+        // Converts txt file into DataLine
         deserializeTripObject(this.ConvertToStringList(dataset));
     }
 
@@ -48,14 +48,14 @@ public class DataConverter {
                     //remove "]" at the end of the dataset
                     line = line.substring(0, line.lastIndexOf("]"));
                 }
-                TripObject tripObject = g.fromJson(line, TripObject.class);
-                tripData.add(tripObject);
+                DataLine dataLine = g.fromJson(line, DataLine.class);
+                tripData.add(dataLine);
             }
         }
 
     }
 
-    public List<TripObject> GetTripObjects() {
+    public List<DataLine> GetTripObjects() {
         return tripData;
     }
 

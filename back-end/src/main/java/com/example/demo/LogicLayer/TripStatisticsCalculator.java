@@ -1,6 +1,6 @@
 package com.example.demo.LogicLayer;
 
-import com.example.demo.models.TripObject;
+import com.example.demo.models.DataLine;
 import org.json.JSONException;
 
 import java.io.IOException;
@@ -12,9 +12,9 @@ public class TripStatisticsCalculator {
 
     private AddressFinder addressFinder;
     private DistanceFinder distanceFinder;
-    private List<TripObject> tripData;
+    private List<DataLine> tripData;
 
-    public TripStatisticsCalculator(List<TripObject> tripData) {
+    public TripStatisticsCalculator(List<DataLine> tripData) {
         this.tripData = tripData;
         this.addressFinder = new AddressFinder();
         this.distanceFinder = new DistanceFinder();
@@ -27,8 +27,8 @@ public class TripStatisticsCalculator {
     public String StartAddress() throws IOException, JSONException {
 
         // Get First and last item from List
-        TripObject first = tripData.get(0);
-        TripObject last = tripData.get(tripData.size() - 1);
+        DataLine first = tripData.get(0);
+        DataLine last = tripData.get(tripData.size() - 1);
 
         // Call API class AddressFinder and use the objects' coordinates to find the address
         return addressFinder.FindAddress(last.getLat().toString(), last.getLon().toString());
@@ -37,8 +37,8 @@ public class TripStatisticsCalculator {
     public String EndAddress() throws IOException, JSONException {
 
         // Get First and last item from List
-        TripObject first = tripData.get(0);
-        TripObject last = tripData.get(tripData.size() - 1);
+        DataLine first = tripData.get(0);
+        DataLine last = tripData.get(tripData.size() - 1);
 
         // Call API class AddressFinder and use the objects' coordinates to find the address
         return addressFinder.FindAddress(first.getLat().toString(), first.getLon().toString());
@@ -47,8 +47,8 @@ public class TripStatisticsCalculator {
     public double calculateDuration() {
 
         // Get First and last item from List
-        TripObject first = tripData.get(0);
-        TripObject last = tripData.get(tripData.size() - 1);
+        DataLine first = tripData.get(0);
+        DataLine last = tripData.get(tripData.size() - 1);
 
         // Get Datetime from Both Objects
         String dateStart = first.getDateTime().replaceAll("\\s", "");
@@ -73,7 +73,7 @@ public class TripStatisticsCalculator {
 
         // Go through trip data and add all Speeds into avgSpeed
         double avgSpeed = 0;
-        for (TripObject trip : tripData) {
+        for (DataLine trip : tripData) {
             avgSpeed += trip.getSpeed();
         }
 

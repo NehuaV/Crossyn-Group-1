@@ -17,9 +17,9 @@ import java.util.List;
 @Table(name = "trips")
 public class Trip {
 
-//    @OneToMany(targetEntity = TripObject.class, cascade = CascadeType.ALL)
+//    @OneToMany(targetEntity = DataLine.class, cascade = CascadeType.ALL)
 //    @JoinColumn(name = "tripId", referencedColumnName = "tripId")
-//    private List<TripObject> tripData;
+//    private List<DataLine> tripData;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
