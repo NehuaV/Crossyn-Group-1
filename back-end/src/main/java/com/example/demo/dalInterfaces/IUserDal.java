@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface IUserDal {
 
-    User getAccountById(int id);
+    User getUserById(int id);
 
-    User getAccountByUsername(String username);
+    User getUserByUsername(String username);
 
-    List<User> getAllAccounts();
+    List<User> getAllUsers();
 
-    int addAccount(User user);
+    int addUser(User user);
 
     boolean checkCredentials(String username, String password);
 }

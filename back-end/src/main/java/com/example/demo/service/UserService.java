@@ -16,28 +16,28 @@ public class UserService implements IUserService {
     @Autowired
     public UserService(IUserDal dal) {
         this.dal = dal;
-        dal.addAccount(new User("test", "test", "test@gmail.com"));
-        dal.addAccount(new User("john", "john", "john@gmail.com"));
+        dal.addUser(new User("test", "test", "test@gmail.com"));
+        dal.addUser(new User("john", "john", "john@gmail.com"));
     }
 
     @Override
-    public User getAccountById(int id) {
-        return dal.getAccountById(id);
+    public User getUserById(int id) {
+        return dal.getUserById(id);
     }
 
     @Override
-    public User getAccountByUsername(String username) {
-        return dal.getAccountByUsername(username);
+    public User getUserByUsername(String username) {
+        return dal.getUserByUsername(username);
     }
 
     @Override
-    public List<User> getAllAccounts() {
-        return dal.getAllAccounts();
+    public List<User> getAllUsers() {
+        return dal.getAllUsers();
     }
 
     @Override
-    public int addAccount(User user) {
-        return dal.addAccount(user);
+    public int addUser(User user) {
+        return dal.addUser(user);
     }
 
     @Override

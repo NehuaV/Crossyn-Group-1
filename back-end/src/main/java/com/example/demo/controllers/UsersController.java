@@ -27,7 +27,7 @@ public class UsersController {
 
     @PostMapping("/register")
     public ResponseEntity<?> userRegistration(@RequestBody User user) {
-        int registrationResult = service.addAccount(user);
+        int registrationResult = service.addUser(user);
 
         if (registrationResult == -1) {
             return ResponseEntity.badRequest().body(new ResponseMessage("User with this username already exists."));

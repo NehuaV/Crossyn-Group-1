@@ -5,13 +5,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IUserRepository extends JpaRepository<User, Integer> {
 
-    User getAccountByUserId(int id);
+    User getUserByUserId(int id);
 
-    User getAccountByUsername(String username);
+    User getUserByUsername(String username);
 
-    boolean existsAccountByUsernameAndPassword(String username, String password);
+    boolean existsUserByUsernameAndPassword(String username, String password);
 
-    boolean existsAccountByUsername(String username);
+    boolean existsUserByUsername(String username);
 
-    boolean existsAccountByEmail(String email);
+    boolean existsUserByEmail(String email);
 }

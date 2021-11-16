@@ -15,7 +15,7 @@ import java.util.List;
 public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private int roleId;
 
     @Column(name = "name")
@@ -23,4 +23,5 @@ public class Role {
 
 //    @ManyToMany(mappedBy = "roles")
 //    private List<User> users;
+
 }
