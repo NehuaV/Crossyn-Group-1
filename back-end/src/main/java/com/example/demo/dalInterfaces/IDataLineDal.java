@@ -8,7 +8,7 @@ public interface IDataLineDal {
 
     void addTripObject(DataLine dataLine);
 
-    List<DataLine> getTripObjectsByTripId(int tripId);
+    List<DataLine> getAllByVehicleId(String vehicleID);
 
     List<DataLine> getAllTripObjects();
 }
