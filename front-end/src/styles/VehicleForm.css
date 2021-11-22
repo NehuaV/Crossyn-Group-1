@@ -1,0 +1,8 @@
+.carbox {
+    /* width: 500px; */
+    display: grid;
+    height: 89vh;
+    align-items: center;
+    justify-content: center;
+    /* text-align: -webkit-center; */
+}

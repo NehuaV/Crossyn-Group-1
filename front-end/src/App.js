@@ -10,6 +10,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Trips from "./components/Trips"
 import {createBrowserHistory} from "history";
+import VechileForm from './components/VechileForm';
 
 function App() {
 
@@ -84,11 +85,13 @@ function App() {
                                 <>
                                     <Route exact path="/"> <Home/> </Route>
                                     <Route path="/trips"> <Trips/> </Route>
+                                    <Route path="/vehicle"><VechileForm/></Route>
                                 </>
                                 :
                                 <>
                                     <Route path="/register"> <Register register={register}/> </Route>
                                     <Route path="/"> <Login login={login}/> </Route>
+
                                 </>
                         }
                     </Switch>

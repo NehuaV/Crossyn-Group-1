@@ -17,6 +17,7 @@ const HeaderCom = ({logout}) => {
                             <>
                                 <Nav.Link href='/'>Home</Nav.Link>
                                 <Nav.Link href='/trips' /*onClick={getTrips}*/ >Trips</Nav.Link>
+                                <Nav.Link href="/vehicle">Vehicle test</Nav.Link>
                                 <Nav.Link href='/' onClick={logout}> Logout</Nav.Link>
                             </>
                             :
