@@ -20,8 +20,8 @@ public class DataLineDalJPA implements IDataLineDal {
     }
 
     @Override
-    public List<DataLine> getTripObjectsByTripId(int tripId) {
-        return repository.getTripObjectsByTripId(tripId);
+    public List<DataLine> getAllByVehicleId(String vehicleID) {
+        return repository.getAllByVehicleId(vehicleID);
     }
 
     @Override
