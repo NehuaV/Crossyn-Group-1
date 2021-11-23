@@ -20,7 +20,8 @@ public class UsersController {
     public ResponseEntity<?> checkLogin(@RequestBody User user) {
 
         if (service.checkCredentials(user.getUsername(), user.getPassword())) {
-            return ResponseEntity.ok(user);
+            User user1 = service.getUserByUsername(user.getUsername());
+            return ResponseEntity.ok(user1);
         }
         return ResponseEntity.ok(new ResponseMessage("Invalid credentials"));
     }

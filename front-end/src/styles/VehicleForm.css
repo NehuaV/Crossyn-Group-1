@@ -1,0 +1,19 @@
+.carbox {
+    /* width: 500px; */
+    display: grid;
+    height: 89vh;
+    align-items: center;
+    justify-content: center;
+    /* text-align: -webkit-center; */
+}
+
+.back-button-container{
+   width: 100%;
+    margin-top: 5px;
+    /* Position correctly - a bit to the bottom left of the page */
+}
+
+.buttons-container{
+    display: flex;
+    flex-direction: column;
+}

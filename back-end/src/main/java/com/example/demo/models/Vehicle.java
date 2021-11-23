@@ -15,6 +15,7 @@ import javax.persistence.*;
 public class Vehicle {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="vehicleId")
     private String vehicleId;
 
@@ -30,9 +31,16 @@ public class Vehicle {
     @Column(name = "brand")
     private String brand;
 
-    @Column(name = "licencePlate")
-    private String licencePlate;
+    @Column(name = "licensePlate")
+    private String licensePlate;
 
+    public Vehicle(int ownerId, String vin, String model, String brand, String licensePlate) {
+        this.ownerId = ownerId;
+        this.vin = vin;
+        this.model = model;
+        this.brand = brand;
+        this.licensePlate = licensePlate;
+    }
 //    @OneToMany(targetEntity = Trip.class, cascade = CascadeType.ALL)
 //    @JoinColumn(name="vehicleId", referencedColumnName="vehicleId")
 //    private List<Trip> trips;

@@ -1,0 +1,9 @@
+.addVehicleButton{
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.table-header{
+    font-size: 22px !important;
+}

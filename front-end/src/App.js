@@ -10,13 +10,15 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Trips from "./components/Trips"
 import {createBrowserHistory} from "history";
+import VehicleForm from './components/VehicleForm';
+import VehicleTable from "./components/vehicleTable";
 
 function App() {
 
     const history = createBrowserHistory();
 
     const logout = () => {
-        localStorage.removeItem('accessToken')
+        localStorage.clear();
         history.push("/");
         window.location.reload();
 
@@ -33,6 +35,12 @@ function App() {
                     } else {
                         console.log(response.data);
                         localStorage.setItem('accessToken', username)
+                        localStorage.setItem('uid', response.data.userId)
+                        if (response.data.roleId == 1) {
+                            localStorage.setItem('loggedInAsFleetOwner', 'true');
+                        } else {
+                            localStorage.setItem('loggedInAsDriver', 'true');
+                        }
                         history.push("/");
                         window.location.reload();
 
@@ -45,17 +53,24 @@ function App() {
             });
     };
 
-    const register = (username, password, email) => {
+    const register = (username, password, email, roleId) => {
         axios
             .post("http://localhost:8080/users/register", {
                 username,
                 email,
                 password,
+                roleId,
             })
             .then((response) => {
                 if (response.status === 200) {
                     alert(response.data.message);
                     localStorage.setItem('accessToken', username)
+                    localStorage.setItem('uid', response.data.userId)
+                    if (roleId == 1) {
+                        localStorage.setItem('loggedInAsFleetOwner', 'true');
+                    } else {
+                        localStorage.setItem('loggedInAsDriver', 'true');
+                    }
                     history.push("/");
                     window.location.reload();
 
@@ -83,12 +98,21 @@ function App() {
                             localStorage.getItem('accessToken') ?
                                 <>
                                     <Route exact path="/"> <Home/> </Route>
-                                    <Route path="/trips"> <Trips/> </Route>
+
+                                    {localStorage.getItem("loggedInAsFleetOwner") ?
+                                        <>
+                                            <Route exact path="/vehicles"><VehicleTable/></Route>
+                                            <Route exact path="/addVehicle"><VehicleForm/></Route>
+                                        </>
+                                        :
+                                        <Route exact path="/trips"> <Trips/> </Route>
+                                    }
+
                                 </>
                                 :
                                 <>
-                                    <Route path="/register"> <Register register={register}/> </Route>
-                                    <Route path="/"> <Login login={login}/> </Route>
+                                    <Route exact path="/register"> <Register register={register}/> </Route>
+                                    <Route exact path="/"> <Login login={login}/> </Route>
                                 </>
                         }
                     </Switch>

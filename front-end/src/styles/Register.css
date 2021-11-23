@@ -2,7 +2,10 @@ body {
     background-color: White;
 }
 
-
+.selector{
+    display: flex;
+    margin-bottom: 20px;
+}
 
 form.register-form {
     padding: 20px;
@@ -20,7 +23,7 @@ form.register-form {
     margin: auto;
     border-radius: 15px;
     background-color: white;
-    margin-top: 15%;
+    margin-top: 8%;
 }
 
 input.register-input {

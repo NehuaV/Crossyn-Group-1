@@ -16,6 +16,9 @@ public class VehicleService implements IVehicleService {
     @Autowired
     public VehicleService(IVehicleDal dal) {
         this.dal = dal;
+        this.addVehicle(new Vehicle(1, "12345", "AMG", "MERCEDES", "NL 12-34-67"));
+        this.addVehicle(new Vehicle(1, "98902", "X6", "BMW", "NL 31-48-90"));
+        this.addVehicle(new Vehicle(1, "02432", "CIVIC", "HONDA", "NL 09-24-387"));
     }
 
     @Override
