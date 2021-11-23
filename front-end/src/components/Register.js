@@ -2,15 +2,15 @@ import { useState } from "react";
 
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import "../styles/Register.css";
+import { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 
-const Register = ({register}) => {
+const Register = ({ register }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [errorMessage, setErrorMessage] = useState("");
-
 
   const handleUsernameChange = (e) => {
     e.preventDefault();
@@ -54,6 +54,9 @@ const Register = ({register}) => {
     }
   };
 
+  const [role, setRole] = useState(0);
+  const handleChange = (val) => setRole(val);
+
   return (
     <div>
       <div className="spacer-register">
@@ -91,6 +94,16 @@ const Register = ({register}) => {
                 required
               />
             </FormGroup>
+
+            <ToggleButtonGroup className="selector" type="radio" name="options" value={role} onChange={handleChange} defaultValue={0}>
+              <ToggleButton id="tbg-radio-1" value={0}>
+                Fleet Owner
+              </ToggleButton>
+              <ToggleButton id="tbg-radio-2" value={1}>
+                Driver
+              </ToggleButton>
+            </ToggleButtonGroup>
+
             <Button className="register-button" type="submit" value="Sign In">
               Register
             </Button>
