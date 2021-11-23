@@ -26,7 +26,7 @@ public class DatasetsEnrichmentApplication {
         //     System.out.println(trip.toString());
         // }
 
-        // // Get the data lines of the trip you want to analyze via his index
+        // // Get the data lines of the trip you want to analyze via its index
         // List<DataLine> dataLines = tripManager.getTripObjects().get(1).getTripLines();
         // for (DataLine dataLine : dataLines){
         //     System.out.println(dataLine.toString());
