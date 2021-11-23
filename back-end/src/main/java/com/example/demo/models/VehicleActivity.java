@@ -17,13 +17,13 @@ public class VehicleActivity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int vehicleActivityId;
 
-    @OneToOne( optional = false, cascade = CascadeType.ALL )
-    @JoinColumn(name = "vehicleId", nullable = false, columnDefinition="varchar(255)")
-    private Vehicle vehicle;
+//    @OneToOne( optional = false, cascade = CascadeType.ALL )
+//    @JoinColumn(name = "vehicleId", nullable = false, columnDefinition="varchar(255)")
+    private Integer vehicleId;
 
-    @OneToOne( optional = false, cascade = CascadeType.ALL )
-    @JoinColumn(name = "driverId", nullable = false, columnDefinition="integer")
-    private User user;
+//    @OneToOne( optional = false, cascade = CascadeType.ALL )
+//    @JoinColumn(name = "driverId", nullable = false, columnDefinition="integer")
+    private Integer driverId;
 
     @Column(name="inUse")
     private boolean inUse;

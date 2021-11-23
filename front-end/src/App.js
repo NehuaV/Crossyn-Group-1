@@ -10,14 +10,15 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Trips from "./components/Trips"
 import {createBrowserHistory} from "history";
-import VechileForm from './components/VechileForm';
+import VehicleForm from './components/VehicleForm';
+import VehicleTable from "./components/vehicleTable";
 
 function App() {
 
     const history = createBrowserHistory();
 
     const logout = () => {
-        localStorage.removeItem('accessToken')
+        localStorage.clear();
         history.push("/");
         window.location.reload();
 
@@ -34,6 +35,12 @@ function App() {
                     } else {
                         console.log(response.data);
                         localStorage.setItem('accessToken', username)
+                        localStorage.setItem('uid', response.data.userId)
+                        if (response.data.roleId == 1) {
+                            localStorage.setItem('loggedInAsFleetOwner', 'true');
+                        } else {
+                            localStorage.setItem('loggedInAsDriver', 'true');
+                        }
                         history.push("/");
                         window.location.reload();
 
@@ -57,6 +64,7 @@ function App() {
                 if (response.status === 200) {
                     alert(response.data.message);
                     localStorage.setItem('accessToken', username)
+                    localStorage.setItem('uid', response.data.userId)
                     history.push("/");
                     window.location.reload();
 
@@ -84,14 +92,22 @@ function App() {
                             localStorage.getItem('accessToken') ?
                                 <>
                                     <Route exact path="/"> <Home/> </Route>
-                                    <Route path="/trips"> <Trips/> </Route>
-                                    <Route path="/vehicle"><VechileForm/></Route>
+
+                                    {localStorage.getItem("loggedInAsFleetOwner") ?
+                                        <>
+                                            <Route path="/vehicles"><VehicleTable/></Route>
+                                            <Route path="/addVehicle"><VehicleForm/></Route>
+                                        </>
+                                        :
+                                        <Route path="/trips"> <Trips/> </Route>
+                                    }
+
                                 </>
                                 :
                                 <>
+                                    <Route path="/vehicle"><VehicleForm/></Route>
                                     <Route path="/register"> <Register register={register}/> </Route>
                                     <Route path="/"> <Login login={login}/> </Route>
-
                                 </>
                         }
                     </Switch>

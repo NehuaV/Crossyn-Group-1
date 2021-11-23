@@ -16,9 +16,12 @@ const HeaderCom = ({logout}) => {
                         {localStorage.getItem('accessToken') ?
                             <>
                                 <Nav.Link href='/'>Home</Nav.Link>
-                                <Nav.Link href='/trips' /*onClick={getTrips}*/ >Trips</Nav.Link>
-                                <Nav.Link href="/vehicle">Vehicle test</Nav.Link>
+
                                 <Nav.Link href='/' onClick={logout}> Logout</Nav.Link>
+                                {localStorage.getItem('loggedInAsFleetOwner') ?
+                                    <><Nav.Link href="/vehicles">Vehicles</Nav.Link></>
+                                    :
+                                    <><Nav.Link href='/trips' /*onClick={getTrips}*/ >Trips</Nav.Link></>}
                             </>
                             :
                             <>

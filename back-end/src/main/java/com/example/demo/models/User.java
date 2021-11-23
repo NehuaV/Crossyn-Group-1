@@ -20,7 +20,7 @@ public class User {
     // try to make it work with GenerationType.IDENTITY
     // doesn't work fine with Postgre fro some reason
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
 
     @Column(name = "username")
@@ -35,7 +35,8 @@ public class User {
     @Column(name="roleId", nullable = true, columnDefinition = "integer default 0")
     private int roleId;
 
-    public User(String username, String password, String email) {
+    public User(String username, String password, String email, int roleId) {
+        this.roleId = roleId;
         this.username = username;
         this.password = password;
         this.email = email;
@@ -60,8 +61,8 @@ public class User {
 //    @NotFound(action= NotFoundAction.IGNORE)
 //    private List<Trip> trips;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private VehicleActivity vehicleActivity;
+//    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+//    private VehicleActivity vehicleActivity;
 
 
 }
