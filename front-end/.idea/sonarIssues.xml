@@ -33,6 +33,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/service/TripService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/service/UserService.java">
           <value>
             <set />
@@ -58,6 +63,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/components/Register.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/components/VechileForm.js">
           <value>
             <set />
@@ -73,7 +83,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/styles/Register.css">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/styles/VehicleForm.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/styles/VehicleTable.css">
           <value>
             <set />
           </value>

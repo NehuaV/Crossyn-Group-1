@@ -4,6 +4,7 @@ import {Form, Row, Button} from "react-bootstrap";
 import axios from "axios";
 import "../styles/VehicleForm.css";
 import {Link} from "react-router-dom";
+import {Card} from "react-bootstrap";
 
 const VehicleForm = () => {
     const initialState = {
@@ -36,6 +37,7 @@ const VehicleForm = () => {
                     alert(response.data.message);
                     console.log(response.data);
                     console.log(vehicle);
+                    setVehicle(initialState);
                 }
             })
             .catch((error) => {
@@ -55,39 +57,48 @@ const VehicleForm = () => {
 
     return (
         <div className="carbox">
-            <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="formGridVin">
-                    <Form.Label>Vin</Form.Label>
-                    <Form.Control type="text" placeholder="Enter vin" required value={vehicle.vin}
-                                  onChange={credentialChange} name="vin" id="vin"/>
-                </Form.Group>
+            <Card>
+                <Card.Header>
+                    Add Vehicle
+                </Card.Header>
+                <Card.Body>
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group controlId="formGridVin">
+                            <Form.Label>Vin</Form.Label>
+                            <Form.Control type="text" placeholder="Enter vin" required value={vehicle.vin}
+                                          onChange={credentialChange} name="vin" id="vin"/>
+                        </Form.Group>
 
-                <Row className="mb-3">
-                    <Form.Group controlId="formGridMake">
-                        <Form.Label>Brand</Form.Label>
-                        <Form.Control required value={vehicle.brand} onChange={credentialChange} name="brand" id="brand"
-                                      type="text" placeholder="Enter Brand"/>
-                    </Form.Group>
+                        <Row className="mb-3">
+                            <Form.Group controlId="formGridMake">
+                                <Form.Label>Brand</Form.Label>
+                                <Form.Control required value={vehicle.brand} onChange={credentialChange} name="brand" id="brand"
+                                              type="text" placeholder="Enter Brand"/>
+                            </Form.Group>
 
-                    <Form.Group controlId="formGridModel">
-                        <Form.Label>Model</Form.Label>
-                        <Form.Control required value={vehicle.model} onChange={credentialChange} name="model" id="model"
-                                      type="text" placeholder="Enter Model"/>
-                    </Form.Group>
-                </Row>
+                            <Form.Group controlId="formGridModel">
+                                <Form.Label>Model</Form.Label>
+                                <Form.Control required value={vehicle.model} onChange={credentialChange} name="model" id="model"
+                                              type="text" placeholder="Enter Model"/>
+                            </Form.Group>
+                        </Row>
 
-                <Form.Group className="mb-3" controlId="formGridLicensePlate">
-                    <Form.Label>License Plate</Form.Label>
-                    <Form.Control required value={vehicle.licensePlate} onChange={credentialChange} name="licensePlate"
-                                  id="licensePlate" placeholder="Enter License Plate Number"/>
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-                <div className="back-button-container">
-                    <Link to={'/'} className="btn-link"><Button variant="secondary"> Back </Button></Link>
-                </div>
-            </Form>
+                        <Form.Group className="mb-3" controlId="formGridLicensePlate">
+                            <Form.Label>License Plate</Form.Label>
+                            <Form.Control required value={vehicle.licensePlate} onChange={credentialChange} name="licensePlate"
+                                          id="licensePlate" placeholder="Enter License Plate Number"/>
+                        </Form.Group>
+                        <div className="buttons-container" >
+                            <Button variant="primary" type="submit">
+                                Add
+                            </Button>
+                            <div className="back-button-container">
+                                <Link to={'/vehicles'} className="btn-link back-button-container"><Button className="back-button-container" variant="secondary"> Back </Button></Link>
+                            </div>
+                        </div>
+                    </Form>
+                </Card.Body>
+            </Card>
         </div>
     );
 }

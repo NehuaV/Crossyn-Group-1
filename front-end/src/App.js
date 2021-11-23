@@ -53,18 +53,24 @@ function App() {
             });
     };
 
-    const register = (username, password, email) => {
+    const register = (username, password, email, roleId) => {
         axios
             .post("http://localhost:8080/users/register", {
                 username,
                 email,
                 password,
+                roleId,
             })
             .then((response) => {
                 if (response.status === 200) {
                     alert(response.data.message);
                     localStorage.setItem('accessToken', username)
                     localStorage.setItem('uid', response.data.userId)
+                    if (roleId == 1) {
+                        localStorage.setItem('loggedInAsFleetOwner', 'true');
+                    } else {
+                        localStorage.setItem('loggedInAsDriver', 'true');
+                    }
                     history.push("/");
                     window.location.reload();
 
@@ -95,19 +101,18 @@ function App() {
 
                                     {localStorage.getItem("loggedInAsFleetOwner") ?
                                         <>
-                                            <Route path="/vehicles"><VehicleTable/></Route>
-                                            <Route path="/addVehicle"><VehicleForm/></Route>
+                                            <Route exact path="/vehicles"><VehicleTable/></Route>
+                                            <Route exact path="/addVehicle"><VehicleForm/></Route>
                                         </>
                                         :
-                                        <Route path="/trips"> <Trips/> </Route>
+                                        <Route exact path="/trips"> <Trips/> </Route>
                                     }
 
                                 </>
                                 :
                                 <>
-                                    <Route path="/vehicle"><VehicleForm/></Route>
-                                    <Route path="/register"> <Register register={register}/> </Route>
-                                    <Route path="/"> <Login login={login}/> </Route>
+                                    <Route exact path="/register"> <Register register={register}/> </Route>
+                                    <Route exact path="/"> <Login login={login}/> </Route>
                                 </>
                         }
                     </Switch>
