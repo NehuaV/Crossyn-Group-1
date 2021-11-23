@@ -32,11 +32,7 @@ public class TripService implements ITripService {
 
     @Override
     public void saveAll() throws IOException {
-<<<<<<< HEAD
-        TripManager tripManager = new TripManager("dataset3.txt");
-=======
         TripManager tripManager = new TripManager("dataset5.txt");
->>>>>>> Vechile-register
 
         for (Trip trip : tripManager.getTrips()) {
             this.addTrip(trip);
