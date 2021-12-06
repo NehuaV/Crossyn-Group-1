@@ -1,8 +1,10 @@
 package com.example.demo.controllers;
 
 import com.example.demo.DTOs.ResponseMessage;
+import com.example.demo.DTOs.UserDTO;
 import com.example.demo.models.User;
 import com.example.demo.serviceInterfaces.IUserService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,20 +16,26 @@ import org.springframework.web.bind.annotation.*;
 public class UsersController {
 
     @Autowired
+    private ModelMapper modelMapper;
+
+    @Autowired
     private IUserService service;
 
     @PostMapping("/login")
-    public ResponseEntity<?> checkLogin(@RequestBody User user) {
+    public ResponseEntity<?> checkLogin(@RequestBody UserDTO userDTO) {
 
-        if (service.checkCredentials(user.getUsername(), user.getPassword())) {
-            User user1 = service.getUserByUsername(user.getUsername());
-            return ResponseEntity.ok(user1);
+        if (service.checkCredentials(userDTO.getUsername(), userDTO.getPassword())) {
+            User user = service.getUserByUsername(userDTO.getUsername());
+            userDTO = modelMapper.map(user, UserDTO.class);
+            return ResponseEntity.ok(userDTO);
         }
         return ResponseEntity.ok(new ResponseMessage("Invalid credentials"));
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> userRegistration(@RequestBody User user) {
+    public ResponseEntity<?> userRegistration(@RequestBody UserDTO userDTO) {
+
+        User user = modelMapper.map(userDTO, User.class);
         int registrationResult = service.addUser(user);
 
         if (registrationResult == -1) {

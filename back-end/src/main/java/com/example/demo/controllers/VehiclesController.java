@@ -1,13 +1,16 @@
 package com.example.demo.controllers;
 
 import com.example.demo.DTOs.ResponseMessage;
+import com.example.demo.DTOs.VehicleDTO;
 import com.example.demo.models.Vehicle;
 import com.example.demo.serviceInterfaces.IVehicleService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -16,10 +19,16 @@ import java.util.List;
 public class VehiclesController {
 
     @Autowired
-    IVehicleService service;
+    private ModelMapper modelMapper;
+
+    @Autowired
+    private IVehicleService service;
 
     @PostMapping("/add")
-    public ResponseEntity<?> addVehicle(@RequestBody Vehicle vehicle) {
+    public ResponseEntity<?> addVehicle(@RequestBody VehicleDTO vehicleDTO) {
+
+        Vehicle vehicle = modelMapper.map(vehicleDTO, Vehicle.class);
+
         if (service.addVehicle(vehicle)) {
             return ResponseEntity.ok(new ResponseMessage("Vehicle has been added successfully!"));
         }
@@ -28,21 +37,18 @@ public class VehiclesController {
 
     @GetMapping("/owner/{id}")
     public ResponseEntity<?> getVehiclesByOwner(@PathVariable(value = "id") int ownerId) {
-        List<Vehicle> vehicles = service.getVehiclesByOwnerId(ownerId);
-
-        if (vehicles != null) {
-            return ResponseEntity.ok().body(vehicles);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        List<VehicleDTO> vehicles = service.getVehiclesByOwnerId(ownerId).stream().map(vehicle -> modelMapper.map(vehicle, VehicleDTO.class))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok().body(vehicles);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<?> getVehicleById(@PathVariable(value = "id") String vehicleId) {
         Vehicle vehicle = service.getVehicleByVehicleId(vehicleId);
 
         if (vehicle != null) {
-            return ResponseEntity.ok().body(vehicle);
+            VehicleDTO vehicleDTO = modelMapper.map(vehicle, VehicleDTO.class);
+            return ResponseEntity.ok().body(vehicleDTO);
         } else {
             return ResponseEntity.notFound().build();
         }

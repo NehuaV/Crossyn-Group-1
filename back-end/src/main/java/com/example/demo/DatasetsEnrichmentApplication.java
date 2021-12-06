@@ -3,14 +3,21 @@ package com.example.demo;
 import com.example.demo.LogicLayer.TripManager;
 import com.example.demo.models.DataLine;
 import com.example.demo.models.Trip;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.io.IOException;
 import java.util.List;
 
 @SpringBootApplication
 public class DatasetsEnrichmentApplication {
+
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
 
     public static void main(String[] args) throws IOException {
         SpringApplication.run(DatasetsEnrichmentApplication.class, args);

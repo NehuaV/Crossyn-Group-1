@@ -1,5 +1,6 @@
 package com.example.demo.models;
 
+import kotlinx.serialization.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 
-
+//@Serializable
+//@Embeddable
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -33,15 +35,4 @@ public class DataLine {
 
     private Boolean ignition;
 
-//    public DataLine(String vehicleId, Double lat, Double lon, int alt, String dateTime, int speed, int speedLimit, Byte roadType, Boolean ignition) {
-//        this.vehicleId = vehicleId;
-//        this.lat = lat;
-//        this.lon = lon;
-//        this.alt = alt;
-//        this.dateTime = dateTime;
-//        this.speed = speed;
-//        this.speedLimit = speedLimit;
-//        this.roadType = roadType;
-//        this.ignition = ignition;
-//    }
 }

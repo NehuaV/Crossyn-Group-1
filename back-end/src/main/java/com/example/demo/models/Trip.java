@@ -1,25 +1,24 @@
 package com.example.demo.models;
 
+import kotlinx.serialization.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.List;
 
 
+@Serializable
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "trips")
 public class Trip {
-
-//    @OneToMany(targetEntity = DataLine.class, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "tripId", referencedColumnName = "tripId")
-//    private List<DataLine> tripData;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,7 +46,7 @@ public class Trip {
     private Double avgSpeed;
 
 
-    public Trip( int driverId, String vehicleId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed) {
+    public Trip(int driverId, String vehicleId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed) {
         this.vehicleId = vehicleId;
         this.startPoint = startPoint;
         this.endPoint = endPoint;
