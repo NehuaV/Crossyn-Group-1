@@ -20,8 +20,17 @@ public class TripStatisticsCalculator {
         this.distanceFinder = new DistanceFinder();
     }
 
-    public String getVehicleId(){
+    public String getVehicleId() {
         return tripData.get(0).getVehicleId();
+    }
+
+    // Sleeps the thread for inputted period of time
+    public static void wait(int ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
     }
 
     public String StartAddress() throws IOException, JSONException {
@@ -39,6 +48,11 @@ public class TripStatisticsCalculator {
         // Get First and last item from List
         DataLine first = tripData.get(0);
         DataLine last = tripData.get(tripData.size() - 1);
+
+        // The Nominatim API requires 1 second between requests to avoid heavy usage
+        // For that reason We implement a sleep between the start and end point addresses
+        // since they are called immediately one after the other
+        wait(1001);
 
         // Call API class AddressFinder and use the objects' coordinates to find the address
         return addressFinder.FindAddress(first.getLat().toString(), first.getLon().toString());
