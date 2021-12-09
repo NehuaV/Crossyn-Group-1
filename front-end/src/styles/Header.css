@@ -1,0 +1,27 @@
+
+.nav-link{
+    font-size: 25px;
+    color: white !important;
+}
+
+.mr-auto{
+    position: relative;
+    margin-left: auto;
+    margin-right: 5vh;
+    text-align: center;
+}
+
+img {
+    border-radius: 5%;
+    margin-inline: 0px;
+}
+
+img.img-logo {
+    width: 75px;
+    margin-left: 10px;
+}
+
+.color-nav {
+    --bs-bg-opacity: 1;
+    background-color: #1d9bf0;
+}

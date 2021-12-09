@@ -1,0 +1,71 @@
+*{
+  color: #0f1419;
+}
+
+section.banner {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+section.banner.\31 {
+  background: url("../images/homeBackgroundImage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 35%; 
+}
+
+section.banner.\32 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 35%;
+}
+
+h1.title {
+  color: black;
+  font-size: 64px;
+  line-height: 90px;
+  padding-bottom: 35px;
+  font-weight: bold;
+}
+
+strong.slogan {
+  font-size: 40px;
+  line-height: 50px;
+  color: black;
+  padding-bottom: 10px;
+  display: block;
+}
+
+p.description {
+  color: black;
+  font-size: 20px;
+  line-height: 28px;
+  padding-bottom: 60px;
+  max-width: 600px;
+  display: inline-block;
+  text-align: center;
+}
+
+a.infoBox {
+  font-size: 17px;
+  color: black;
+  -webkit-text-stroke: 1px Black;
+  padding: 13px 0px;
+  width: 100%;
+  max-width: 190px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 25px;
+  transition: ease-in all 0.5s;
+}
+
+a.infoBox:hover {
+  border-radius: 5px;
+}
+
+.text {
+  text-align: center;
+}
