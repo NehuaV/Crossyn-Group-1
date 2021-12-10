@@ -40,6 +40,11 @@ public class TripService implements ITripService {
     }
 
     @Override
+    public List<Trip> getAllTripsByVehicleId(String VehicleId) {
+        return dal.getAllTripsByVehicleId(VehicleId);
+    }
+
+    @Override
     public void addTrip(Trip trip) {
         dal.addTrip(trip);
     }

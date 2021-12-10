@@ -39,4 +39,15 @@ public class TripsController {
 
         return ResponseEntity.ok().body(trips);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getAllTripsByVehicleID(@PathVariable(value = "id") String VehicleId) {
+        List<Trip> trips = service.getAllTripsByVehicleId(VehicleId);
+
+        if (trips != null) {
+            return ResponseEntity.ok().body(trips);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

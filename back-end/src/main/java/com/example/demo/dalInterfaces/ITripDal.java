@@ -12,4 +12,6 @@ public interface ITripDal {
 
     void addTrip(Trip trip);
 
+    List<Trip>getAllTripsByVehicleId(String VehicleId);
+
 }

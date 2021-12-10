@@ -12,6 +12,7 @@ import Trips from "./components/Trips"
 import {createBrowserHistory} from "history";
 import VehicleForm from './components/VehicleForm';
 import VehicleTable from "./components/vehicleTable";
+import VechileTrips from "./components/VechileTrips";
 
 function App() {
 
@@ -103,6 +104,7 @@ function App() {
                                         <>
                                             <Route exact path="/vehicles"><VehicleTable/></Route>
                                             <Route exact path="/addVehicle"><VehicleForm/></Route>
+                                            <Route exact path="/VehicleTrips/:vehicleId"><VechileTrips/></Route>
                                         </>
                                         :
                                         <Route exact path="/trips"> <Trips/> </Route>

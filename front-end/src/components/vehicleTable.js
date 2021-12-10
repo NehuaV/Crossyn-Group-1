@@ -3,6 +3,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import axios from "axios";
 import {Button, Card} from "react-bootstrap";
 import "../styles/VehicleTable.css";
+import VechileTrips from './VechileTrips'
 
 class VehicleTable extends React.Component {
 
@@ -54,6 +55,13 @@ class VehicleTable extends React.Component {
                                     <td>{vehicle.licensePlate}</td>
                                     <td>{vehicle.model}</td>
                                     <td>{vehicle.vin}</td>
+                                    <td>
+                                    <Button href={"/VehicleTrips/" + vehicle.vehicleId} className="ShowTripButton">
+                        {/* <VechileTrips vehicleId={vehicle.vehicleId} /> */}
+                        
+                            Show trips
+                        </Button>
+                                    </td>
                                 </tr>
                             ))}
                             </tbody>
