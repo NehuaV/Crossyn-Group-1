@@ -13,6 +13,7 @@ import Trips from "./components/Trips";
 import { createBrowserHistory } from "history";
 import VehicleForm from "./components/VehicleForm";
 import VehicleTable from "./components/vehicleTable";
+import VechileTrips from "./components/VechileTrips";
 import MapComponent from "./components/MapComponent";
 
 function App() {
@@ -104,6 +105,9 @@ function App() {
                     </Route>
                     <Route exact path="/addVehicle">
                       <VehicleForm />
+                    </Route>
+                    <Route exact path="/VehicleTrips/:vehicleId">
+                      <VechileTrips />
                     </Route>
                   </>
                 ) : (

@@ -28,4 +28,9 @@ public class TripDalJPA implements ITripDal {
     public void addTrip(Trip trip) {
         repository.save(trip);
     }
+
+    @Override
+    public List<Trip> getAllTripsByVehicleId(String VehicleId) {
+        return repository.getAllByVehicleId(VehicleId);
+    }
 }
