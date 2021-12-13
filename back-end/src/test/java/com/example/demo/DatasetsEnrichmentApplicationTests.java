@@ -7,10 +7,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class DatasetsEnrichmentApplicationTests {
 
-	@Test
-	void contextLoads() {
-
-		Assertions.assertEquals(1, 1);
-	}
 
 }
