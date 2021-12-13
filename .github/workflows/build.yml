@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - Testing-sonarcloud
+      - Development
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
