@@ -22,7 +22,7 @@ public class Vehicle {
     @Column(name = "ownerId")
     private int ownerId;
 
-    @Column(name="driverId", columnDefinition = "integer default -1")
+    @Column(name="driverId", columnDefinition ="integer default -1")
     private Integer driverId;
 
     @Column(name = "vin")
@@ -37,12 +37,16 @@ public class Vehicle {
     @Column(name = "licensePlate")
     private String licensePlate;
 
-    public Vehicle(int ownerId, String vin, String model, String brand, String licensePlate) {
+    @Column(name="mileage")
+    private double mileage;
+
+    public Vehicle(int ownerId, String vin, String model, String brand, String licensePlate, double mileage) {
         this.ownerId = ownerId;
         this.vin = vin;
         this.model = model;
         this.brand = brand;
         this.licensePlate = licensePlate;
+        this.mileage = mileage;
     }
 
 //    @OneToMany(targetEntity = Trip.class, cascade = CascadeType.ALL)

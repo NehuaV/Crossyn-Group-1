@@ -45,6 +45,8 @@ class VehicleTable extends React.Component {
                                 <th>License Plate</th>
                                 <th>Model</th>
                                 <th>Vin</th>
+                                <th>Mileage</th>
+                                <th>Trips</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -55,6 +57,7 @@ class VehicleTable extends React.Component {
                                     <td>{vehicle.licensePlate}</td>
                                     <td>{vehicle.model}</td>
                                     <td>{vehicle.vin}</td>
+                                    <td>{vehicle.mileage.toFixed(2)} km</td>
                                     <td>
                                     <Button href={"/VehicleTrips/" + vehicle.vehicleId} className="ShowTripButton">
                         

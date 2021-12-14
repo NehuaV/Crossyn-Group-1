@@ -24,6 +24,8 @@ public class VehicleDTO {
 
     private String licensePlate;
 
+    private double mileage;
+
     public VehicleDTO(int ownerId, String vin, String model, String brand, String licensePlate) {
         this.ownerId = ownerId;
         this.vin = vin;

@@ -149,7 +149,7 @@ public class TripStatisticsCalculator {
              distance += distanceFinder.FindDistance(lat1,lon1,lat2,lon2,height1,height2);
 
         }
-        String distance_out = String.format("%1$,.2f",distance/1000) + " kilometers";
+        String distance_out = String.format("%1$,.2f",distance/1000);
        return distance_out;
 
     }

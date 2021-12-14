@@ -9,9 +9,9 @@ public interface IVehicleRepository extends JpaRepository<Vehicle, Integer> {
 
     Vehicle getVehicleByVehicleId(int id);
 
-    List<Vehicle> getVehiclesByOwnerId(int ownerId);
+    List<Vehicle> getVehiclesByOwnerIdOrderByVehicleId(int ownerId);
 
-    List<Vehicle> getVehiclesByDriverIdIsNull();
+    List<Vehicle> getVehiclesByDriverIdIsNullOrderByVehicleId();
 
     boolean existsVehicleByVin(String vin);
 

@@ -5,6 +5,8 @@ import com.example.demo.dalInterfaces.ITripDal;
 import com.example.demo.dalInterfaces.IDataLineDal;
 import com.example.demo.dalInterfaces.IVehicleDal;
 import com.example.demo.models.Trip;
+import com.example.demo.models.Vehicle;
+import com.example.demo.repositoryInterfaces.IVehicleRepository;
 import com.example.demo.serviceInterfaces.ITripService;
 import com.example.demo.serviceInterfaces.IVehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,7 @@ public class TripService implements ITripService {
     ITripDal dal;
 
     @Autowired
-    IVehicleDal vehicleDal;
+    IVehicleRepository vehicleRepository;
 
     @Override
     public Trip getTripById(int id) {
@@ -37,10 +39,12 @@ public class TripService implements ITripService {
         TripManager tripManager = new TripManager("dataset1.txt");
 
         for (Trip trip : tripManager.getTrips()) {
+            Vehicle vehicle = vehicleRepository.getVehicleByVehicleId(trip.getVehicleId());
+            double distance = vehicle.getMileage() +  Double.parseDouble(trip.getDistance());
+            vehicle.setMileage(distance);
+            vehicleRepository.save(vehicle);
 
-            int driverId = vehicleDal.getVehicleByVehicleId(trip.getVehicleId()).getDriverId();
-            trip.setDriverId(driverId);
-            System.out.println(trip.toString());
+            trip.setDriverId(vehicle.getDriverId());
             this.addTrip(trip);
         }
     }

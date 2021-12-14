@@ -31,12 +31,12 @@ public class VehicleDalJPA implements IVehicleDal {
 
     @Override
     public List<Vehicle> getAllFreeVehicles() {
-        return vehicleRepository.getVehiclesByDriverIdIsNull();
+        return vehicleRepository.getVehiclesByDriverIdIsNullOrderByVehicleId();
     }
 
     @Override
     public List<Vehicle> getVehiclesByOwnerId(int ownerId) {
-        return vehicleRepository.getVehiclesByOwnerId(ownerId);
+        return vehicleRepository.getVehiclesByOwnerIdOrderByVehicleId(ownerId);
     }
 
     @Override
@@ -52,7 +52,6 @@ public class VehicleDalJPA implements IVehicleDal {
     public boolean assignDriver(Vehicle vehicle, int driverId) {
 
         if (vehicleRepository.getVehicleByVehicleId(vehicle.getVehicleId()).getDriverId() != null) {
-            System.out.println("DRIVER ID IS NOT NULL");
             return false;
         }
         vehicle.setDriverId(driverId);
