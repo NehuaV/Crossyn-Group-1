@@ -83,7 +83,7 @@ public class TripCreator {
 
         // Creates a trip object based on the tripLines
         TripStatisticsCalculator tripStatisticsCalculator = new TripStatisticsCalculator(tripLines);
-        Trip trip = new Trip(0,tripStatisticsCalculator.getVehicleId(), tripStatisticsCalculator.StartAddress(), tripStatisticsCalculator.EndAddress(), tripStatisticsCalculator.calculateDuration(), tripStatisticsCalculator.calculateDistance(), tripStatisticsCalculator.calculateAverageSpeed());
+        Trip trip = new Trip(0,tripStatisticsCalculator.getVehicleId(), tripStatisticsCalculator.StartAddress(), tripStatisticsCalculator.EndAddress(), tripStatisticsCalculator.calculateDuration(), tripStatisticsCalculator.calculateDistance(), tripStatisticsCalculator.calculateAverageSpeed(),tripStatisticsCalculator.getWeather());
         this.trips.add(trip);
 
         // Saves all trip-lines + a trip reference in separate object

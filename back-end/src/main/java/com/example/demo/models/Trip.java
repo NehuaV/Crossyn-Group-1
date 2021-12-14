@@ -45,8 +45,11 @@ public class Trip {
     @Column(name = "avgSpeed")
     private Double avgSpeed;
 
+    @Column(name = "weatherInfo")
+    private  String weatherInfo;
 
-    public Trip(int driverId, String vehicleId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed) {
+
+    public Trip(int driverId, String vehicleId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed,String weatherInfo) {
         this.vehicleId = vehicleId;
         this.startPoint = startPoint;
         this.endPoint = endPoint;
@@ -54,5 +57,6 @@ public class Trip {
         this.distance = distance;
         this.avgSpeed = avgSpeed;
         this.driverId = driverId;
+        this.weatherInfo = weatherInfo;
     }
 }

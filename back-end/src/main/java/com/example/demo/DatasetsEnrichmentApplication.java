@@ -20,24 +20,26 @@ public class DatasetsEnrichmentApplication {
     }
 
     public static void main(String[] args) throws IOException {
-        SpringApplication.run(DatasetsEnrichmentApplication.class, args);
+        //SpringApplication.run(DatasetsEnrichmentApplication.class, args);
 
         // // Following code is only used for testing purposes
 
         // // Input the name of the dataset you want to split
-//         TripManager tripManager = new TripManager("dataset7.txt");
+      TripManager tripManager = new TripManager("dataset7.txt");
 
         // // Get the all the split trips and display them in the console
-        // List<Trip> trips = tripManager.getTrips();
-        // for (Trip trip : trips){
-        //     System.out.println(trip.toString());
-        // }
+      List<Trip> trips = tripManager.getTrips();
+      for (Trip trip : trips){
+         System.out.println(trip.getWeatherinfo());
+         System.out.println(trip.getDistance());
+         }
+
 
         // // Get the data lines of the trip you want to analyze via its index
-        // List<DataLine> dataLines = tripManager.getTripObjects().get(1).getTripLines();
-        // for (DataLine dataLine : dataLines){
-        //     System.out.println(dataLine.toString());
-        // }
+//        List<DataLine> dataLines = tripManager.getTripObjects().get(1).getTripLines();
+//         for (DataLine dataLine : dataLines){
+//             System.out.println(dataLine.toString());
+//         }
 //        // Get the last data line of the trip
 //        DataLine lastLine = dataLines.get(dataLines.size() - 1);
 //        System.out.println(lastLine);

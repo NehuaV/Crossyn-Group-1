@@ -26,7 +26,9 @@ public class TripDTO {
 
     private Double avgSpeed;
 
-    public TripDTO(String vehicleId, int driverId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed) {
+    private String weatherInfo;
+
+    public TripDTO(String vehicleId, int driverId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed, String weatherInfo) {
         this.vehicleId = vehicleId;
         this.driverId = driverId;
         this.startPoint = startPoint;
@@ -34,5 +36,6 @@ public class TripDTO {
         this.duration = duration;
         this.distance = distance;
         this.avgSpeed = avgSpeed;
+        this.weatherInfo = weatherInfo;
     }
 }
