@@ -18,4 +18,9 @@ public class VehicleActivityDTO {
 
     private boolean inUse;
 
+    public VehicleActivityDTO(Integer vehicleId, Integer driverId, boolean inUse) {
+        this.vehicleId = vehicleId;
+        this.driverId = driverId;
+        this.inUse = inUse;
+    }
 }

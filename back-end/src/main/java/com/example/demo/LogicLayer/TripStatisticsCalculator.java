@@ -20,7 +20,7 @@ public class TripStatisticsCalculator {
         this.distanceFinder = new DistanceFinder();
     }
 
-    public String getVehicleId() {
+    public int getVehicleId() {
         return tripData.get(0).getVehicleId();
     }
 

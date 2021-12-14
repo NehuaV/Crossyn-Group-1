@@ -19,6 +19,8 @@ public class UserDTO {
 
     private int roleId;
 
+    private boolean assigned;
+
     public UserDTO(String username, String password, String email, int roleId) {
         this.username = username;
         this.password = password;

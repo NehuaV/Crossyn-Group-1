@@ -3,6 +3,11 @@ package com.example.demo.LogicLayer;
 import com.example.demo.DataLayer.DataConverter;
 import com.example.demo.models.Trip;
 import com.example.demo.models.TripLinesList;
+import com.example.demo.service.TripService;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,6 +15,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+@Getter
+@Setter
 public class TripManager {
 
     private TripCreator tripCreator;
@@ -26,6 +33,7 @@ public class TripManager {
 
         // Instantiate the class for splitting trips
         this.tripCreator = new TripCreator();
+
         // Split the list of TripObjects into trips
         this.tripCreator.Splitter(this.dataConverter.GetTripObjects());
 

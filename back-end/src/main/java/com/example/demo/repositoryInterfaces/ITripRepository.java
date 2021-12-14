@@ -8,6 +8,6 @@ import java.util.List;
 public interface ITripRepository extends JpaRepository<Trip, Integer> {
 
     Trip getTripModelByTripId(int id);
-    List<Trip> getAllByVehicleId(String VehicleId);
+    List<Trip> getAllByVehicleId(int VehicleId);
 
 }

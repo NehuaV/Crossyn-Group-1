@@ -20,7 +20,7 @@ public class DataLineService implements IDataLineService {
     }
 
     @Override
-    public List<DataLine> getAllByVehicleId(String vehicleId) {
+    public List<DataLine> getAllByVehicleId(int vehicleId) {
         return dal.getAllByVehicleId(vehicleId);
     }
 

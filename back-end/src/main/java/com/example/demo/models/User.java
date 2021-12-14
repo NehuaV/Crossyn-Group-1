@@ -35,6 +35,9 @@ public class User {
     @Column(name="roleId", nullable = true, columnDefinition = "integer default 0")
     private int roleId;
 
+    @Column (name="assigned", columnDefinition = "boolean default false" )
+    private boolean assigned;
+
     public User(String username, String password, String email, int roleId) {
         this.roleId = roleId;
         this.username = username;

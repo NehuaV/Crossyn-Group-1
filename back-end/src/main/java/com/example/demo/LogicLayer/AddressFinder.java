@@ -43,8 +43,12 @@ public class AddressFinder implements IAddressFinder {
         // Navigate through JSON object
         JSONObject temp = myResponse.getJSONObject("address");
         // Save all needed fields to string
-        String result = temp.getString("road") + " " + temp.getString("postcode") + " " + temp.getString("city");
+
+        if (temp.has("city")) {
+            // Return address String
+            return temp.getString("road") + " " + temp.getString("postcode") + " " + temp.getString("city");
+        }
         // Return address String
-        return result;
+        return temp.getString("road") + " " + temp.getString("postcode");
     }
 }

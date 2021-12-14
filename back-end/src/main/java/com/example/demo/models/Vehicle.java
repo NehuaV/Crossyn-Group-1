@@ -17,10 +17,13 @@ public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="vehicleId")
-    private String vehicleId;
+    private int vehicleId;
 
     @Column(name = "ownerId")
     private int ownerId;
+
+    @Column(name="driverId", columnDefinition = "integer default -1")
+    private Integer driverId;
 
     @Column(name = "vin")
     private String vin;
@@ -41,6 +44,7 @@ public class Vehicle {
         this.brand = brand;
         this.licensePlate = licensePlate;
     }
+
 //    @OneToMany(targetEntity = Trip.class, cascade = CascadeType.ALL)
 //    @JoinColumn(name="vehicleId", referencedColumnName="vehicleId")
 //    private List<Trip> trips;

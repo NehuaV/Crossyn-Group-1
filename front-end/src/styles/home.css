@@ -1,4 +1,4 @@
-*{
+* {
   color: #0f1419;
 }
 
@@ -14,7 +14,7 @@ section.banner.\31 {
   background: url("../images/homeBackgroundImage.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 35%; 
+  background-position: 50% 35%;
 }
 
 section.banner.\32 {
@@ -68,4 +68,67 @@ a.infoBox:hover {
 
 .text {
   text-align: center;
+}
+
+.driver-instruction-container{
+  font-size: 22px;
+  text-decoration: underline;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.home-vehicle-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.vehicle-container {
+  width: 1300px;
+  min-height: 55px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.licensePlate-container {
+  width: 200px;
+  margin-left: 80px;
+  line-height: 55px;
+  text-align: center;
+}
+
+.vin-container {
+  margin-left: 50px;
+  width: 200px;
+  line-height: 55px;
+  text-align: left;
+}
+
+.brand-container {
+  margin-left: 50px;
+  width: 200px;
+  line-height: 55px;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.model-container {
+  width: 200px;
+  margin-left: 50px;
+  line-height: 55px;
+  text-align: left;
+}
+
+.select-vehicle-button {
+  margin-left: 50px;
+  margin-top: 7px;
+  width: 110px;
+  height: 40px;
+}
+
+.select-vehicle-button:hover{
+  color: black !important;
 }

@@ -7,9 +7,12 @@ import java.util.List;
 
 public interface IVehicleRepository extends JpaRepository<Vehicle, Integer> {
 
-    Vehicle getVehicleByVehicleId(String id);
+    Vehicle getVehicleByVehicleId(int id);
 
     List<Vehicle> getVehiclesByOwnerId(int ownerId);
 
+    List<Vehicle> getVehiclesByDriverIdIsNull();
+
     boolean existsVehicleByVin(String vin);
+
 }

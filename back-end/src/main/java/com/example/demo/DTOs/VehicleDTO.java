@@ -10,9 +10,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class VehicleDTO {
 
-    private String vehicleId;
+    private int vehicleId;
 
     private int ownerId;
+
+    private int driverId;
 
     private String vin;
 

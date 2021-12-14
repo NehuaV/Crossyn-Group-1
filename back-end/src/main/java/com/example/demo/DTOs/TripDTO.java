@@ -12,7 +12,7 @@ public class TripDTO {
 
     private int tripId;
 
-    private String vehicleId;
+    private int vehicleId;
 
     private int driverId;
 
@@ -26,7 +26,7 @@ public class TripDTO {
 
     private Double avgSpeed;
 
-    public TripDTO(String vehicleId, int driverId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed) {
+    public TripDTO(int vehicleId, int driverId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed) {
         this.vehicleId = vehicleId;
         this.driverId = driverId;
         this.startPoint = startPoint;

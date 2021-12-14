@@ -41,7 +41,7 @@ public class TripsController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getAllTripsByVehicleID(@PathVariable(value = "id") String VehicleId) {
+    public ResponseEntity<?> getAllTripsByVehicleID(@PathVariable(value = "id") int VehicleId) {
         List<Trip> trips = service.getAllTripsByVehicleId(VehicleId);
 
         if (trips != null) {

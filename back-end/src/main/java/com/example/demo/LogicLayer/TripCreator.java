@@ -3,9 +3,15 @@ package com.example.demo.LogicLayer;
 import com.example.demo.models.Trip;
 import com.example.demo.models.TripLinesList;
 import com.example.demo.models.DataLine;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.SneakyThrows;
+import com.example.demo.service.TripService;
+import com.example.demo.serviceInterfaces.IDataLineService;
+import com.example.demo.serviceInterfaces.ITripService;
+import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -20,6 +26,7 @@ public class TripCreator {
 
     private List<TripLinesList> tripLinesCollection;
     private List<Trip> trips;
+
 
     public TripCreator() {
         this.tripLinesCollection = new ArrayList<>();

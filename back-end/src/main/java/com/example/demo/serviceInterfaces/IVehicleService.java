@@ -6,11 +6,15 @@ import java.util.List;
 
 public interface IVehicleService {
 
-    Vehicle getVehicleByVehicleId(String id);
+    Vehicle getVehicleByVehicleId(int id);
 
     List<Vehicle> getAllVehicles();
+
+    List<Vehicle> getAllFreeVehicles();
 
     List<Vehicle> getVehiclesByOwnerId(int ownerId);
 
     boolean addVehicle(Vehicle vehicle);
+
+    boolean assignDriver(Vehicle vehicle, int driverId);
 }
