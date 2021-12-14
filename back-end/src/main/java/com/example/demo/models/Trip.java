@@ -25,7 +25,7 @@ public class Trip {
     private int tripId;
 
     @Column(name = "vehicleId")
-    private String vehicleId;
+    private int vehicleId;
     
     @Column(name = "driverId", nullable = true)
     private int driverId;
@@ -49,7 +49,7 @@ public class Trip {
     private  String weatherInfo;
 
 
-    public Trip(int driverId, String vehicleId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed,String weatherInfo) {
+    public Trip(int driverId, int vehicleId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed,String weatherInfo) {
         this.vehicleId = vehicleId;
         this.startPoint = startPoint;
         this.endPoint = endPoint;

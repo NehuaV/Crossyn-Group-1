@@ -8,5 +8,5 @@ import javax.xml.crypto.Data;
 import java.util.List;
 
 public interface IDataLineRepository extends MongoRepository<DataLine,Integer> {
-    List<DataLine> getAllByVehicleId(String vehicleID);
+    List<DataLine> getAllByVehicleId(int vehicleID);
 }

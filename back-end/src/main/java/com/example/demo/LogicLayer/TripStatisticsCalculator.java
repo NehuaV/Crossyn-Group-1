@@ -25,7 +25,7 @@ public class TripStatisticsCalculator {
         this.weatherFinder = new WeatherFinder();
     }
 
-    public String getVehicleId() {
+    public int getVehicleId() {
         return tripData.get(0).getVehicleId();
     }
 

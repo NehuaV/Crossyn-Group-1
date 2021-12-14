@@ -24,7 +24,7 @@ public class VehiclesController {
     @Autowired
     private IVehicleService service;
 
-    @PostMapping("/add")
+    @PostMapping()
     public ResponseEntity<?> addVehicle(@RequestBody VehicleDTO vehicleDTO) {
 
         Vehicle vehicle = modelMapper.map(vehicleDTO, Vehicle.class);
@@ -35,6 +35,17 @@ public class VehiclesController {
         return ResponseEntity.badRequest().body(new ResponseMessage("Vehicle with this VIN already exists."));
     }
 
+    @PostMapping("/assignDriver")
+    public ResponseEntity<?> assignDriver(@RequestBody VehicleDTO vehicleDTO) {
+
+        Vehicle vehicle = service.getVehicleByVehicleId(vehicleDTO.getVehicleId());
+
+        if (service.assignDriver(vehicle, vehicleDTO.getDriverId())) {
+            return ResponseEntity.ok(new ResponseMessage("You have been assigned successfully!"));
+        }
+        return ResponseEntity.badRequest().body(new ResponseMessage("A driver has already been assigned to the selected vehicle."));
+    }
+
     @GetMapping("/owner/{id}")
     public ResponseEntity<?> getVehiclesByOwner(@PathVariable(value = "id") int ownerId) {
         List<VehicleDTO> vehicles = service.getVehiclesByOwnerId(ownerId).stream().map(vehicle -> modelMapper.map(vehicle, VehicleDTO.class))
@@ -42,8 +53,15 @@ public class VehiclesController {
         return ResponseEntity.ok().body(vehicles);
     }
 
+    @GetMapping()
+    public ResponseEntity<?> getFreeVehicles() {
+        List<VehicleDTO> vehicles = service.getAllFreeVehicles().stream().map(vehicle -> modelMapper.map(vehicle, VehicleDTO.class))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok().body(vehicles);
+    }
+
     @GetMapping("/{id}")
-    public ResponseEntity<?> getVehicleById(@PathVariable(value = "id") String vehicleId) {
+    public ResponseEntity<?> getVehicleById(@PathVariable(value = "id") int vehicleId) {
         Vehicle vehicle = service.getVehicleByVehicleId(vehicleId);
 
         if (vehicle != null) {

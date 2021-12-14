@@ -27,7 +27,7 @@ public class DataLineController {
     }
 
     @GetMapping("/findAllBooks/{vehicleId}")
-    public List<DataLine> getDataLinesByVehicleID (@PathVariable String vehicleId){
+    public List<DataLine> getDataLinesByVehicleID (@PathVariable int vehicleId){
         return service.getAllByVehicleId(vehicleId);
     }
 

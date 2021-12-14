@@ -38,9 +38,12 @@ function App() {
             localStorage.setItem("accessToken", username);
             localStorage.setItem("uid", response.data.userId);
             if (response.data.roleId == 1) {
-              localStorage.setItem("loggedInAsFleetOwner", "true");
+              localStorage.setItem("loggedInAsFleetOwner", "true");    
             } else {
               localStorage.setItem("loggedInAsDriver", "true");
+              if(response.data.assigned == false){
+                localStorage.setItem("assigned", "false");
+              }
             }
             history.push("/");
             window.location.reload();
@@ -63,13 +66,14 @@ function App() {
       })
       .then((response) => {
         if (response.status === 200) {
-          alert(response.data.message);
+          alert("You have signed up successfully!");
           localStorage.setItem("accessToken", username);
           localStorage.setItem("uid", response.data.userId);
           if (roleId == 1) {
             localStorage.setItem("loggedInAsFleetOwner", "true");
           } else {
             localStorage.setItem("loggedInAsDriver", "true");
+            localStorage.setItem("assigned", "false");
           }
           history.push("/");
           window.location.reload();

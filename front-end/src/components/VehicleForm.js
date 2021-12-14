@@ -25,7 +25,7 @@ const VehicleForm = () => {
     const addVehicle = () => {
         console.log(vehicle.ownerId);
         axios
-            .post("http://localhost:8080/vehicles/add", {
+            .post("http://localhost:8080/vehicles", {
                 ownerId: vehicle.ownerId,
                 vin: vehicle.vin,
                 model: vehicle.model,

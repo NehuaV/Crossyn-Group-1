@@ -22,13 +22,18 @@ public class VehicleService implements IVehicleService {
     }
 
     @Override
-    public Vehicle getVehicleByVehicleId(String id) {
+    public Vehicle getVehicleByVehicleId(int id) {
         return dal.getVehicleByVehicleId(id);
     }
 
     @Override
     public List<Vehicle> getAllVehicles() {
         return dal.getAllVehicles();
+    }
+
+    @Override
+    public List<Vehicle> getAllFreeVehicles() {
+        return dal.getAllFreeVehicles();
     }
 
     @Override
@@ -39,5 +44,10 @@ public class VehicleService implements IVehicleService {
     @Override
     public boolean addVehicle(Vehicle vehicle) {
         return dal.addVehicle(vehicle);
+    }
+
+    @Override
+    public boolean assignDriver(Vehicle vehicle, int driverId) {
+        return dal.assignDriver(vehicle, driverId);
     }
 }

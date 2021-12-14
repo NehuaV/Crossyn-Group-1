@@ -30,7 +30,12 @@ public class TripDalJPA implements ITripDal {
     }
 
     @Override
-    public List<Trip> getAllTripsByVehicleId(String VehicleId) {
+    public List<Trip> getAllTripsByVehicleId(int VehicleId) {
         return repository.getAllByVehicleId(VehicleId);
+    }
+
+    @Override
+    public List<Trip> getAllByDriverId(int driverId) {
+        return repository.getAllByDriverId(driverId);
     }
 }

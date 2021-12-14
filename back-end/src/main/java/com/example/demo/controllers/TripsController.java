@@ -40,8 +40,19 @@ public class TripsController {
         return ResponseEntity.ok().body(trips);
     }
 
+    @GetMapping("/driver")
+    public ResponseEntity<?> getAllTripsByDriverID(@RequestParam("driverId") int driverId) {
+        List<Trip> trips = service.getAllByDriverId(driverId);
+
+        if (trips != null) {
+            return ResponseEntity.ok().body(trips);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @GetMapping("/{id}")
-    public ResponseEntity<?> getAllTripsByVehicleID(@PathVariable(value = "id") String VehicleId) {
+    public ResponseEntity<?> getAllTripsByVehicleID(@PathVariable(value = "id") int VehicleId) {
         List<Trip> trips = service.getAllTripsByVehicleId(VehicleId);
 
         if (trips != null) {

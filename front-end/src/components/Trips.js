@@ -10,14 +10,15 @@ const Trips = () => {
     const [trips, setTrips] = useState([]);
 
     useEffect(() =>{
-        axios.get(`http://localhost:8080/trips`)
+        const driverId = localStorage.getItem("uid");
+        axios.get(`http://localhost:8080/trips/driver?driverId=${driverId}`)
                 .then(res => {
                     setTrips(res.data);
                     console.log(res.data);
                 });
         },[]
     )
-    //console.log(initialTrips + " TEST")
+
 
     return (
 

@@ -15,5 +15,7 @@ public interface ITripService {
 
     void saveAll() throws IOException;
 
-    List<Trip>getAllTripsByVehicleId(String VehicleId);
+    List<Trip>getAllTripsByVehicleId(int VehicleId);
+
+    List<Trip> getAllByDriverId(int driverId);
 }

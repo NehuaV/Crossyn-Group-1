@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class DataLine {
 
 
-    private String vehicleId;
+    private int vehicleId;
 
     private Double lat;
 
