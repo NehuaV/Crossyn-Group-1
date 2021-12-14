@@ -37,6 +37,7 @@ jobs:
           cd back-end
           chmod +x ./gradlew
           ./gradlew build sonarqube --info
+          
   docker:
     name: docker
     runs-on: 'docker'
