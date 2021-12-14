@@ -3,8 +3,10 @@ package com.example.demo.service;
 import com.example.demo.LogicLayer.TripManager;
 import com.example.demo.dalInterfaces.ITripDal;
 import com.example.demo.dalInterfaces.IDataLineDal;
+import com.example.demo.dalInterfaces.IVehicleDal;
 import com.example.demo.models.Trip;
 import com.example.demo.serviceInterfaces.ITripService;
+import com.example.demo.serviceInterfaces.IVehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +20,7 @@ public class TripService implements ITripService {
     ITripDal dal;
 
     @Autowired
-    IDataLineDal tripObjectDal;
+    IVehicleDal vehicleDal;
 
     @Override
     public Trip getTripById(int id) {
@@ -35,6 +37,10 @@ public class TripService implements ITripService {
         TripManager tripManager = new TripManager("dataset1.txt");
 
         for (Trip trip : tripManager.getTrips()) {
+
+            int driverId = vehicleDal.getVehicleByVehicleId(trip.getVehicleId()).getDriverId();
+            trip.setDriverId(driverId);
+            System.out.println(trip.toString());
             this.addTrip(trip);
         }
     }
@@ -42,6 +48,11 @@ public class TripService implements ITripService {
     @Override
     public List<Trip> getAllTripsByVehicleId(int VehicleId) {
         return dal.getAllTripsByVehicleId(VehicleId);
+    }
+
+    @Override
+    public List<Trip> getAllByDriverId(int driverId) {
+        return dal.getAllByDriverId(driverId);
     }
 
     @Override

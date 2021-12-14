@@ -66,7 +66,7 @@ function App() {
       })
       .then((response) => {
         if (response.status === 200) {
-          alert(response.data.message);
+          alert("You have signed up successfully!");
           localStorage.setItem("accessToken", username);
           localStorage.setItem("uid", response.data.userId);
           if (roleId == 1) {

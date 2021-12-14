@@ -14,4 +14,6 @@ public interface ITripDal {
 
     List<Trip>getAllTripsByVehicleId(int VehicleId);
 
+    List<Trip> getAllByDriverId(int driverId);
+
 }

@@ -43,7 +43,9 @@ public class UsersController {
         } else if (registrationResult == -2) {
             return ResponseEntity.badRequest().body(new ResponseMessage("User with this email already exists."));
         } else {
-            return ResponseEntity.ok(new ResponseMessage("You have signed up successfully!"));
+            User userResponse = service.getUserByUsername(userDTO.getUsername());
+            userDTO = modelMapper.map(userResponse, UserDTO.class);
+            return ResponseEntity.ok(userDTO);
         }
     }
 }
