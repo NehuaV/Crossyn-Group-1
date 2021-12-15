@@ -14,3 +14,7 @@
     display: grid;
     align-content: center;
 }
+
+.trip-link-container{
+    text-decoration: none !important;
+}

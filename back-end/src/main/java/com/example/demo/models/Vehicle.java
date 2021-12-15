@@ -49,6 +49,15 @@ public class Vehicle {
         this.mileage = mileage;
     }
 
+    public Vehicle(int ownerId, Integer driverId, String vin, String model, String brand, String licensePlate, double mileage) {
+        this.ownerId = ownerId;
+        this.driverId = driverId;
+        this.vin = vin;
+        this.model = model;
+        this.brand = brand;
+        this.licensePlate = licensePlate;
+        this.mileage = mileage;
+    }
 //    @OneToMany(targetEntity = Trip.class, cascade = CascadeType.ALL)
 //    @JoinColumn(name="vehicleId", referencedColumnName="vehicleId")
 //    private List<Trip> trips;

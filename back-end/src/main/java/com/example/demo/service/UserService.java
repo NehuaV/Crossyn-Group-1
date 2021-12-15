@@ -16,8 +16,19 @@ public class UserService implements IUserService {
     @Autowired
     public UserService(IUserDal dal) {
         this.dal = dal;
+
         dal.addUser(new User("test", "test", "test@gmail.com",1));
-        dal.addUser(new User("john", "john", "john@gmail.com",2));
+
+        User user = new User("john", "john", "john@gmail.com",2);
+        user.setAssigned(true);
+        dal.addUser(user);
+        user = new User("tom", "tom", "tom@gmail.com",2);
+        user.setAssigned(true);
+        dal.addUser(user);
+        user = new User("tim", "tim", "tim@gmail.com",2);
+        user.setAssigned(true);
+        dal.addUser(user);
+        dal.addUser(new User("stan", "stan", "stan@gmail.com",2));
     }
 
     @Override

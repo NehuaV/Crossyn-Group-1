@@ -121,7 +121,7 @@ function App() {
                     </Route>
                   </>
                 )}
-                <Route exact path="/map">
+                <Route exact path="/map/:tripId">
                   <MapComponent />
                 </Route>
               </>

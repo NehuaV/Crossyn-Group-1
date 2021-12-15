@@ -7,12 +7,30 @@ import {
 } from "react-leaflet";
 import React from "react";
 import "../styles/MapComponent.css";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 // Hardcoded dataset
-import DataSet from "../testing set/dataset1.json";
+import Trip1 from "../testing set/trip1.json";
+import Trip2 from "../testing set/trip2.json";
+import Trip3 from "../testing set/trip3.json";
 
 function MapComponent() {
-  // Converts JSON Object Array To Nested Coordinate Array
-  var result = DataSet.map((a) => [a.lat, a.lon]);
+
+  const { tripId } = useParams();
+
+  var result = null;
+
+  if (tripId == 1 || tripId == 4) {
+    result = Trip1.map((a) => [a.lat, a.lon]);
+  } else if (tripId == 2 || tripId == 5) {
+    result = Trip2.map((a) => [a.lat, a.lon]);
+  } else {
+    result = Trip3.map((a) => [a.lat, a.lon]);
+  }
+
+
+  // // Converts JSON Object Array To Nested Coordinate Array
+  // var result = DataSet.map((a) => [a.lat, a.lon]);
+
   // Color of the path
   const colorOptions = { color: "red", width: "3" };
   // Use Math to decide  the middle point of a trip
@@ -20,7 +38,7 @@ function MapComponent() {
 
   return (
     <>
-      <h1>Map of our trips</h1>
+      <h1>Trip #{tripId}</h1>
       <MapContainer
         center={result[0]}
         zoom={13}

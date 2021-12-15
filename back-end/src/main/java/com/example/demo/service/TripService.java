@@ -36,9 +36,15 @@ public class TripService implements ITripService {
 
     @Override
     public void saveAll() throws IOException {
-        TripManager tripManager = new TripManager("dataset1.txt");
 
-        for (Trip trip : tripManager.getTrips()) {
+        TripManager tripManager = new TripManager("dataset1.txt");
+        List<Trip> trips = tripManager.getTrips();
+        tripManager = new TripManager("dataset2.txt");
+        trips.addAll(tripManager.getTrips());
+        tripManager = new TripManager("dataset3.txt");
+        trips.addAll(tripManager.getTrips());
+
+        for (Trip trip : trips) {
             Vehicle vehicle = vehicleRepository.getVehicleByVehicleId(trip.getVehicleId());
             double distance = vehicle.getMileage() +  Double.parseDouble(trip.getDistance());
             vehicle.setMileage(distance);

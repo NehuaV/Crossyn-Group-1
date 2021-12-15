@@ -24,7 +24,6 @@ const HeaderCom = ({ logout }) => {
                   {localStorage.getItem("loggedInAsFleetOwner") ? (
                     <>
                       <Nav.Link href="/vehicles">Vehicles</Nav.Link>
-                      <Nav.Link href="/map">Map</Nav.Link>
                     </>
                   ) : (
                     <>
@@ -37,10 +36,8 @@ const HeaderCom = ({ logout }) => {
               ) : (
                 <>
                   <Nav.Link href="/login">Login</Nav.Link>
-                  <Nav.Link href="/register">Register</Nav.Link>
                 </>
               )}
-              {/*<Nav.Link hreft='/login' onClick={logout}>Logout</Nav.Link>*/}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
