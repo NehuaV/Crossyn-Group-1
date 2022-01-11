@@ -1,5 +1,7 @@
 package com.example.demo.models;
 
+import com.example.demo.models.POJO.DataLinePOJO;
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import kotlinx.serialization.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,6 +20,9 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "trips")
+@TypeDefs({
+        @TypeDef(name="jsonb",typeClass = JsonBinaryType.class)
+})
 public class Trip {
 
     @Id
@@ -46,7 +51,11 @@ public class Trip {
     private Double avgSpeed;
 
     @Column(name = "weatherInfo")
-    private  String weatherInfo;
+    private String weatherInfo;
+
+    @Type(type ="jsonb")
+    @Column(columnDefinition = "jsonb")
+    private List<DataLinePOJO> datalines;
 
 
     public Trip(int driverId, int vehicleId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed,String weatherInfo) {
