@@ -7,11 +7,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.*;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.List;
+import java.util.Objects;
 
 
 @Serializable
@@ -57,8 +60,7 @@ public class Trip {
     @Column(columnDefinition = "jsonb")
     private List<DataLinePOJO> datalines;
 
-
-    public Trip(int driverId, int vehicleId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed,String weatherInfo) {
+    public Trip(int driverId, int vehicleId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed, String weatherInfo) {
         this.vehicleId = vehicleId;
         this.startPoint = startPoint;
         this.endPoint = endPoint;
@@ -67,5 +69,18 @@ public class Trip {
         this.avgSpeed = avgSpeed;
         this.driverId = driverId;
         this.weatherInfo = weatherInfo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Trip)) return false;
+        Trip trip = (Trip) o;
+        return getTripId() == trip.getTripId() && getVehicleId() == trip.getVehicleId() && getDriverId() == trip.getDriverId() && Objects.equals(getStartPoint(), trip.getStartPoint()) && Objects.equals(getEndPoint(), trip.getEndPoint()) && Objects.equals(getDuration(), trip.getDuration()) && Objects.equals(getDistance(), trip.getDistance()) && Objects.equals(getAvgSpeed(), trip.getAvgSpeed()) && Objects.equals(getWeatherInfo(), trip.getWeatherInfo()) && Objects.equals(getDatalines(), trip.getDatalines());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTripId(), getVehicleId(), getDriverId(), getStartPoint(), getEndPoint(), getDuration(), getDistance(), getAvgSpeed(), getWeatherInfo(), getDatalines());
     }
 }

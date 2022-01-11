@@ -1,13 +1,14 @@
 package com.example.demo.models.POJO;
 
+import com.example.demo.models.DataLine;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.repository.NoRepositoryBean;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @Data
-@NoRepositoryBean
+@NoArgsConstructor
 @AllArgsConstructor
 public class DataLinePOJO implements Serializable {
 
@@ -20,4 +21,16 @@ public class DataLinePOJO implements Serializable {
     private int speedLimit;
     private Byte roadType;
     private Boolean ignition;
+
+    public DataLinePOJO(DataLine item) {
+        this.vehicleId = item.getVehicleId();
+        this.lat = item.getLat();
+        this.lon = item.getLon();
+        this.alt = item.getAlt();
+        this.dateTime = item.getDateTime();
+        this.speed = item.getSpeed();
+        this.speedLimit = item.getSpeedLimit();
+        this.roadType = item.getRoadType();
+        this.ignition = item.getIgnition();
+    }
 }
