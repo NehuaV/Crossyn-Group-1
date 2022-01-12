@@ -5,6 +5,8 @@ import com.example.demo.DTOs.VehicleDTO;
 import com.example.demo.models.Vehicle;
 import com.example.demo.serviceInterfaces.IVehicleService;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +19,8 @@ import java.util.stream.Collectors;
 @CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
 @RequestMapping("/vehicles")
 public class VehiclesController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(VehiclesController.class);
 
     @Autowired
     private ModelMapper modelMapper;
@@ -57,6 +61,7 @@ public class VehiclesController {
     public ResponseEntity<?> getFreeVehicles() {
         List<VehicleDTO> vehicles = service.getAllFreeVehicles().stream().map(vehicle -> modelMapper.map(vehicle, VehicleDTO.class))
                 .collect(Collectors.toList());
+        LOGGER.info("Give free vehicles");
         return ResponseEntity.ok().body(vehicles);
     }
 
@@ -66,6 +71,7 @@ public class VehiclesController {
 
         if (vehicle != null) {
             VehicleDTO vehicleDTO = modelMapper.map(vehicle, VehicleDTO.class);
+
             return ResponseEntity.ok().body(vehicleDTO);
         } else {
             return ResponseEntity.notFound().build();

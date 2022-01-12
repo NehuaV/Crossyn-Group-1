@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class DataLineService implements IDataLineService {
+public class
+DataLineService implements IDataLineService {
 
     @Autowired
     IDataLineDal dal;

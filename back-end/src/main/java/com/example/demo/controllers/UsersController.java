@@ -1,5 +1,7 @@
 package com.example.demo.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.example.demo.DTOs.ResponseMessage;
 import com.example.demo.DTOs.UserDTO;
 import com.example.demo.models.User;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/users")
 public class UsersController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(UsersController.class);
     @Autowired
     private ModelMapper modelMapper;
 
@@ -27,9 +30,12 @@ public class UsersController {
         if (service.checkCredentials(userDTO.getUsername(), userDTO.getPassword())) {
             User user = service.getUserByUsername(userDTO.getUsername());
             userDTO = modelMapper.map(user, UserDTO.class);
+            LOGGER.info("User Logged in");
             return ResponseEntity.ok(userDTO);
         }
+LOGGER.error("Wrong credentials");
         return ResponseEntity.ok(new ResponseMessage("Invalid credentials"));
+
     }
 
     @PostMapping("/register")
