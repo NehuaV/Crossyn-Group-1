@@ -1,13 +1,13 @@
 package com.example.demo.repositoryInterfaces;
 
-import com.example.demo.models.User;
+import com.example.demo.models.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface IUserRepository extends JpaRepository<User, Integer> {
+public interface IUserRepository extends JpaRepository<Account, Integer> {
 
-    User getUserByUserId(int id);
+    Account getUserByUserId(int id);
 
-    User getUserByUsername(String username);
+    Account getUserByUsername(String username);
 
     boolean existsUserByUsernameAndPassword(String username, String password);
 

@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.dalInterfaces.IUserDal;
-import com.example.demo.models.User;
+import com.example.demo.models.Account;
 import com.example.demo.serviceInterfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,38 +17,38 @@ public class UserService implements IUserService {
     public UserService(IUserDal dal) {
         this.dal = dal;
 
-        dal.addUser(new User("test", "test", "test@gmail.com",1));
+        dal.addUser(new Account("test", "test", "test@gmail.com","fleetOwner"));
 
-        User user = new User("john", "john", "john@gmail.com",2);
-        user.setAssigned(true);
-        dal.addUser(user);
-        user = new User("tom", "tom", "tom@gmail.com",2);
-        user.setAssigned(true);
-        dal.addUser(user);
-        user = new User("tim", "tim", "tim@gmail.com",2);
-        user.setAssigned(true);
-        dal.addUser(user);
-        dal.addUser(new User("stan", "stan", "stan@gmail.com",2));
+        Account account = new Account("john", "john", "john@gmail.com","driver");
+        account.setAssigned(true);
+        dal.addUser(account);
+        account = new Account("tom", "tom", "tom@gmail.com","driver");
+        account.setAssigned(true);
+        dal.addUser(account);
+        account = new Account("tim", "tim", "tim@gmail.com","driver");
+        account.setAssigned(true);
+        dal.addUser(account);
+        dal.addUser(new Account("stan", "stan", "stan@gmail.com","driver"));
     }
 
     @Override
-    public User getUserById(int id) {
+    public Account getUserById(int id) {
         return dal.getUserById(id);
     }
 
     @Override
-    public User getUserByUsername(String username) {
+    public Account getUserByUsername(String username) {
         return dal.getUserByUsername(username);
     }
 
     @Override
-    public List<User> getAllUsers() {
+    public List<Account> getAllUsers() {
         return dal.getAllUsers();
     }
 
     @Override
-    public int addUser(User user) {
-        return dal.addUser(user);
+    public int addUser(Account account) {
+        return dal.addUser(account);
     }
 
     @Override

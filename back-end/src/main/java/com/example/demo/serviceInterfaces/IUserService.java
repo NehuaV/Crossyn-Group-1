@@ -1,18 +1,18 @@
 package com.example.demo.serviceInterfaces;
 
-import com.example.demo.models.User;
+import com.example.demo.models.Account;
 
 import java.util.List;
 
 public interface IUserService {
 
-    User getUserById(int id);
+    Account getUserById(int id);
 
-    User getUserByUsername(String username);
+    Account getUserByUsername(String username);
 
-    List<User> getAllUsers();
+    List<Account> getAllUsers();
 
-    int addUser(User user);
+    int addUser(Account account);
 
     boolean checkCredentials(String username, String password);
 }

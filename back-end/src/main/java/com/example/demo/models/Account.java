@@ -14,8 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "accounts")
+public class Account {
 
     // try to make it work with GenerationType.IDENTITY
     // doesn't work fine with Postgre fro some reason
@@ -32,14 +32,14 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @Column(name="roleId", nullable = true, columnDefinition = "integer default 0")
-    private int roleId;
+    @Column(name = "role")
+    private String role;
 
     @Column (name="assigned", columnDefinition = "boolean default false" )
     private boolean assigned;
 
-    public User(String username, String password, String email, int roleId) {
-        this.roleId = roleId;
+    public Account(String username, String password, String email, String role) {
+        this.role = role;
         this.username = username;
         this.password = password;
         this.email = email;

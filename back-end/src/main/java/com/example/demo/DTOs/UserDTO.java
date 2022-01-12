@@ -17,14 +17,14 @@ public class UserDTO {
 
     private String email;
 
-    private int roleId;
+    private String role;
 
     private boolean assigned;
 
-    public UserDTO(String username, String password, String email, int roleId) {
+    public UserDTO(String username, String password, String email, String role) {
         this.username = username;
         this.password = password;
         this.email = email;
-        this.roleId = roleId;
+        this.role = role;
     }
 }

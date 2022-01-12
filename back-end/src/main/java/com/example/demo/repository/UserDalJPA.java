@@ -1,42 +1,48 @@
 package com.example.demo.repository;
 
 import com.example.demo.dalInterfaces.IUserDal;
-import com.example.demo.models.User;
+import com.example.demo.models.Account;
 import com.example.demo.repositoryInterfaces.IUserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
+@RequiredArgsConstructor
 public class UserDalJPA implements IUserDal {
+
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
     IUserRepository repository;
 
     @Override
-    public User getUserById(int id) {
+    public Account getUserById(int id) {
         return repository.getUserByUserId(id);
     }
 
     @Override
-    public User getUserByUsername(String username) {
+    public Account getUserByUsername(String username) {
         return repository.getUserByUsername(username);
     }
 
     @Override
-    public List<User> getAllUsers() {
+    public List<Account> getAllUsers() {
         return repository.findAll();
     }
 
     @Override
-    public int addUser(User user) {
-        if (repository.existsUserByUsername(user.getUsername())) {
+    public int addUser(Account account) {
+        if (repository.existsUserByUsername(account.getUsername())) {
             return -1;
-        } else if (repository.existsUserByEmail(user.getEmail())) {
+        } else if (repository.existsUserByEmail(account.getEmail())) {
             return -2;
         }
-        repository.save(user);
+        account.setPassword(passwordEncoder.encode(account.getPassword()));
+        repository.save(account);
         return 0;
     }
 

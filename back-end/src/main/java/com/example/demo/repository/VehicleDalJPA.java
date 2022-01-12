@@ -1,7 +1,7 @@
 package com.example.demo.repository;
 
 import com.example.demo.dalInterfaces.IVehicleDal;
-import com.example.demo.models.User;
+import com.example.demo.models.Account;
 import com.example.demo.models.Vehicle;
 import com.example.demo.repositoryInterfaces.IUserRepository;
 import com.example.demo.repositoryInterfaces.IVehicleRepository;
@@ -57,9 +57,9 @@ public class VehicleDalJPA implements IVehicleDal {
         vehicle.setDriverId(driverId);
         vehicleRepository.save(vehicle);
 
-        User user = userRepository.getUserByUserId(driverId);
-        user.setAssigned(true);
-        userRepository.save(user);
+        Account account = userRepository.getUserByUserId(driverId);
+        account.setAssigned(true);
+        userRepository.save(account);
 
         return true;
     }
