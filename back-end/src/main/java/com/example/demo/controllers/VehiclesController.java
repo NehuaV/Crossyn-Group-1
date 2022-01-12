@@ -3,12 +3,14 @@ package com.example.demo.controllers;
 import com.example.demo.DTOs.ResponseMessage;
 import com.example.demo.DTOs.VehicleDTO;
 import com.example.demo.models.Vehicle;
+import com.example.demo.service.UserService;
 import com.example.demo.serviceInterfaces.IVehicleService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,10 +26,15 @@ public class VehiclesController {
     @Autowired
     private IVehicleService service;
 
+    @Autowired
+    private UserService userService;
+
     @PostMapping()
-    public ResponseEntity<?> addVehicle(@RequestBody VehicleDTO vehicleDTO) {
+    public ResponseEntity<?> addVehicle(@RequestBody VehicleDTO vehicleDTO, Principal principal) {
 
         Vehicle vehicle = modelMapper.map(vehicleDTO, Vehicle.class);
+        int ownerId = userService.getUserByUsername(principal.getName()).getUserId();
+        vehicle.setOwnerId(ownerId);
 
         if (service.addVehicle(vehicle)) {
             return ResponseEntity.ok(new ResponseMessage("Vehicle has been added successfully!"));
@@ -36,18 +43,22 @@ public class VehiclesController {
     }
 
     @PostMapping("/assignDriver")
-    public ResponseEntity<?> assignDriver(@RequestBody VehicleDTO vehicleDTO) {
+    public ResponseEntity<?> assignDriver(@RequestBody VehicleDTO vehicleDTO, Principal principal) {
 
+        int driverId = userService.getUserByUsername(principal.getName()).getUserId();
         Vehicle vehicle = service.getVehicleByVehicleId(vehicleDTO.getVehicleId());
 
-        if (service.assignDriver(vehicle, vehicleDTO.getDriverId())) {
+        if (service.assignDriver(vehicle, driverId)) {
             return ResponseEntity.ok(new ResponseMessage("You have been assigned successfully!"));
         }
         return ResponseEntity.badRequest().body(new ResponseMessage("A driver has already been assigned to the selected vehicle."));
     }
 
-    @GetMapping("/owner/{id}")
-    public ResponseEntity<?> getVehiclesByOwner(@PathVariable(value = "id") int ownerId) {
+    @GetMapping("/owner")
+    public ResponseEntity<?> getVehiclesByOwner(Principal principal) {
+
+        int ownerId = userService.getUserByUsername(principal.getName()).getUserId();
+
         List<VehicleDTO> vehicles = service.getVehiclesByOwnerId(ownerId).stream().map(vehicle -> modelMapper.map(vehicle, VehicleDTO.class))
                 .collect(Collectors.toList());
         return ResponseEntity.ok().body(vehicles);
@@ -71,4 +82,5 @@ public class VehiclesController {
             return ResponseEntity.notFound().build();
         }
     }
+
 }

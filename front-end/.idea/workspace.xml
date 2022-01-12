@@ -2,9 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8b1e579-931c-4e07-a3dd-27ed1da0363a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../documentation/Database_Research_Document.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../documentation/Database_Research_Document.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/configuration/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/controllers/TripsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/controllers/TripsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/controllers/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/controllers/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/controllers/VehiclesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/controllers/VehiclesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DriverAssignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DriverAssignment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HeaderCom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HeaderCom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Trips.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Trips.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VechileTrips.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VechileTrips.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Vehicle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Vehicle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VehicleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VehicleForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/vehicleTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/vehicleTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +57,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\New folder\IntelliJ IDEA 2020.3.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -58,6 +79,7 @@
       <workItem from="1637699163278" duration="2626000" />
       <workItem from="1638827701581" duration="10000" />
       <workItem from="1641718379902" duration="1564000" />
+      <workItem from="1641970135684" duration="8254000" />
     </task>
     <servers />
   </component>

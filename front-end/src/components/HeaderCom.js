@@ -21,7 +21,7 @@ const HeaderCom = ({ logout }) => {
                   <Nav.Link href="/" onClick={logout}>
                     Logout
                   </Nav.Link>
-                  {localStorage.getItem("loggedInAsFleetOwner") ? (
+                  {localStorage.getItem("role") === "fleetOwner" ? (
                     <>
                       <Nav.Link href="/vehicles">Vehicles</Nav.Link>
                     </>

@@ -8,7 +8,7 @@ import {Card} from "react-bootstrap";
 
 const VehicleForm = () => {
     const initialState = {
-        ownerId: localStorage.getItem('uid'),
+        ownerId: 0,
         vin: "",
         model: "",
         brand: "",
@@ -25,7 +25,7 @@ const VehicleForm = () => {
     const addVehicle = () => {
         console.log(vehicle.ownerId);
         axios
-            .post("http://localhost:8080/vehicles", {
+            .post("vehicles", {
                 ownerId: vehicle.ownerId,
                 vin: vehicle.vin,
                 model: vehicle.model,
@@ -33,12 +33,9 @@ const VehicleForm = () => {
                 licensePlate: vehicle.licensePlate
             })
             .then((response) => {
-                if (response.status === 200) {
                     alert(response.data.message);
                     console.log(response.data);
-                    console.log(vehicle);
                     setVehicle(initialState);
-                }
             })
             .catch((error) => {
                 if (error.response.status === 400) {

@@ -25,10 +25,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
-                .antMatchers(HttpMethod.POST, AuthenticationConfigConstants.SIGN_UP_URL).permitAll()
+                .antMatchers(HttpMethod.POST, AuthenticationConfigConstants.SIGN_UP_URL, "/trips").permitAll() // permit all "/trips" only for testing per
                 .antMatchers(HttpMethod.GET, "/vehicles/**").hasAnyAuthority("fleetOwner")
                 .antMatchers(HttpMethod.POST, "/vehicles").hasAnyAuthority("fleetOwner")
                 .antMatchers(HttpMethod.POST, "/vehicles/assignDriver").hasAnyAuthority( "driver")
+                .antMatchers(HttpMethod.GET, "/vehicles/**").hasAnyAuthority("driver") // strange bug --> look into it further
                 .antMatchers(HttpMethod.GET, "/trips/**").hasAnyAuthority("fleetOwner", "driver")
                 .anyRequest().authenticated()
                 .and()

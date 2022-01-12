@@ -6,9 +6,9 @@ const Vehicle = ({ brand, licensePlate, model, vin, vehicleId }) => {
     const assignDriver = () => {
 
         axios
-            .post("http://localhost:8080/vehicles/assignDriver", {
+            .post("vehicles/assignDriver", {
                 vehicleId,
-                driverId: localStorage.getItem("uid")
+                driverId: 0
             })
             .then((response) => {
                 if (response.status === 200) {

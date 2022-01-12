@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
@@ -21,16 +23,6 @@ public class UsersController {
     @Autowired
     private IUserService service;
 
-//    @PostMapping("/login")
-//    public ResponseEntity<?> checkLogin(@RequestBody UserDTO userDTO) {
-//
-//        if (service.checkCredentials(userDTO.getUsername(), userDTO.getPassword())) {
-//            Account account = service.getUserByUsername(userDTO.getUsername());
-//            userDTO = modelMapper.map(account, UserDTO.class);
-//            return ResponseEntity.ok(userDTO);
-//        }
-//        return ResponseEntity.ok(new ResponseMessage("Invalid credentials"));
-//    }
 
     @PostMapping("/register")
     public ResponseEntity<?> userRegistration(@RequestBody UserDTO userDTO) {
@@ -43,9 +35,21 @@ public class UsersController {
         } else if (registrationResult == -2) {
             return ResponseEntity.badRequest().body(new ResponseMessage("User with this email already exists."));
         } else {
-            Account accountResponse = service.getUserByUsername(userDTO.getUsername());
-            userDTO = modelMapper.map(accountResponse, UserDTO.class);
-            return ResponseEntity.ok(userDTO);
+            return ResponseEntity.ok(new ResponseMessage("Congratulations! You have signed up successfully!"));
         }
+    }
+
+    @GetMapping("/status")
+    public ResponseEntity<?> checkUserStatus(Principal principal){
+
+        Account user = service.getUserByUsername(principal.getName());
+        if(user != null){
+            boolean status = true;
+            if( user.getRole().equals("driver") && !user.isAssigned()){
+                status = false;
+            }
+            return ResponseEntity.ok(status);
+        }
+        return ResponseEntity.notFound().build();
     }
 }

@@ -35,7 +35,7 @@ public class Account {
     @Column(name = "role")
     private String role;
 
-    @Column (name="assigned", columnDefinition = "boolean default false" )
+    @Column(name = "assigned", columnDefinition = "boolean default false")
     private boolean assigned;
 
     public Account(String username, String password, String email, String role) {
@@ -44,6 +44,7 @@ public class Account {
         this.password = password;
         this.email = email;
     }
+
 
     // The following relationships declarations are disabled due to lack of front-end implementation
     // If you know how to make the relationships 1 to (0 or many), so they are not mandatory, feel free to implement them

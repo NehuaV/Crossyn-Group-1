@@ -55,7 +55,7 @@ const Register = ({ register }) => {
     }
   };
 
-  const [role, setRole] = useState(1);
+  const [role, setRole] = useState("driver");
   const handleChange = (val) => setRole(val);
 
   return (
@@ -96,11 +96,11 @@ const Register = ({ register }) => {
               />
             </FormGroup>
 
-            <ToggleButtonGroup className="selector" type="radio" name="options" value={role} onChange={handleChange} defaultValue={2}>
-              <ToggleButton id="tbg-radio-1" value={1}>
+            <ToggleButtonGroup className="selector" type="radio" name="options" value={role} onChange={handleChange} defaultValue={"driver"}>
+              <ToggleButton id="tbg-radio-1" value={"fleetOwner"}>
                 Fleet Owner
               </ToggleButton>
-              <ToggleButton id="tbg-radio-2" value={2}>
+              <ToggleButton id="tbg-radio-2" value={"driver"}>
                 Driver
               </ToggleButton>
             </ToggleButtonGroup>

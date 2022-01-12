@@ -8,12 +8,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/configuration/SecurityConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/controllers/TripsController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/controllers/UsersController.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/controllers/VehiclesController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/models/Account.java">
           <value>
             <set />
           </value>
@@ -53,7 +68,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/package.json">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/App.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/components/DriverAssignment.js">
           <value>
             <set />
           </value>
@@ -73,7 +98,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/components/Trips.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/components/VechileForm.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/components/VechileTrips.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/components/Vehicle.js">
           <value>
             <set />
           </value>
@@ -84,6 +124,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/components/vehicleTable.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/index.js">
           <value>
             <set />
           </value>

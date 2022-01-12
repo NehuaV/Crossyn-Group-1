@@ -22,7 +22,7 @@ class VehicleTable extends React.Component {
 
     // Waits for data to come then executes the rest of the code :)
     async getAllVehicles() {
-        await axios.get("http://localhost:8080/vehicles/owner/" + localStorage.getItem('uid'))
+        await axios.get("vehicles/owner")
             .then(response => {
                 console.log(response.data);
                 this.setState({vehicles: response.data});

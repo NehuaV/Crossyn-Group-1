@@ -5,13 +5,17 @@ import com.example.demo.DTOs.TripDTO;
 import com.example.demo.DTOs.VehicleDTO;
 import com.example.demo.models.Trip;
 import com.example.demo.serviceInterfaces.ITripService;
+import com.example.demo.serviceInterfaces.IUserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -23,7 +27,10 @@ public class TripsController {
     private ModelMapper modelMapper;
 
     @Autowired
-    ITripService service;
+    private ITripService service;
+
+    @Autowired
+    private IUserService userService;
 
     @PostMapping()
     public ResponseEntity<?> saveAllTrips() throws IOException {
@@ -41,7 +48,9 @@ public class TripsController {
     }
 
     @GetMapping("/driver")
-    public ResponseEntity<?> getAllTripsByDriverID(@RequestParam("driverId") int driverId) {
+    public ResponseEntity<?> getAllTripsByDriverID( Principal principal) {
+
+        int driverId = userService.getUserByUsername(principal.getName()).getUserId();
         List<Trip> trips = service.getAllByDriverId(driverId);
 
         if (trips != null) {

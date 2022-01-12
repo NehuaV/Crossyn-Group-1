@@ -10,7 +10,7 @@ const DriverAssignment = () => {
     const [vehicles, setVehicles] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/vehicles`)
+        axios.get(`vehicles`)
             .then(res => {
                 setVehicles(res.data);
                 console.log(res.data);
