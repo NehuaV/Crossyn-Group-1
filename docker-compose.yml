@@ -1,11 +1,38 @@
-version: '3.4'
+version: '3.8'
 
 services:
-  frontend:
-    build: ./front-end/
-    ports:
-      - "1:3000"
+  posgresdb:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD= admin
+      - POSTGRES_USERNAME= postgres
+    ports: 
+      - "5433:5432"
+    volumes:
+      - "db:/var/lib/pgsql/data"
   backend:
     build: ./back-end/
     ports:
-      - "2:8000"
+      - "10000:8080"
+    depends_on:
+      - posgresdb
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url" : "jdbc:postgresql://localhost:5432/crossynDB",
+        "spring.datasource.username" : "postgres",
+        "spring.datasource.password" : "admin",
+        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.PostgreSQLDialect",
+        "spring.datasource.driver-class-name" : "org.postgresql.Driver",
+        "spring.jpa.hibernate.ddl-auto" : "update"}'
+    volumes: 
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+  frontend:
+    build: ./front-end/
+    ports:
+      - "12000:3000"
+
+volumes:
+  db:

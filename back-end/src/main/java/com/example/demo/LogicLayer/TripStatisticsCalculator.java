@@ -150,7 +150,7 @@ public class TripStatisticsCalculator {
 
         }
         String distance_out = String.format("%1$,.2f",distance/1000);
-       return distance_out;
+       return distance_out.replace(",",".");
 
     }
 }

@@ -1,5 +1,7 @@
 package com.example.demo.LogicLayer;
 
+import com.example.demo.DTOs.TripDTO;
+import com.example.demo.models.POJO.DataLinePOJO;
 import com.example.demo.models.Trip;
 import com.example.demo.models.TripLinesList;
 import com.example.demo.models.DataLine;
@@ -7,6 +9,7 @@ import com.example.demo.service.TripService;
 import com.example.demo.serviceInterfaces.IDataLineService;
 import com.example.demo.serviceInterfaces.ITripService;
 import lombok.*;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,19 +17,21 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.sql.SQLOutput;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Getter
 @Setter
+@Service
 public class TripCreator {
 
     private List<TripLinesList> tripLinesCollection;
     private List<Trip> trips;
-
 
     public TripCreator() {
         this.tripLinesCollection = new ArrayList<>();
@@ -90,10 +95,26 @@ public class TripCreator {
 
         // Creates a trip object based on the tripLines
         TripStatisticsCalculator tripStatisticsCalculator = new TripStatisticsCalculator(tripLines);
-        Trip trip = new Trip(0,tripStatisticsCalculator.getVehicleId(), tripStatisticsCalculator.StartAddress(), tripStatisticsCalculator.EndAddress(), tripStatisticsCalculator.calculateDuration(), tripStatisticsCalculator.calculateDistance(), tripStatisticsCalculator.calculateAverageSpeed(),tripStatisticsCalculator.getWeather());
-        this.trips.add(trip);
+
+        Trip trip = new Trip(0,
+                tripStatisticsCalculator.getVehicleId(),
+                tripStatisticsCalculator.StartAddress(),
+                tripStatisticsCalculator.EndAddress(),
+                tripStatisticsCalculator.calculateDuration(),
+                tripStatisticsCalculator.calculateDistance(),
+                tripStatisticsCalculator.calculateAverageSpeed(),
+                tripStatisticsCalculator.getWeather());
+
+        // Parse Datalines to simple POJO object
+        List<DataLinePOJO> clonedList = tripLines.stream()
+                .map(item -> {return (new DataLinePOJO(item));})
+                .collect(Collectors.toList());
+
+        // Set the datalines (Ready to convert to JsonB object)
+        trip.setDatalines(clonedList);
 
         // Saves all trip-lines + a trip reference in separate object
+        this.trips.add(trip);
         this.tripLinesCollection.add(new TripLinesList(tripLines, trip));
     }
 
