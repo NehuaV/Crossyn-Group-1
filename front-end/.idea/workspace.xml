@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8b1e579-931c-4e07-a3dd-27ed1da0363a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/DTOs/TripDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/DTOs/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/DTOs/VehicleActivityDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/DTOs/VehicleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/DatasetsEnrichmentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/DatasetsEnrichmentApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/controllers/VehiclesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/controllers/VehiclesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/models/DataLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/models/DataLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/models/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../back-end/src/main/java/com/example/demo/models/Trip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../documentation/Database_Research_Document.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../documentation/Database_Research_Document.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +57,7 @@
       <workItem from="1637681709097" duration="11976000" />
       <workItem from="1637699163278" duration="2626000" />
       <workItem from="1638827701581" duration="10000" />
+      <workItem from="1641718379902" duration="1564000" />
     </task>
     <servers />
   </component>
