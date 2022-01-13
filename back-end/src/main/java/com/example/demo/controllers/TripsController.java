@@ -4,6 +4,7 @@ import com.example.demo.DTOs.ResponseMessage;
 import com.example.demo.DTOs.TripDTO;
 import com.example.demo.DTOs.VehicleDTO;
 import com.example.demo.models.Trip;
+import com.example.demo.models.Vehicle;
 import com.example.demo.serviceInterfaces.ITripService;
 import com.example.demo.serviceInterfaces.IUserService;
 import org.modelmapper.ModelMapper;
@@ -48,7 +49,7 @@ public class TripsController {
     }
 
     @GetMapping("/driver")
-    public ResponseEntity<?> getAllTripsByDriverID( Principal principal) {
+    public ResponseEntity<?> getAllTripsByDriverID(Principal principal) {
 
         int driverId = userService.getUserByUsername(principal.getName()).getUserId();
         List<Trip> trips = service.getAllByDriverId(driverId);
@@ -60,12 +61,23 @@ public class TripsController {
         }
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getAllTripsByVehicleID(@PathVariable(value = "id") int VehicleId) {
+    @GetMapping("/vehicle")
+    public ResponseEntity<?> getAllTripsByVehicleID(@RequestParam(value = "id") Integer VehicleId) {
         List<Trip> trips = service.getAllTripsByVehicleId(VehicleId);
 
         if (trips != null) {
             return ResponseEntity.ok().body(trips);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/{tripId}")
+    public ResponseEntity<?> getAllTripsByVehicleID(@PathVariable(value = "tripId") int tripId) {
+
+        TripDTO trip = modelMapper.map(service.getTripById(tripId), TripDTO.class);
+        if (trip != null) {
+            return ResponseEntity.ok().body(trip);
         } else {
             return ResponseEntity.notFound().build();
         }

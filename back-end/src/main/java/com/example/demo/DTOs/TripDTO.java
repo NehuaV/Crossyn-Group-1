@@ -1,9 +1,12 @@
 package com.example.demo.DTOs;
 
 
+import com.example.demo.models.POJO.DataLinePOJO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -27,6 +30,8 @@ public class TripDTO {
     private Double avgSpeed;
 
     private String weatherInfo;
+
+    private List<DataLinePOJO> datalines;
 
     public TripDTO(int vehicleId, int driverId, String startPoint, String endPoint, Double duration, String distance, Double avgSpeed, String weatherInfo) {
         this.vehicleId = vehicleId;

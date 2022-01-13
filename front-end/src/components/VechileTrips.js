@@ -16,7 +16,7 @@ const VechileTrips = (props) => {
 
     useEffect(() =>{
         console.log("Vehicle ID: " + vehicleId);
-        axios.get(`trips/${vehicleId}`)
+        axios.get(`trips/vehicle?id=${vehicleId}`)
                 .then(res => {
                     setTrips(res.data);
                     console.log(res.data);
