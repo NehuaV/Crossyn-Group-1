@@ -48,7 +48,7 @@ const Register = ({ register }) => {
         return;
       }
       setErrorMessage("");
-      
+
       register(username, password, email, role);
     } else {
       setErrorMessage("Passwords do not match.");
@@ -96,7 +96,14 @@ const Register = ({ register }) => {
               />
             </FormGroup>
 
-            <ToggleButtonGroup className="selector" type="radio" name="options" value={role} onChange={handleChange} defaultValue={"driver"}>
+            <ToggleButtonGroup
+              className="selector"
+              type="radio"
+              name="options"
+              value={role}
+              onChange={handleChange}
+              defaultValue={"driver"}
+            >
               <ToggleButton id="tbg-radio-1" value={"fleetOwner"}>
                 Fleet Owner
               </ToggleButton>

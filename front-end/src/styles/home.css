@@ -3,7 +3,7 @@
 }
 
 section.banner {
-  min-height: 90vh;
+  min-height: 89.6vh;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -11,7 +11,7 @@ section.banner {
 }
 
 section.banner.\31 {
-  background: url("../images/homeBackgroundImage.jpg");
+  background: url("../images/low_poly_mountain_2-wallpaper-1920x1080.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 35%;

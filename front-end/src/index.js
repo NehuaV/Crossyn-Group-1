@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from "axios";
 
+import "./styles/global.css"
+
 axios.defaults.baseURL = 'http://localhost:8080/';
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('accessToken');
 
