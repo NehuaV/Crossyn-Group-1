@@ -45,10 +45,13 @@ LOGGER.error("Wrong credentials");
         int registrationResult = service.addUser(user);
 
         if (registrationResult == -1) {
+            LOGGER.error("User with this username already exists");
             return ResponseEntity.badRequest().body(new ResponseMessage("User with this username already exists."));
         } else if (registrationResult == -2) {
+            LOGGER.error("User with this email already exists");
             return ResponseEntity.badRequest().body(new ResponseMessage("User with this email already exists."));
         } else {
+            LOGGER.info("User registered");
             User userResponse = service.getUserByUsername(userDTO.getUsername());
             userDTO = modelMapper.map(userResponse, UserDTO.class);
             return ResponseEntity.ok(userDTO);

@@ -34,8 +34,10 @@ public class VehiclesController {
         Vehicle vehicle = modelMapper.map(vehicleDTO, Vehicle.class);
 
         if (service.addVehicle(vehicle)) {
+            LOGGER.info("Vehicle has been added successfully!!");
             return ResponseEntity.ok(new ResponseMessage("Vehicle has been added successfully!"));
         }
+        LOGGER.error("Vehicle with this VIN already exists");
         return ResponseEntity.badRequest().body(new ResponseMessage("Vehicle with this VIN already exists."));
     }
 
@@ -45,8 +47,10 @@ public class VehiclesController {
         Vehicle vehicle = service.getVehicleByVehicleId(vehicleDTO.getVehicleId());
 
         if (service.assignDriver(vehicle, vehicleDTO.getDriverId())) {
+            LOGGER.info("You have been assigned as a driver!");
             return ResponseEntity.ok(new ResponseMessage("You have been assigned successfully!"));
         }
+        LOGGER.error("Vehicle already has a driver assigned");
         return ResponseEntity.badRequest().body(new ResponseMessage("A driver has already been assigned to the selected vehicle."));
     }
 
@@ -71,9 +75,10 @@ public class VehiclesController {
 
         if (vehicle != null) {
             VehicleDTO vehicleDTO = modelMapper.map(vehicle, VehicleDTO.class);
-
+            LOGGER.info("Returned vehicle by id");
             return ResponseEntity.ok().body(vehicleDTO);
         } else {
+            LOGGER.error("No vehicle with id found");
             return ResponseEntity.notFound().build();
         }
     }
