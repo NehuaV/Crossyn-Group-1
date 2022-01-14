@@ -9,6 +9,8 @@ public interface IVehicleRepository extends JpaRepository<Vehicle, Integer> {
 
     Vehicle getVehicleByVehicleId(int id);
 
+    Vehicle getVehicleByLicensePlate(String licensePlate);
+
     List<Vehicle> getVehiclesByOwnerIdOrderByVehicleId(int ownerId);
 
     List<Vehicle> getVehiclesByDriverIdIsNullOrderByVehicleId();

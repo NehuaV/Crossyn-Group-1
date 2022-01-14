@@ -8,6 +8,8 @@ public interface IVehicleDal {
 
     Vehicle getVehicleByVehicleId(int id);
 
+    Vehicle getVehicleByLicensePlate(String licensePlate);
+
     List<Vehicle> getAllVehicles();
 
     List<Vehicle> getAllFreeVehicles();

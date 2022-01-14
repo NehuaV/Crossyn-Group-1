@@ -46,12 +46,15 @@ public class VehiclesController {
     public ResponseEntity<?> assignDriver(@RequestBody VehicleDTO vehicleDTO, Principal principal) {
 
         int driverId = userService.getUserByUsername(principal.getName()).getUserId();
-        Vehicle vehicle = service.getVehicleByVehicleId(vehicleDTO.getVehicleId());
+        Vehicle  vehicle = service.getVehicleByLicensePlate(vehicleDTO.getLicensePlate());
 
-        if (service.assignDriver(vehicle, driverId)) {
-            return ResponseEntity.ok(new ResponseMessage("You have been assigned successfully!"));
+        if(vehicle != null) {
+            if (service.assignDriver(vehicle, driverId)) {
+                return ResponseEntity.ok(new ResponseMessage("You have been assigned successfully!"));
+            }
+            return ResponseEntity.badRequest().body(new ResponseMessage("A driver has already been assigned to the selected vehicle."));
         }
-        return ResponseEntity.badRequest().body(new ResponseMessage("A driver has already been assigned to the selected vehicle."));
+        return ResponseEntity.badRequest().body(new ResponseMessage("Couldn't find a vehicle with this license number. Please try again!"));
     }
 
     @GetMapping("/owner")

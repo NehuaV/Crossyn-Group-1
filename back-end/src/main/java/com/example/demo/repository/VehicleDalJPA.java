@@ -25,6 +25,11 @@ public class VehicleDalJPA implements IVehicleDal {
     }
 
     @Override
+    public Vehicle getVehicleByLicensePlate(String licensePlate) {
+        return vehicleRepository.getVehicleByLicensePlate(licensePlate);
+    }
+
+    @Override
     public List<Vehicle> getAllVehicles() {
         return vehicleRepository.findAll();
     }

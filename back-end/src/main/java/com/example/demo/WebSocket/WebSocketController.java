@@ -13,6 +13,7 @@ public class WebSocketController {
     @SendTo("/topic/general")
     public DataLinePOJO greeting(@RequestBody DataLinePOJO dataLinePOJO) {
         System.out.println(dataLinePOJO);
+
         return dataLinePOJO;
     }
 }

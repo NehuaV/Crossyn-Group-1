@@ -30,6 +30,11 @@ public class VehicleService implements IVehicleService {
     }
 
     @Override
+    public Vehicle getVehicleByLicensePlate(String licensePlate) {
+        return dal.getVehicleByLicensePlate(licensePlate);
+    }
+
+    @Override
     public List<Vehicle> getAllVehicles() {
         return dal.getAllVehicles();
     }

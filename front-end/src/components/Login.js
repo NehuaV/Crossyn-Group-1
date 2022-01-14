@@ -61,11 +61,7 @@ const Login = ({ login }) => {
             </Button>
             <div className="extra-links">
               <a className="link" href="/register">
-                Signup Now!
-              </a>
-              <a> | </a>
-              <a className="link" href="/">
-                Forgotten Password?
+                Don't have an account? Signup Now!
               </a>
             </div>
           </Form>

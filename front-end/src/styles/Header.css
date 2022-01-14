@@ -4,6 +4,10 @@
     color: white !important;
 }
 
+.nav-link:hover{
+    color: black !important;
+}
+
 .mr-auto{
     position: relative;
     margin-left: auto;

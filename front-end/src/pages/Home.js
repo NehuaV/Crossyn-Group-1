@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Home = () => {
-  const [assigned, setAssigned] = useState(true);
+  const [assigned, setAssigned] = useState(null);
 
   const checkStatus = () => {
     axios
@@ -28,18 +28,19 @@ const Home = () => {
     checkStatus();
   }, []);
 
-  return (
-    <div>
-      {!assigned ? (
-        <>
-          <DriverAssignment />
-        </>
-      ) : (
-        <>
-          <HomeDefault />
-        </>
-      )}
-    </div>
+  return ( assigned === null ? null : (
+          <div>
+            {!assigned ? (
+                <>
+                  <DriverAssignment />
+                </>
+            ) : (
+                <>
+                  <HomeDefault />
+                </>
+            )}
+          </div>
+      )
   );
 };
 

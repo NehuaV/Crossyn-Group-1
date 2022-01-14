@@ -3,7 +3,7 @@
 }
 
 section.banner {
-  min-height: 89.6vh;
+  min-height: 85.3vh;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -71,10 +71,10 @@ a.infoBox:hover {
 }
 
 .driver-instruction-container{
-  font-size: 22px;
+  font-size: 24px;
   text-decoration: underline;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .home-vehicle-container {
@@ -82,6 +82,11 @@ a.infoBox:hover {
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  border: 3px solid #2E3675;
+  border-radius: 25px;
+  width: 1000px;
+  margin-left: 250px;
+  margin-top: 60px;
 }
 
 .vehicle-container {
@@ -91,6 +96,18 @@ a.infoBox:hover {
   display: flex;
   flex-direction: row;
 
+}
+
+.pick-vehicle-button{
+  margin-bottom: 30px !important;
+  margin-top: 10px;
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.pick-vehicle-button:hover{
+  color: black;
 }
 
 .licensePlate-container {

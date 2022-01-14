@@ -16,21 +16,22 @@ const HeaderCom = ({ logout }) => {
           <Nav className="mr-auto">
             {localStorage.getItem("accessToken") ? (
               <>
+                {localStorage.getItem("role") === "fleetOwner" ? (
+                    <>
+                      <Nav.Link href="/websocket">Test</Nav.Link>
+                      <Nav.Link href="/vehicles">Vehicles</Nav.Link>
+                    </>
+                ) : (
+                    <>
+                      <Nav.Link href="/trips" /*onClick={getTrips}*/>
+                        Trips
+                      </Nav.Link>
+                    </>
+                )}
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/" onClick={logout}>
                   Logout
                 </Nav.Link>
-                {localStorage.getItem("role") === "fleetOwner" ? (
-                  <>
-                    <Nav.Link href="/vehicles">Vehicles</Nav.Link>
-                  </>
-                ) : (
-                  <>
-                    <Nav.Link href="/trips" /*onClick={getTrips}*/>
-                      Trips
-                    </Nav.Link>
-                  </>
-                )}
               </>
             ) : (
               <>

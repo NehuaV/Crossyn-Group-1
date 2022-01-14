@@ -2,8 +2,16 @@
     background-color: #2E3675!important;
 }
 
+.btn:hover{
+    color: black !important;
+}
+
 .button{
     background-color: #2E3675!important;
+}
+
+.button:hover{
+    color: black !important;
 }
 
 .button-primary{

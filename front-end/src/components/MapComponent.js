@@ -8,11 +8,8 @@ import {
 import React, { useEffect, useState } from "react";
 import "../styles/MapComponent.css";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-// Hardcoded dataset
-import Trip1 from "../testing set/trip1.json";
-import Trip2 from "../testing set/trip2.json";
-import Trip3 from "../testing set/trip3.json";
 import axios from "axios";
+
 
 function MapComponent() {
   const { tripId } = useParams();

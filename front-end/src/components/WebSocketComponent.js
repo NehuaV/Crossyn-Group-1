@@ -3,7 +3,7 @@ import SockJsClient from "react-stomp";
 
 import { Card, Form, Button } from "react-bootstrap";
 
-import Trip1 from "../testing set/trip1.json";
+import DataSet from "../testing set/dataset1.json"
 
 const SOCKET_URL = "http://localhost:8080/websocket";
 const GENERAL_TOPIC = "/topic/general";
@@ -18,7 +18,7 @@ const WebSocketComponent = () => {
   };
 
   const sendMessage = async () => {
-    Trip1.map((obj) => {
+    DataSet.map((obj) => {
       generalClientRef.sendMessage("/app/general", JSON.stringify(obj));
     });
   };
