@@ -54,7 +54,6 @@ public class VehiclesController {
         int driverId = userService.getUserByUsername(principal.getName()).getUserId();
         Vehicle  vehicle = service.getVehicleByLicensePlate(vehicleDTO.getLicensePlate());
 
-<<<<<<< HEAD
         if(vehicle != null) {
             if (service.assignDriver(vehicle, driverId)) {
                 LOGGER.info("You have been assigned as a driver!");
@@ -64,14 +63,6 @@ public class VehiclesController {
             return ResponseEntity.badRequest().body(new ResponseMessage("A driver has already been assigned to the selected vehicle."));
         }
         return ResponseEntity.badRequest().body(new ResponseMessage("Couldn't find a vehicle with this license number. Please try again!"));
-=======
-        if (service.assignDriver(vehicle, vehicleDTO.getDriverId())) {
-          
-            return ResponseEntity.ok(new ResponseMessage("You have been assigned successfully!"));
-        }
-       
-        return ResponseEntity.badRequest().body(new ResponseMessage("A driver has already been assigned to the selected vehicle."));
->>>>>>> Logger
     }
 
     @GetMapping("/owner")

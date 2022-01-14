@@ -26,22 +26,6 @@ public class UsersController {
     @Autowired
     private IUserService service;
 
-<<<<<<< HEAD
-=======
-    @PostMapping("/login")
-    public ResponseEntity<?> checkLogin(@RequestBody UserDTO userDTO) {
-
-        if (service.checkCredentials(userDTO.getUsername(), userDTO.getPassword())) {
-            User user = service.getUserByUsername(userDTO.getUsername());
-            userDTO = modelMapper.map(user, UserDTO.class);
-            LOGGER.info("User Logged in");
-            return ResponseEntity.ok(userDTO);
-        }
-LOGGER.error("Wrong credentials");
-        return ResponseEntity.ok(new ResponseMessage("Invalid credentials"));
-
-    }
->>>>>>> Logger
 
     @PostMapping("/register")
     public ResponseEntity<?> userRegistration(@RequestBody UserDTO userDTO) {
@@ -56,7 +40,6 @@ LOGGER.error("Wrong credentials");
             LOGGER.error("User with this email already exists");
             return ResponseEntity.badRequest().body(new ResponseMessage("User with this email already exists."));
         } else {
-<<<<<<< HEAD
             return ResponseEntity.ok(new ResponseMessage("Congratulations! You have signed up successfully!"));
         }
     }
@@ -71,12 +54,6 @@ LOGGER.error("Wrong credentials");
                 status = false;
             }
             return ResponseEntity.ok(status);
-=======
-            LOGGER.info("User registered");
-            User userResponse = service.getUserByUsername(userDTO.getUsername());
-            userDTO = modelMapper.map(userResponse, UserDTO.class);
-            return ResponseEntity.ok(userDTO);
->>>>>>> Logger
         }
         return ResponseEntity.notFound().build();
     }
