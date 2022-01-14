@@ -25,6 +25,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
+                .antMatchers("/websocket/**").permitAll() // Websocket No security for testing purposes
                 .antMatchers(HttpMethod.POST, AuthenticationConfigConstants.SIGN_UP_URL,"/trips/{tripId}").permitAll() // permit all "/trips" only for testing per
                 .antMatchers(HttpMethod.GET, "/vehicles/**").hasAnyAuthority("fleetOwner")
                 .antMatchers(HttpMethod.POST, "/vehicles").hasAnyAuthority("fleetOwner")

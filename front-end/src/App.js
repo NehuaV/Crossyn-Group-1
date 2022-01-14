@@ -17,6 +17,7 @@ import VehicleTable from "./components/vehicleTable";
 import VechileTrips from "./components/VechileTrips";
 import MapComponent from "./components/MapComponent";
 import HomeDefault from "./components/HomeDefault";
+import WebSocketComponent from "./components/WebSocketComponent";
 
 function App() {
     const history = createBrowserHistory();
@@ -84,11 +85,13 @@ function App() {
             <div className="c1-home">
                 <Router>
                     <Switch>
-
                         {localStorage.getItem("accessToken") ? (
                             <>
                                 <Route exact path="/">
                                     <Home/>
+                                </Route>
+                                <Route exact path="/websocket">
+                                    <WebSocketComponent/>
                                 </Route>
                                 {localStorage.getItem("role") === "fleetOwner" ? (
                                     <>

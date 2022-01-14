@@ -2,6 +2,7 @@ package com.example.demo.models.POJO;
 
 import com.example.demo.models.DataLine;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
