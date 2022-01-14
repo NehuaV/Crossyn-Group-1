@@ -21,7 +21,6 @@ public class VehicleService implements IVehicleService {
         this.addVehicle(new Vehicle(1, 4,"02432765765487689", "CIVIC", "HONDA", "NL 09-24-387",0));
         this.addVehicle(new Vehicle(1, "78598403923203123", "E320", "BMW", "NL 05-54-29",0));
         this.addVehicle(new Vehicle(1, "85473092322348203", "5008", "PEUGEOT", "NL 81-73-405",0));
-
     }
 
     @Override

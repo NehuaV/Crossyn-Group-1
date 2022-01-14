@@ -237,3 +237,272 @@ https://vladmihalcea.com/hypersistence-optimizer/
 2022-01-14 08:41:38.350  INFO 18588 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : Started DatasetsEnrichmentApplication in 7.626 seconds (JVM running for 9.917)
 2022-01-14 08:41:57.812  INFO 18588 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-01-14 08:41:57.813  INFO 18588 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-14 08:41:57.815  INFO 18588 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-14 08:42:37.765  INFO 18588 --- [MessageBroker-7] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 6, active threads = 0, queued tasks = 0, completed tasks = 6], outboundChannel[pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 9]
+2022-01-14 09:28:56.407  INFO 14300 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : Starting DatasetsEnrichmentApplication using Java 11.0.2 on DESKTOP-B5JUE8P with PID 14300 (C:\Users\stass\OneDrive\Desktop\SEMESTER_3\Crossyn-Group-1\back-end\build\classes\java\main started by stass in C:\Users\stass\OneDrive\Desktop\SEMESTER_3\Crossyn-Group-1\back-end)
+2022-01-14 09:28:56.410  INFO 14300 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : No active profile set, falling back to default profiles: default
+2022-01-14 09:28:56.464  INFO 14300 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-01-14 09:28:56.464  INFO 14300 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-01-14 09:28:57.437  INFO 14300 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-01-14 09:28:57.437  INFO 14300 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-01-14 09:28:57.507  INFO 14300 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IDataLineRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2022-01-14 09:28:57.554  INFO 14300 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 4 JPA repository interfaces.
+2022-01-14 09:28:57.584  INFO 14300 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-01-14 09:28:57.584  INFO 14300 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-01-14 09:28:57.603  INFO 14300 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IRoleRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:28:57.611  INFO 14300 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.ITripRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:28:57.612  INFO 14300 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IUserRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:28:57.612  INFO 14300 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IVehicleRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:28:57.623  INFO 14300 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 MongoDB repository interfaces.
+2022-01-14 09:28:58.276  INFO 14300 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-14 09:28:58.286  INFO 14300 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-14 09:28:58.286  INFO 14300 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2022-01-14 09:28:58.432  INFO 14300 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-14 09:28:58.433  INFO 14300 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1968 ms
+2022-01-14 09:28:58.645  INFO 14300 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-01-14 09:28:58.704  INFO 14300 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-01-14 09:28:58.864  INFO 14300 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-01-14 09:28:58.988  INFO 14300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-01-14 09:28:59.527  INFO 14300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-01-14 09:28:59.547  INFO 14300 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-01-14 09:28:59.818  INFO 14300 --- [restartedMain] Hibernate Types                          : This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2022-01-14 09:29:00.578  INFO 14300 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-01-14 09:29:00.588  INFO 14300 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-01-14 09:29:01.147  WARN 14300 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-01-14 09:29:01.246  INFO 14300 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-01-14 09:29:01.365  INFO 14300 --- [cluster-rtt-ClusterId{value='61e1263dec34f01af43af83d', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:2}] to localhost:27017
+2022-01-14 09:29:01.365  INFO 14300 --- [cluster-ClusterId{value='61e1263dec34f01af43af83d', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2022-01-14 09:29:01.369  INFO 14300 --- [cluster-ClusterId{value='61e1263dec34f01af43af83d', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=73837500}
+2022-01-14 09:29:01.460  INFO 14300 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-01-14 09:29:02.158  INFO 14300 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@297634d3, org.springframework.security.web.context.SecurityContextPersistenceFilter@7fa9573c, org.springframework.security.web.header.HeaderWriterFilter@3962db9d, org.springframework.web.filter.CorsFilter@2fb8c4d9, org.springframework.security.web.authentication.logout.LogoutFilter@301e716, com.example.demo.filters.JWTAuthenticationFilter@7fc3f580, com.example.demo.filters.JWTAuthorizationFilter@1afd6b36, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@406e3dd4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a812c99, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2350416, org.springframework.security.web.session.SessionManagementFilter@51929f13, org.springframework.security.web.access.ExceptionTranslationFilter@37dcc65a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@c6da5bf]
+2022-01-14 09:29:02.408  INFO 14300 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-14 09:29:02.410  INFO 14300 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-01-14 09:29:02.410  INFO 14300 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@746949b1]]
+2022-01-14 09:29:02.411  INFO 14300 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-01-14 09:29:02.425  INFO 14300 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : Started DatasetsEnrichmentApplication in 6.544 seconds (JVM running for 9.301)
+2022-01-14 09:30:01.857  INFO 14300 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2022-01-14 09:30:37.515  INFO 14300 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-14 09:30:37.516  INFO 14300 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-14 09:30:37.518  INFO 14300 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-01-14 09:31:52.493  INFO 14300 --- [http-nio-8080-exec-8] c.e.demo.controllers.TripsController     : found trips with VehicleID
+2022-01-14 09:34:23.385  INFO 14300 --- [http-nio-8080-exec-1] c.e.demo.controllers.TripsController     : saved all trips
+2022-01-14 09:34:32.728  INFO 14300 --- [http-nio-8080-exec-10] c.e.demo.controllers.TripsController     : found trips with VehicleID
+2022-01-14 09:42:06.914  INFO 14300 --- [http-nio-8080-exec-4] c.e.demo.controllers.TripsController     : saved all trips
+2022-01-14 09:42:08.692  INFO 14300 --- [http-nio-8080-exec-3] c.e.demo.controllers.TripsController     : found trips with VehicleID
+2022-01-14 09:44:28.821  INFO 16612 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : Starting DatasetsEnrichmentApplication using Java 11.0.2 on DESKTOP-B5JUE8P with PID 16612 (C:\Users\stass\OneDrive\Desktop\SEMESTER_3\Crossyn-Group-1\back-end\build\classes\java\main started by stass in C:\Users\stass\OneDrive\Desktop\SEMESTER_3\Crossyn-Group-1\back-end)
+2022-01-14 09:44:28.826  INFO 16612 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : No active profile set, falling back to default profiles: default
+2022-01-14 09:44:28.876  INFO 16612 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-01-14 09:44:28.877  INFO 16612 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-01-14 09:44:30.080  INFO 16612 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-01-14 09:44:30.082  INFO 16612 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-01-14 09:44:30.178  INFO 16612 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IDataLineRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2022-01-14 09:44:30.232  INFO 16612 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135 ms. Found 4 JPA repository interfaces.
+2022-01-14 09:44:30.266  INFO 16612 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-01-14 09:44:30.267  INFO 16612 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-01-14 09:44:30.297  INFO 16612 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IRoleRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:44:30.304  INFO 16612 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.ITripRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:44:30.305  INFO 16612 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IUserRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:44:30.306  INFO 16612 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IVehicleRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:44:30.318  INFO 16612 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 1 MongoDB repository interfaces.
+2022-01-14 09:44:31.189  INFO 16612 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-14 09:44:31.202  INFO 16612 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-14 09:44:31.203  INFO 16612 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2022-01-14 09:44:31.381  INFO 16612 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-14 09:44:31.382  INFO 16612 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2504 ms
+2022-01-14 09:44:31.678  INFO 16612 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-01-14 09:44:31.759  INFO 16612 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-01-14 09:44:31.985  INFO 16612 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-01-14 09:44:32.125  INFO 16612 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-01-14 09:44:32.397  INFO 16612 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-01-14 09:44:32.425  INFO 16612 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-01-14 09:44:32.692  INFO 16612 --- [restartedMain] Hibernate Types                          : This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2022-01-14 09:44:33.646  INFO 16612 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-01-14 09:44:33.659  INFO 16612 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-01-14 09:44:35.068  WARN 16612 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-01-14 09:44:35.214  INFO 16612 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-01-14 09:44:35.328  INFO 16612 --- [cluster-ClusterId{value='61e129e3f380a135bac182c6', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:3}] to localhost:27017
+2022-01-14 09:44:35.332  INFO 16612 --- [cluster-ClusterId{value='61e129e3f380a135bac182c6', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=43879600}
+2022-01-14 09:44:35.382  INFO 16612 --- [cluster-rtt-ClusterId{value='61e129e3f380a135bac182c6', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:4}] to localhost:27017
+2022-01-14 09:44:35.482  INFO 16612 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-01-14 09:44:36.486  INFO 16612 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38226c1b, org.springframework.security.web.context.SecurityContextPersistenceFilter@3244c66f, org.springframework.security.web.header.HeaderWriterFilter@7cb00895, org.springframework.web.filter.CorsFilter@92c545f, org.springframework.security.web.authentication.logout.LogoutFilter@ef72968, com.example.demo.filters.JWTAuthenticationFilter@65bbb680, com.example.demo.filters.JWTAuthorizationFilter@2857fe56, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d34df15, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@381a5ab6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3be1df3, org.springframework.security.web.session.SessionManagementFilter@46346300, org.springframework.security.web.access.ExceptionTranslationFilter@7342c4b2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@32112bf2]
+2022-01-14 09:44:36.847  INFO 16612 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-14 09:44:36.849  INFO 16612 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-01-14 09:44:36.850  INFO 16612 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6da3adcd]]
+2022-01-14 09:44:36.850  INFO 16612 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-01-14 09:44:36.866  INFO 16612 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : Started DatasetsEnrichmentApplication in 8.698 seconds (JVM running for 10.545)
+2022-01-14 09:44:37.082  INFO 16612 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-14 09:44:37.082  INFO 16612 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-14 09:44:37.084  INFO 16612 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-01-14 09:45:36.071  INFO 16612 --- [MessageBroker-4] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 6, active threads = 0, queued tasks = 0, completed tasks = 6], outboundChannel[pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 14]
+2022-01-14 09:45:56.735  INFO 16224 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : Starting DatasetsEnrichmentApplication using Java 11.0.2 on DESKTOP-B5JUE8P with PID 16224 (C:\Users\stass\OneDrive\Desktop\SEMESTER_3\Crossyn-Group-1\back-end\build\classes\java\main started by stass in C:\Users\stass\OneDrive\Desktop\SEMESTER_3\Crossyn-Group-1\back-end)
+2022-01-14 09:45:56.741  INFO 16224 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : No active profile set, falling back to default profiles: default
+2022-01-14 09:45:56.802  INFO 16224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-01-14 09:45:56.802  INFO 16224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-01-14 09:45:58.065  INFO 16224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-01-14 09:45:58.065  INFO 16224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-01-14 09:45:58.154  INFO 16224 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IDataLineRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2022-01-14 09:45:58.241  INFO 16224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 161 ms. Found 4 JPA repository interfaces.
+2022-01-14 09:45:58.284  INFO 16224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-01-14 09:45:58.285  INFO 16224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-01-14 09:45:58.312  INFO 16224 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IRoleRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:45:58.320  INFO 16224 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.ITripRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:45:58.321  INFO 16224 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IUserRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:45:58.321  INFO 16224 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IVehicleRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:45:58.335  INFO 16224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 1 MongoDB repository interfaces.
+2022-01-14 09:45:59.221  INFO 16224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-14 09:45:59.237  INFO 16224 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-14 09:45:59.238  INFO 16224 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2022-01-14 09:45:59.416  INFO 16224 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-14 09:45:59.417  INFO 16224 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2613 ms
+2022-01-14 09:45:59.688  INFO 16224 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-01-14 09:45:59.764  INFO 16224 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-01-14 09:45:59.960  INFO 16224 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-01-14 09:46:00.114  INFO 16224 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-01-14 09:46:00.402  INFO 16224 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-01-14 09:46:00.424  INFO 16224 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-01-14 09:46:00.730  INFO 16224 --- [restartedMain] Hibernate Types                          : This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2022-01-14 09:46:01.749  INFO 16224 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-01-14 09:46:01.772  INFO 16224 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-01-14 09:46:03.171  WARN 16224 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-01-14 09:46:03.291  INFO 16224 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-01-14 09:46:03.376  INFO 16224 --- [cluster-ClusterId{value='61e12a3b37f67718b1fc6f07', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:5}] to localhost:27017
+2022-01-14 09:46:03.376  INFO 16224 --- [cluster-rtt-ClusterId{value='61e12a3b37f67718b1fc6f07', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:6}] to localhost:27017
+2022-01-14 09:46:03.385  INFO 16224 --- [cluster-ClusterId{value='61e12a3b37f67718b1fc6f07', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=31810600}
+2022-01-14 09:46:03.532  INFO 16224 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-01-14 09:46:04.400  INFO 16224 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11cb7d43, org.springframework.security.web.context.SecurityContextPersistenceFilter@565e3909, org.springframework.security.web.header.HeaderWriterFilter@1cd8f2eb, org.springframework.web.filter.CorsFilter@19f62981, org.springframework.security.web.authentication.logout.LogoutFilter@5f599c0e, com.example.demo.filters.JWTAuthenticationFilter@16ff0a4f, com.example.demo.filters.JWTAuthorizationFilter@3a4a1ce2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36c6cc8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@ca428b4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70a15f8d, org.springframework.security.web.session.SessionManagementFilter@40192288, org.springframework.security.web.access.ExceptionTranslationFilter@2d2d642e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@79d99126]
+2022-01-14 09:46:04.749  INFO 16224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-14 09:46:04.751  INFO 16224 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-01-14 09:46:04.751  INFO 16224 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@567ceca3]]
+2022-01-14 09:46:04.751  INFO 16224 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-01-14 09:46:04.767  INFO 16224 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : Started DatasetsEnrichmentApplication in 8.653 seconds (JVM running for 10.369)
+2022-01-14 09:46:04.857  INFO 16224 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-14 09:46:04.857  INFO 16224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-14 09:46:04.859  INFO 16224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-14 09:46:23.004  INFO 16224 --- [http-nio-8080-exec-2] c.e.demo.controllers.TripsController     : saved all trips
+2022-01-14 09:46:49.699  INFO 16224 --- [http-nio-8080-exec-5] c.e.demo.controllers.TripsController     : found trips with VehicleID
+2022-01-14 09:47:03.488  INFO 16224 --- [http-nio-8080-exec-9] c.e.demo.controllers.TripsController     : found trips with VehicleID
+2022-01-14 09:47:04.014  INFO 16224 --- [MessageBroker-7] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 16, active threads = 0, queued tasks = 0, completed tasks = 15372], outboundChannel[pool size = 16, active threads = 0, queued tasks = 0, completed tasks = 5122], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 1, completed tasks = 12]
+2022-01-14 09:48:55.227  INFO 16224 --- [http-nio-8080-exec-4] c.e.demo.controllers.VehiclesController  : You have been assigned as a driver!
+2022-01-14 09:48:58.443  INFO 16224 --- [http-nio-8080-exec-9] c.e.demo.controllers.TripsController     : found trips with driverID
+2022-01-14 09:49:41.145  INFO 16224 --- [http-nio-8080-exec-4] c.e.demo.controllers.TripsController     : found trips with driverID
+2022-01-14 09:49:56.424  INFO 14808 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : Starting DatasetsEnrichmentApplication using Java 11.0.2 on DESKTOP-B5JUE8P with PID 14808 (C:\Users\stass\OneDrive\Desktop\SEMESTER_3\Crossyn-Group-1\back-end\build\classes\java\main started by stass in C:\Users\stass\OneDrive\Desktop\SEMESTER_3\Crossyn-Group-1\back-end)
+2022-01-14 09:49:56.428  INFO 14808 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : No active profile set, falling back to default profiles: default
+2022-01-14 09:49:56.506  INFO 14808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-01-14 09:49:56.506  INFO 14808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-01-14 09:49:58.398  INFO 14808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-01-14 09:49:58.399  INFO 14808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-01-14 09:49:58.479  INFO 14808 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IDataLineRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2022-01-14 09:49:58.538  INFO 14808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 4 JPA repository interfaces.
+2022-01-14 09:49:58.585  INFO 14808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-01-14 09:49:58.586  INFO 14808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-01-14 09:49:58.610  INFO 14808 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IRoleRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:49:58.622  INFO 14808 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.ITripRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:49:58.627  INFO 14808 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IUserRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:49:58.629  INFO 14808 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.repositoryInterfaces.IVehicleRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-01-14 09:49:58.652  INFO 14808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 1 MongoDB repository interfaces.
+2022-01-14 09:49:59.528  INFO 14808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-14 09:49:59.544  INFO 14808 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-14 09:49:59.544  INFO 14808 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2022-01-14 09:49:59.727  INFO 14808 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-14 09:49:59.727  INFO 14808 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3218 ms
+2022-01-14 09:50:00.011  INFO 14808 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-01-14 09:50:00.092  INFO 14808 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-01-14 09:50:00.282  INFO 14808 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-01-14 09:50:00.419  INFO 14808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-01-14 09:50:00.703  INFO 14808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-01-14 09:50:00.729  INFO 14808 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-01-14 09:50:01.044  INFO 14808 --- [restartedMain] Hibernate Types                          : This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2022-01-14 09:50:01.986  INFO 14808 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-01-14 09:50:01.999  INFO 14808 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-01-14 09:50:03.519  WARN 14808 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-01-14 09:50:03.665  INFO 14808 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-01-14 09:50:03.769  INFO 14808 --- [cluster-rtt-ClusterId{value='61e12b2b9ad121047f4d60ba', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:8}] to localhost:27017
+2022-01-14 09:50:03.769  INFO 14808 --- [cluster-ClusterId{value='61e12b2b9ad121047f4d60ba', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:7}] to localhost:27017
+2022-01-14 09:50:03.779  INFO 14808 --- [cluster-ClusterId{value='61e12b2b9ad121047f4d60ba', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=28245200}
+2022-01-14 09:50:03.919  INFO 14808 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-01-14 09:50:04.943  INFO 14808 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f7b0c49, org.springframework.security.web.context.SecurityContextPersistenceFilter@644d5d56, org.springframework.security.web.header.HeaderWriterFilter@601908db, org.springframework.web.filter.CorsFilter@480c710d, org.springframework.security.web.authentication.logout.LogoutFilter@3ee0b361, com.example.demo.filters.JWTAuthenticationFilter@333fa3b1, com.example.demo.filters.JWTAuthorizationFilter@347cfe9a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@327a7491, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e44cdc2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1342b518, org.springframework.security.web.session.SessionManagementFilter@3471cb7d, org.springframework.security.web.access.ExceptionTranslationFilter@286951bd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a781209]
+2022-01-14 09:50:05.332  INFO 14808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-14 09:50:05.335  INFO 14808 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-01-14 09:50:05.335  INFO 14808 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7c9b8b69]]
+2022-01-14 09:50:05.337  INFO 14808 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-01-14 09:50:05.352  INFO 14808 --- [restartedMain] c.e.demo.DatasetsEnrichmentApplication   : Started DatasetsEnrichmentApplication in 9.622 seconds (JVM running for 11.959)

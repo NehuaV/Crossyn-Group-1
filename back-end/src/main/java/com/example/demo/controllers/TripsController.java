@@ -53,7 +53,6 @@ public class TripsController {
     }
 
     @GetMapping("/driver")
-
     public ResponseEntity<?> getAllTripsByDriverID(Principal principal) {
         LOGGER.trace("Entering TripsBydriverID method");
         int driverId = userService.getUserByUsername(principal.getName()).getUserId();

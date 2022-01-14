@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3'
 
 services:
   elasticsearch:
@@ -21,38 +21,42 @@ services:
         source: ./logstash_pipeline/
         target: /usr/share/logstash/pipeline
         read_only: true   
-  posgresdb:
-    image: postgres
-    restart: always
-    environment:
-      - POSTGRES_PASSWORD= admin
-      - POSTGRES_USERNAME= postgres
-    ports: 
-      - "5433:5432"
+  DB:
+    image: "postgres"
+    container_name: DB
     volumes:
-      - "db:/var/lib/pgsql/data"
-  backend:
-    build: ./back-end/
+      - pg-data:/var/lib/postgresql/data
     ports:
-      - "10000:8080"
-    depends_on:
-      - posgresdb
+      - 5432:5432
+
     environment:
-      SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url" : "jdbc:postgresql://localhost:5432/crossynDB",
-        "spring.datasource.username" : "postgres",
-        "spring.datasource.password" : "admin",
-        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.PostgreSQLDialect",
-        "spring.datasource.driver-class-name" : "org.postgresql.Driver",
-        "spring.jpa.hibernate.ddl-auto" : "update"}'
-    volumes: 
-      - .m2:/root/.m2
-    stdin_open: true
-    tty: true
-  frontend:
-    build: ./front-end/
+      - POSTGRES_DB=crossynDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+
+  crbackend:
+    
+    build: ./back-end
+    container_name: crbackend
+
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://DB:5432/crossynDB
+      - DB_SERVER=crossynDB
+      - POSTGRES_DB=crossynDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
     ports:
-      - "12000:3000"
+      - 8080:8080
+    links:
+      - DB
+
+  crfrontend:
+    build: ./front-end
+    container_name: crfrontend
+    ports:
+      - 3000:3000
+    links:
+      - crbackend
 
 volumes:
-  db:
+  pg-data:
